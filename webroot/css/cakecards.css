@@ -1,0 +1,100 @@
+@charset "utf-8";
+/**
+ *
+ */
+
+.error-message {
+    color: #a94442;
+    font-weight: bold;
+}
+
+#mediaGalleryNav {
+    border-right: 1px solid #e5e5e5;
+    min-height: 20em;
+}
+
+#content {
+    float: none;
+}
+
+#letterSelector {
+    padding: 5px 0px 5px 0px;
+}
+
+.btn-toolbar {
+    margin-bottom: 20px;
+}
+
+#toTop-right {
+    display: none;
+    text-decoration: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    outline: none;
+}
+
+#toTop-left {
+    display: none;
+    text-decoration: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    outline: none;
+}
+
+#toTop-center {
+    display: none;
+    text-decoration: none;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -20px; /*Feintuning je nach Inhalt */
+    outline: none;
+}
+
+body {
+    padding-top: 90px;
+}
+
+textarea {
+    min-height: 20em;
+}
+
+.navbar {
+    margin-bottom: 0px !important;
+}
+
+.statusbar {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 50px;
+    height: 30px;
+    z-index: 1030;
+}
+
+.statusbar-ok {
+    background-color: #dff0d8;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-color: #3c763d;
+    color: #3c763d;
+}
+
+.statusbar-wait {
+    background-color: #f2dede;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-color: #a94442;
+    color: #a94442;
+}
+
+.statusbar p {
+    padding: 5px;
+    padding-left: 30px;
+}
+
+#fileupload {
+    padding:10px;
+}

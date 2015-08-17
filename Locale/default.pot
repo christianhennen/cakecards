@@ -1,0 +1,594 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2015-08-17 09:43+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: /CardTexts/add.ctp:5
+#: /CardTexts/edit.ctp:5
+msgid "Add card text"
+msgstr ""
+
+#: /CardTexts/index.ctp:5
+msgid "New card text"
+msgstr ""
+
+#: /CardTexts/index.ctp:14
+#: /Helper/NavHelper.php:15
+#: /People/export_excel.ctp:38
+msgid "Card texts"
+msgstr ""
+
+#: /CardTexts/index.ctp:38
+msgid "Do you really want to delete this card text?"
+msgstr ""
+
+#: /CardTypes/add.ctp:5
+msgid "Add card type"
+msgstr ""
+
+#: /CardTypes/edit.ctp:5
+msgid "Edit card type"
+msgstr ""
+
+#: /CardTypes/index.ctp:6
+msgid "New card type"
+msgstr ""
+
+#: /CardTypes/index.ctp:15
+#: /Helper/NavHelper.php:19
+#: /People/export_excel.ctp:63
+msgid "Card types"
+msgstr ""
+
+#: /CardTypes/index.ctp:32
+msgid "Do you really want to delete this card type?"
+msgstr ""
+
+#: /CardTypes/index.ctp:41
+#: /Elements/card_type_form.ctp:7
+#: /Elements/option_form.ctp:10
+msgid "Image"
+msgstr ""
+
+#: /CardTypes/index.ctp:47
+#: /Elements/card_type_form.ctp:22
+msgid "Font"
+msgstr ""
+
+#: /CardTypes/index.ctp:50
+#: /Elements/card_type_form.ctp:39
+msgid "Horizontal starting position"
+msgstr ""
+
+#: /CardTypes/index.ctp:55
+#: /Elements/card_type_form.ctp:36
+msgid "Font size"
+msgstr ""
+
+#: /CardTypes/index.ctp:58
+#: /Elements/card_type_form.ctp:40
+msgid "Vertical starting position"
+msgstr ""
+
+#: /CardTypes/index.ctp:63
+#: /Elements/card_type_form.ctp:37
+msgid "Font color"
+msgstr ""
+
+#: /CardTypes/index.ctp:66
+#: /Elements/card_type_form.ctp:41
+msgid "Rotation"
+msgstr ""
+
+#: /Elements/card_text_form.ctp:3
+#: /Elements/option_form.ctp:4
+#: /People/export_excel.ctp:12
+msgid "Card type"
+msgstr ""
+
+#: /Elements/card_text_form.ctp:4
+#: /Elements/person_form_footer.ctp:7
+#: /People/export_excel.ctp:42
+msgid "Text"
+msgstr ""
+
+#: /Elements/card_type_form.ctp:3
+#: /Elements/upload_form.ctp:4
+msgid "Name"
+msgstr ""
+
+#: /Elements/card_type_form.ctp:9;24
+#: /Elements/option_form.ctp:12
+msgid "Choose..."
+msgstr ""
+
+#: /Elements/card_type_form.ctp:17
+#: /Elements/option_form.ctp:20
+msgid "Current image"
+msgstr ""
+
+#: /Elements/card_type_form.ctp:32
+msgid "Current font"
+msgstr ""
+
+#: /Elements/form-footer.ctp:2
+#: /People/send_emails.ctp:11
+msgid "Cancel"
+msgstr ""
+
+#: /Elements/form-footer.ctp:4
+msgid "Preview"
+msgstr ""
+
+#: /Elements/form-footer.ctp:9
+msgid "Save"
+msgstr ""
+
+#: /Elements/media_gallery.ctp:6
+msgid "Media Gallery"
+msgstr ""
+
+#: /Elements/media_gallery.ctp:11
+msgid "Choose from file system"
+msgstr ""
+
+#: /Elements/media_gallery.ctp:12
+msgid "Choose from image gallery"
+msgstr ""
+
+#: /Elements/media_gallery.ctp:24
+msgid "Add files..."
+msgstr ""
+
+#: /Elements/media_gallery.ctp:30
+msgid "Upload %d files"
+msgstr ""
+
+#: /Elements/media_gallery.ctp:61
+#: /People/index.ctp:153
+msgid "Close"
+msgstr ""
+
+#: /Elements/option_form.ctp:5
+#: /People/export_excel.ctp:67
+msgid "Description"
+msgstr ""
+
+#: /Elements/option_form.ctp:6
+#: /Options/index.ctp:84
+msgid "Subject"
+msgstr ""
+
+#: /Elements/option_form.ctp:7
+msgid "Is this a test configuration?"
+msgstr ""
+
+#: /Elements/option_form.ctp:25
+msgid "Signature"
+msgstr ""
+
+#: /Elements/option_form.ctp:26
+#: /Options/index.ctp:60
+msgid "Mail server"
+msgstr ""
+
+#: /Elements/option_form.ctp:27
+#: /Options/index.ctp:63
+msgid "Port"
+msgstr ""
+
+#: /Elements/option_form.ctp:28
+msgid "Time until timeout in ms"
+msgstr ""
+
+#: /Elements/option_form.ctp:29
+msgid "Does the server use TLS?"
+msgstr ""
+
+#: /Elements/option_form.ctp:30
+#: /Options/index.ctp:81
+msgid "Sender address"
+msgstr ""
+
+#: /Elements/option_form.ctp:31
+#: /Options/index.ctp:78
+msgid "Sender name"
+msgstr ""
+
+#: /Elements/option_form.ctp:32
+#: /Elements/user_form.ctp:2
+#: /Options/index.ctp:89
+#: /Users/login.ctp:9
+msgid "Username"
+msgstr ""
+
+#: /Elements/option_form.ctp:33
+#: /Elements/user_form.ctp:3
+#: /Options/index.ctp:92
+#: /Users/login.ctp:11
+msgid "Password"
+msgstr ""
+
+#: /Elements/option_form.ctp:38
+msgid "Signature image"
+msgstr ""
+
+#: /Elements/option_form.ctp:39
+msgid "The following placeholder will be inserted into the signature."
+msgstr ""
+
+#: /Elements/person_form.ctp:3
+#: /People/export_excel.ctp:9
+msgid "Prename"
+msgstr ""
+
+#: /Elements/person_form.ctp:4
+#: /People/export_excel.ctp:10
+msgid "Surname"
+msgstr ""
+
+#: /Elements/person_form.ctp:5
+#: /People/export_excel.ctp:11
+msgid "Salutation"
+msgstr ""
+
+#: /Elements/person_form.ctp:6
+msgid "E-mail address"
+msgstr ""
+
+#: /Elements/person_form.ctp:7
+msgid "Text number (see below)"
+msgstr ""
+
+#: /Elements/person_form_footer.ctp:5
+msgid "Text number"
+msgstr ""
+
+#: /Elements/person_form_footer.ctp:6
+#: /Elements/upload_form.ctp:3
+#: /People/export_excel.ctp:43
+msgid "Type"
+msgstr ""
+
+#: /Elements/upload_form.ctp:5
+msgid "Size"
+msgstr ""
+
+#: /Helper/NavHelper.php:11
+#: /People/export_excel.ctp:5
+#: /People/index.ctp:76
+msgid "Recipients"
+msgstr ""
+
+#: /Helper/NavHelper.php:23
+#: /Options/index.ctp:14
+msgid "Mailing options"
+msgstr ""
+
+#: /Helper/NavHelper.php:27
+#: /Users/index.ctp:14
+msgid "Security"
+msgstr ""
+
+#: /Helper/NavHelper.php:34
+msgid "Logout"
+msgstr ""
+
+#: /Helper/NavHelper.php:41
+msgid "Toggle navigation"
+msgstr ""
+
+#: /Layouts/default.ctp:114
+msgid "Yes"
+msgstr ""
+
+#: /Layouts/default.ctp:114
+msgid "No"
+msgstr ""
+
+#: /Options/add.ctp:5
+msgid "Add mailing options"
+msgstr ""
+
+#: /Options/edit.ctp:5
+msgid "Edit mailing options"
+msgstr ""
+
+#: /Options/index.ctp:5
+msgid "New mailing options"
+msgstr ""
+
+#: /Options/index.ctp:16
+msgid "Is test mode active?"
+msgstr ""
+
+#: /Options/index.ctp:24
+msgid "Should mails be sent to the sender?"
+msgstr ""
+
+#: /Options/index.ctp:66
+msgid "Use TLS"
+msgstr ""
+
+#: /Options/index.ctp:73
+msgid "Timeout"
+msgstr ""
+
+#: /People/add.ctp:5
+#: /People/edit.ctp:5
+msgid "Add a recipient"
+msgstr ""
+
+#: /People/export_excel.ctp:8;41;66
+msgid "ID"
+msgstr ""
+
+#: /People/export_excel.ctp:13
+msgid "Card text"
+msgstr ""
+
+#: /People/export_excel.ctp:14
+msgid "E-Mail address"
+msgstr ""
+
+#: /People/index.ctp:3
+msgid "Search"
+msgstr ""
+
+#: /People/index.ctp:11
+msgid "<span class=\"hidden-xs\">New</span> recipient"
+msgstr ""
+
+#: /People/index.ctp:17
+msgid "<span class=\"hidden-xs\">Export to</span> Excel"
+msgstr ""
+
+#: /People/index.ctp:23;178
+msgid "<span class=\"hidden-xs\">Send</span> all"
+msgstr ""
+
+#: /People/index.ctp:26
+msgid "Do you really want to send all cards at once?"
+msgstr ""
+
+#: /People/index.ctp:30
+msgid "<span class=\"hidden-xs\">Delete</span> selected"
+msgstr ""
+
+#: /People/index.ctp:33
+msgid "Do you really want to delete the specified recipients?"
+msgstr ""
+
+#: /People/index.ctp:108
+#: /Users/index.ctp:23
+msgid "Edit"
+msgstr ""
+
+#: /People/index.ctp:114
+msgid "Toggle dropdown"
+msgstr ""
+
+#: /People/index.ctp:119
+msgid "Send"
+msgstr ""
+
+#: /People/index.ctp:122
+msgid "Do you really want to send this card?"
+msgstr ""
+
+#: /People/index.ctp:128
+#: /Users/index.ctp:31
+msgid "Delete"
+msgstr ""
+
+#: /People/index.ctp:131
+msgid "Do you really want to delete this recipient?"
+msgstr ""
+
+#: /People/index.ctp:147
+msgid "Detail view"
+msgstr ""
+
+#: /People/index.ctp:197
+msgid "<span class=\"hidden-xs\">Send</span> selected"
+msgstr ""
+
+#: /People/send_email.ctp:4
+msgid "Success!"
+msgstr ""
+
+#: /People/send_email.ctp:6
+msgid "Error!"
+msgstr ""
+
+#: /People/send_emails.ctp:4
+msgid "Results of mail delivery"
+msgstr ""
+
+#: /People/send_emails.ctp:9;30
+msgid "%d e-mail(s) to send"
+msgstr ""
+
+#: /People/send_emails.ctp:13
+msgid "Mail delivery"
+msgstr ""
+
+#: /People/send_emails.ctp:17
+msgid "Recipient"
+msgstr ""
+
+#: /People/send_emails.ctp:27
+msgid "E-mail(s) successfully send!"
+msgstr ""
+
+#: /Uploads/edit.ctp:5
+msgid "Edit upload"
+msgstr ""
+
+#: /Users/add.ctp:5
+msgid "Add a user"
+msgstr ""
+
+#: /Users/edit.ctp:5
+msgid "Edit user"
+msgstr ""
+
+#: /Users/index.ctp:5
+msgid "New user"
+msgstr ""
+
+#: /Users/index.ctp:34
+msgid "Do you really want to delete this user?"
+msgstr ""
+
+#: /Users/login.ctp:5;14
+msgid "Login"
+msgstr ""
+
+#: /CardTextsController.php:19;33
+msgid "Card text has successfully been saved."
+msgstr ""
+
+#: /CardTextsController.php:22;36
+msgid "Card text could not be saved!"
+msgstr ""
+
+#: /CardTextsController.php:29
+msgid "The specified card text was not found!"
+msgstr ""
+
+#: /CardTextsController.php:47
+msgid "Card text has successfully been deleted."
+msgstr ""
+
+#: /CardTypesController.php:18;31
+msgid "Card type has successfully been saved."
+msgstr ""
+
+#: /CardTypesController.php:21;34
+msgid "Card type could not be saved!"
+msgstr ""
+
+#: /CardTypesController.php:27
+msgid "The specified card type was not found!"
+msgstr ""
+
+#: /CardTypesController.php:45
+msgid "Card type has successfully been deleted."
+msgstr ""
+
+#: /OptionsController.php:20;35
+msgid "Mailing options have successfully been saved."
+msgstr ""
+
+#: /OptionsController.php:23;38
+msgid "Mailing options could not be saved!"
+msgstr ""
+
+#: /OptionsController.php:31
+msgid "The specified mailing options set was not found!"
+msgstr ""
+
+#: /OptionsController.php:54
+msgid "Mailing mode has been set to productive configuration. Mails are sent directly to recipients!"
+msgstr ""
+
+#: /OptionsController.php:62
+msgid "Mailing mode has been set to test configuration. However, mails are sent directly to recipients!"
+msgstr ""
+
+#: /OptionsController.php:70
+msgid "Mailing mode has been set to test configuration. Mails are sent to the sender specified in the mailing options. Recipients do not receive any mail!"
+msgstr ""
+
+#: /PeopleController.php:19;34
+msgid "Recipient has successfully been saved."
+msgstr ""
+
+#: /PeopleController.php:22;37
+msgid "Recipient could not be saved!"
+msgstr ""
+
+#: /PeopleController.php:30;95;104
+msgid "The specified recipient was not found!"
+msgstr ""
+
+#: /PeopleController.php:54
+msgid "Recipients have successfully been deleted."
+msgstr ""
+
+#: /PeopleController.php:56
+msgid "Recipients could not be deleted."
+msgstr ""
+
+#: /PeopleController.php:62
+msgid "Recipient has successfully been deleted."
+msgstr ""
+
+#: /PeopleController.php:64
+msgid "Recipient could not be deleted."
+msgstr ""
+
+#: /UploadsController.php:84
+msgid "An error occured during file upload!"
+msgstr ""
+
+#: /UploadsController.php:92
+msgid "Error: Only .jpg or .png images under 20Mb are accepted for upload!"
+msgstr ""
+
+#: /UploadsController.php:98
+msgid "Error: No file uploaded!"
+msgstr ""
+
+#: /UploadsController.php:110
+msgid "The specified upload was not found!"
+msgstr ""
+
+#: /UploadsController.php:114
+msgid "Upload has successfully been saved."
+msgstr ""
+
+#: /UploadsController.php:117
+msgid "Upload could not be saved!"
+msgstr ""
+
+#: /UsersController.php:26;39
+msgid "User has successfully been saved."
+msgstr ""
+
+#: /UsersController.php:29;42
+msgid "User could not be saved!"
+msgstr ""
+
+#: /UsersController.php:35;51
+msgid "The specified user was not found!"
+msgstr ""
+
+#: /UsersController.php:54
+msgid "You can't delete your own user account!"
+msgstr ""
+
+#: /UsersController.php:58
+msgid "User has successfully been deleted."
+msgstr ""
+
+#: /UsersController.php:61
+msgid "User could not be deleted."
+msgstr ""
+
+#: /UsersController.php:73
+msgid "Wrong username or password!"
+msgstr ""
+
