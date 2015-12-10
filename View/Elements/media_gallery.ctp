@@ -29,6 +29,10 @@
                                         <i class="glyphicon glyphicon-upload"></i>
                                         <span><? echo __('Upload %d files') ?></span>
                                     </span>
+                                    <span class="btn btn-primary startupload-button2" style="display: none">
+                                        <i class="glyphicon glyphicon-upload"></i>
+                                        <span><? echo __('Upload %d files') ?></span>
+                                    </span>
                                     <!-- The global file processing state -->
                                     <span class="fileupload-process"></span>
                                 </div>
@@ -66,25 +70,38 @@
 <script type="text/javascript">
 
     $(function () {
+        var filesList = new Array();
         $('#fileupload').fileupload({
             dataType: 'json',
-            acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+            autoUpload: false,
+            acceptFileTypes: /(\.|\/)(gif|jpe?g|png|ttf)$/i,
+            fileInput:$('#inputUploadFile'),
             add: function (e, data) {
-                $('.startupload-button')
+                var startButton = $('.startupload-button');
+                if (!startButton.length) {
+                    $('.startupload-button2').clone().insertAfter('.fileinput-button:last').removeClass('startupload-button2').addClass('startupload-button').show();
+                }
+                data.context = $('.startupload-button')
                     .click(function () {
-                        $('.upload-progress').text('Uploading...').show();
+                        data.context = $('.upload-progress').text('Uploading...').replaceAll($(this)).show();
                         data.submit();
                     }).show();
-            },
-            change: function (e, data) {
-                var buttonText = $('.startupload-button span');
-                buttonText.text(sprintf(buttonText.text(),data.files.length));
+                $.each(data.files, function(index, file) {
+                    filesList.push(data.files[index]);
+                })
+                var text = "file";
+                if (filesList.length > 1) text = "files";
+                $('.startupload-button span').text(sprintf('Upload %d %s',filesList.length,text));
             },
             done: function (e, data) {
                 $('.upload-progress').text('Done!').show();
                 var error = data.result.files[0].error;
                 if (!error) {
                     var id = data.result.files[0].id;
+                    $.each(filesList, function(index,file) {
+                        if(file.name == data.result.files[0].name)
+                            filesList.splice(index,1);
+                    });
                     $.ajax({
                         type: 'GET',
                         url: myBaseUrl+'uploads/index/'+id,
@@ -100,7 +117,8 @@
 
             },
             fail: function(e,data) {
-                console.log("Request failed: " + data.textStatus + " " + data.errorThrown).show();
+                console.log("Request failed: " + data.textStatus + " " + data.errorThrown);
+                $('.upload-progress').html(data._response.jqXHR.responseText).show();
             },
             progressall: function (e, data) {
                 var progress = parseInt(data.loaded / data.total * 100, 10);
@@ -111,6 +129,7 @@
             }
         });
     });
+
     $(document).on('click', '#previewButton', function () {
         event.preventDefault();
         $('#cardPreview').html('');
@@ -163,6 +182,7 @@
         $('#mediaGalleryFilesystem').show();
         $('#mediaGallery').hide();
         $('#cardPreview').hide();
+        //resetFileUpload();
     });
     $(document).on('click', '#fromGallery', function () {
         event.preventDefault();

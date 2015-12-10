@@ -32,26 +32,35 @@ class UploadsController extends AppController {
         }
     }
 
+    public function isImage($ext,$mimeType){
+        if (($ext == "jpg" || $ext == "jpeg" || $ext == "png") && ($mimeType == "image/jpeg" || $mimeType== "image/png")) return true;
+        else return false;
+    }
+
+    public function isFont($ext,$mimeType){
+        if (($ext == "ttf") && ($mimeType == "font/ttf" || $mimeType == "font/truetype" || $mimeType =="application/octet-stream")) return true;
+        else return false;
+    }
+
     public function add() {
         if ($this->request->is('post')) {
             $result = null;
             $file = $this->request->data['files'];
             $type = $this->request->data['type'];
+            $filename = basename($file['name']);
             if((!empty($file)) && ($file['error'] == 0)) {
-                $filename = basename($file['name']);
-                $ext = substr($filename, strrpos($filename, '.') + 1);
-                if (($ext == "jpg" || $ext == "jpeg" || $ext == "png") && ($file["type"] == "image/jpeg" || $file["type"] == "image/png") &&
-                    ($file["size"] < 20000000)) {
-
+                $ext = strtolower(substr($filename, strrpos($filename, '.') + 1));
+                if (($this->isImage($ext,$file["type"]) || $this->isFont($ext,$file["type"])) && ($file["size"] < 20000000)) {
                     $this->Upload->set('name',$filename);
                     $this->Upload->set('size',$file["size"]);
                     $this->Upload->set('type',$type);
-                        if ($this->Upload->save()) {
-                            $id = $this->Upload->getInsertID();
-                            $newname = WWW_ROOT."files".DS.$id.DS.$filename;
-                            mkdir(WWW_ROOT."files/".$id);
-                            if ((move_uploaded_file($file['tmp_name'],$newname))) {
-                                $url = $this->webroot."files".DS.$id.DS.$filename;
+                    if($this->Upload->save()) {
+                        $id = $this->Upload->getInsertID();
+                        $newname = WWW_ROOT . "files" . DS . $id . DS . $filename;
+                        mkdir(WWW_ROOT . "files/" . $id);
+                        if ((move_uploaded_file($file['tmp_name'], $newname))) {
+                            $url = $this->webroot . "files" . DS . $id . DS . $filename;
+                            if ($this->isImage($ext, $file["type"])) {
                                 $image = null;
                                 if ($ext == "jpg" || $ext == "jpeg") {
                                     $image = imagecreatefromjpeg($newname);
@@ -71,25 +80,36 @@ class UploadsController extends AppController {
                                 }
                                 imagedestroy($image);
                                 imagedestroy($new_image);
-                                $result = array("files" => array(array(
-                                    "name" => $filename,
-                                    "size" => $file["size"],
-                                    "url" => $url,
-                                    "id" => $id
-                                )));
-                            } else {
-                                $this->Upload->delete($id);
-                                $result = array("files" => array(array(
-                                    "name" => $filename,
-                                    "error" => __('An error occured during file upload!')
-                                )));
+                            } elseif ($this->isFont($ext,$file["type"])) {
+                                $image = imagecreatefrompng('files/font-preview.png');
+                                $font_color = ImageColorAllocate($image,0,0,0);
+                                imagettftext($image, 18, 0, 0,  30, $font_color, $newname , $filename);
+                                imagepng($image, "files/".$id."/preview.png");
                             }
+                            $result = array("files" => array(array(
+                                "name" => $filename,
+                                "size" => $file["size"],
+                                "url" => $url,
+                                "id" => $id
+                            )));
+                        } else {
+                            $this->Upload->delete($id);
+                            $result = array("files" => array(array(
+                                "name" => $filename,
+                                "error" => __('An error occured during file upload!')
+                            )));
                         }
+                    } else {
+                        $result = array("files" => array(array(
+                            "name" => $filename,
+                            "error" => __('Error: Could not save file')
+                        )));
+                    }
 
                 } else {
                     $result = array("files" => array(array(
                         "name" => $filename,
-                        "error" => __('Error: Only .jpg or .png images under 20Mb are accepted for upload!')
+                        "error" => __('Error: Only files under 20Mb in .jpg .png or .ttf format are accepted for upload!')
                     )));
                 }
             } else {
