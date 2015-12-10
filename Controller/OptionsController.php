@@ -1,49 +1,56 @@
 <?php
+
 /**
- *@property Option $Option
+ * @property Option $Option
+ * @property mixed Message
+ * @property mixed User
  */
+class OptionsController extends AppController
+{
 
-class OptionsController extends AppController {
-
-    public $helpers = array('Html','Form');
+    public $helpers = array('Html', 'Form');
     public $components = array('Message');
 
-    public function index() {
-        $this->set('options',$this->Option->find('all'));
+    public function index()
+    {
+        $this->set('options', $this->Option->find('all'));
         $this->loadModel('User');
-        $this->set('user',$this->User->findById($this->Auth->user('id'), array('id', 'testmode_active','sender_is_recipient')));
+        $this->set('user', $this->User->findById($this->Auth->user('id'), array('id', 'testmode_active', 'sender_is_recipient')));
     }
 
-    public function add() {
+    public function add()
+    {
         if ($this->request->is('post')) {
             if ($this->Option->save($this->request->data)) {
-                $this->Message->display(__('Mailing options have successfully been saved.'),'success');
+                $this->Message->display(__('Mailing options have successfully been saved.'), 'success');
                 $this->redirect(array('action' => 'index'));
             }
             $this->Message->display(__('Mailing options could not be saved!'), 'danger');
         }
-        $this->set('cardtypes',$this->Option->CardType->find('list'));
+        $this->set('cardtypes', $this->Option->CardType->find('list'));
         $this->set('uploads', $this->Option->Upload->findAllByType('signature'));
     }
 
-    public function edit($id = null) {
+    public function edit($id = null)
+    {
         if (!$id OR !$option = $this->Option->findById($id)) {
             throw new NotFoundException(__('The specified mailing options set was not found!'));
         }
-        if ($this->request->is(array('post','put'))) {
+        if ($this->request->is(array('post', 'put'))) {
             if ($this->Option->save($this->request->data)) {
-                $this->Message->display(__('Mailing options have successfully been saved.'),'success');
+                $this->Message->display(__('Mailing options have successfully been saved.'), 'success');
                 $this->redirect(array('action' => 'index'));
             }
             $this->Message->display(__('Mailing options could not be saved!'), 'danger');
         }
-        $this->set('cardtypes',$this->Option->CardType->find('list'));
+        $this->set('cardtypes', $this->Option->CardType->find('list'));
         $this->set('uploads', $this->Option->Upload->findAllByType('signature'));
         $this->request->data = $option;
-        $this->set('option',$option);
+        $this->set('option', $option);
     }
 
-    public function changeMailingMode($mode = null) {
+    public function changeMailingMode($mode = null)
+    {
         $this->loadModel('User');
         $currentUser = $this->User->findById($this->Auth->user('id'), array('id', 'testmode_active', 'sender_is_recipient'));
         if ($mode == '0') {
@@ -74,4 +81,3 @@ class OptionsController extends AppController {
         $this->redirect(array('action' => 'index'));
     }
 }
-?>

@@ -1,26 +1,31 @@
 <?php
-/**
- *@property User $User
- */
 
-class UsersController extends AppController {
+/**
+ * @property User $User
+ * @property mixed Message
+ */
+class UsersController extends AppController
+{
 
     public $components = array('Message');
 
-    public function beforeFilter() {
+    public function beforeFilter()
+    {
         parent::beforeFilter();
         if ($this->User->find('count') == 0) {
-            $this->Auth->allow('logout','add');
+            $this->Auth->allow('logout', 'add');
         } else
-        $this->Auth->allow('logout');
+            $this->Auth->allow('logout');
     }
 
-    public function index() {
+    public function index()
+    {
         $this->User->recursive = 0;
         $this->set('users', $this->paginate());
     }
 
-    public function add() {
+    public function add()
+    {
         if ($this->request->is('post')) {
             if ($this->User->save($this->request->data)) {
                 $this->Message->display(__('User has successfully been saved.'), 'success');
@@ -30,11 +35,12 @@ class UsersController extends AppController {
         }
     }
 
-    public function edit($id = null) {
+    public function edit($id = null)
+    {
         if (!$id OR !$this->User->findById($id)) {
             throw new NotFoundException(__('The specified user was not found!'));
         }
-        if ($this->request->is(array('post','put'))) {
+        if ($this->request->is(array('post', 'put'))) {
             if ($this->User->save($this->request->data)) {
                 $this->Message->display(__('User has successfully been saved.'), 'success');
                 $this->redirect(array('action' => 'index'));
@@ -45,7 +51,8 @@ class UsersController extends AppController {
         unset($this->request->data['User']['password']);
     }
 
-    public function delete($id = null) {
+    public function delete($id = null)
+    {
         if ($this->request->is('post')) {
             if (!$id OR !$this->User->findById($id)) {
                 throw new NotFoundException(__('The specified user was not found!'));
@@ -65,18 +72,19 @@ class UsersController extends AppController {
         }
     }
 
-    public function login() {
-    	if ($this->request->is('post')) {
-        	if ($this->Auth->login()) {
-            	$this->redirect(array('controller' => 'people','action' => 'index'));
-        	}
-        	$this->Message->display(__('Wrong username or password!'), 'danger');
-    	}
-	}
+    public function login()
+    {
+        if ($this->request->is('post')) {
+            if ($this->Auth->login()) {
+                $this->redirect(array('controller' => 'people', 'action' => 'index'));
+            }
+            $this->Message->display(__('Wrong username or password!'), 'danger');
+        }
+    }
 
-	public function logout() {
-    	$this->redirect($this->Auth->logout());
-	}
+    public function logout()
+    {
+        $this->redirect($this->Auth->logout());
+    }
 
 }
-?>

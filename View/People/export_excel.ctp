@@ -1,5 +1,4 @@
 <?php
-
 $this->PhpExcel->createWorksheet();
 $this->PhpExcel->setDefaultFont('Calibri', 12);
 $this->PhpExcel->xls->getActiveSheet()->setTitle(__('Recipients'));
@@ -84,4 +83,3 @@ $this->PhpExcel->addTableFooter();
 $this->PhpExcel->xls->setActiveSheetIndex(0);
 
 $this->PhpExcel->output(date("Y-m-d H:i:s") . '.xlsx');
-?>

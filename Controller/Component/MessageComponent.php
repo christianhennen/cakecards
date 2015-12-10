@@ -1,5 +1,9 @@
-<?
+<?php
 App::uses('Component', 'Controller');
+
+/**
+ * @property mixed Session
+ */
 class MessageComponent extends Component {
 
     public $components = array('Session');
@@ -12,4 +16,3 @@ class MessageComponent extends Component {
         );
     }
 }
-?>

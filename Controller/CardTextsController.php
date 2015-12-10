@@ -1,19 +1,23 @@
 <?php
+
 /**
- *@property CardText $CardText
+ * @property CardText $CardText
+ * @property mixed Message
  */
+class CardTextsController extends AppController
+{
 
-class CardTextsController extends AppController {
-
-    public $helpers = array('Html','Form');
+    public $helpers = array('Html', 'Form');
     public $components = array('Message');
 
-    public function index() {
-        $this->set('cardtexts',$this->CardText->find('all', array(
+    public function index()
+    {
+        $this->set('cardtexts', $this->CardText->find('all', array(
             'order' => array('CardText.card_type_id' => 'desc'))));
     }
 
-    public function add() {
+    public function add()
+    {
         if ($this->request->is('post')) {
             if ($this->CardText->save($this->request->data)) {
                 $this->Message->display(__('Card text has successfully been saved.'), 'success');
@@ -21,25 +25,27 @@ class CardTextsController extends AppController {
             }
             $this->Message->display(__('Card text could not be saved!'), 'danger');
         }
-        $this->set('cardTypes',$this->CardText->CardType->find('list'));
+        $this->set('cardTypes', $this->CardText->CardType->find('list'));
     }
 
-    public function edit($id = null) {
+    public function edit($id = null)
+    {
         if (!$id OR !$cardtext = $this->CardText->findById($id)) {
             throw new NotFoundException(__('The specified card text was not found!'));
         }
-        if ($this->request->is(array('post','put'))) {
+        if ($this->request->is(array('post', 'put'))) {
             if ($this->CardText->save($this->request->data)) {
                 $this->Message->display(__('Card text has successfully been saved.'), 'success');
                 $this->redirect(array('action' => 'index'));
             }
             $this->Message->display(__('Card text could not be saved!'), 'danger');
         }
-        $this->set('cardTypes',$this->CardText->CardType->find('list'));
+        $this->set('cardTypes', $this->CardText->CardType->find('list'));
         $this->request->data = $cardtext;
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         if ($this->request->is('get')) {
             throw new MethodNotAllowedException();
         }
@@ -50,4 +56,3 @@ class CardTextsController extends AppController {
     }
 
 }
-?>

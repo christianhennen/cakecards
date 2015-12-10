@@ -20,65 +20,69 @@
  */
 
 App::uses('Controller', 'Controller');
+
 /**
  * Application Controller
  *
  * Add your application-wide methods in the class below, your controllers
  * will inherit them.
  *
- * @package		app.Controller
- * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
+ * @package        app.Controller
+ * @link        http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
-class AppController extends Controller {
+class AppController extends Controller
+{
 
-	public $components = array(
-		'Auth' => array(
-			'flash' => array(
-				'element' => 'alert',
-				'key' => 'auth',
-				'params' => array(
-					'plugin' => 'BoostCake',
-					'class' => 'alert-error'
-				)
-			),
-			'loginRedirect' => array(
+    public $components = array(
+        'Auth' => array(
+            'flash' => array(
+                'element' => 'alert',
+                'key' => 'auth',
+                'params' => array(
+                    'plugin' => 'BoostCake',
+                    'class' => 'alert-error'
+                )
+            ),
+            'loginRedirect' => array(
                 'controller' => 'people',
                 'action' => 'index'
             ),
-        	'logoutRedirect' => array(
+            'logoutRedirect' => array(
                 'controller' => 'pages',
                 'action' => 'display',
                 'home'
             )
-		),
-		'Session',
-		'DebugKit.Toolbar' => array('autoRun' => false)
-	);
-	public $helpers = array(
-		'Nav',
-		'Session',
-		'Html' => array('className' => 'BoostCake.BoostCakeHtml'),
-		'Form' => array('className' => 'BoostCake.BoostCakeForm'),
-		'Paginator' => array('className' => 'BoostCake.BoostCakePaginator')
-	);
+        ),
+        'Session',
+        'DebugKit.Toolbar' => array('autoRun' => false)
+    );
+    public $helpers = array(
+        'Nav',
+        'Session',
+        'Html' => array('className' => 'BoostCake.BoostCakeHtml'),
+        'Form' => array('className' => 'BoostCake.BoostCakeForm'),
+        'Paginator' => array('className' => 'BoostCake.BoostCakePaginator')
+    );
 
-	protected function _checkBrowserLanguage(){
-		if(!$this->Session->check('Config.language')){
+    protected function _checkBrowserLanguage()
+    {
+        if (!$this->Session->check('Config.language')) {
             $browserLanguage = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-            switch ($browserLanguage){
-				case "en":
-					$this->Session->write('Config.language', 'en');
-					break;
-				case "de":
-					$this->Session->write('Config.language', 'de');
-					break;
-				default:
-					$this->Session->write('Config.language', 'en');
-			}
-		}
-	}
+            switch ($browserLanguage) {
+                case "en":
+                    $this->Session->write('Config.language', 'en');
+                    break;
+                case "de":
+                    $this->Session->write('Config.language', 'de');
+                    break;
+                default:
+                    $this->Session->write('Config.language', 'en');
+            }
+        }
+    }
 
-	public function beforeFilter() {
-		$this->_checkBrowserLanguage();
-	}
+    public function beforeFilter()
+    {
+        $this->_checkBrowserLanguage();
+    }
 }

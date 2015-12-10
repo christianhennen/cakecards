@@ -1,7 +1,8 @@
 <?php
+
 /**
- *@property Upload $Image
- *@property Upload $Font
+ * @property Upload $Image
+ * @property Upload $Font
  */
 
 class CardType extends AppModel {
@@ -63,4 +64,3 @@ class CardType extends AppModel {
         )
     );
 }
-?>

@@ -8,30 +8,30 @@
         <?php
         echo $this->Html->link(
             $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-plus'))
-            .' '.__('<span class="hidden-xs">New</span> recipient'),
+            . ' ' . __('<span class="hidden-xs">New</span> recipient'),
             array('action' => 'add'),
             array('class' => 'btn btn-primary', 'escape' => false)
         );
         echo $this->Html->link(
             $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-list-alt'))
-            .' '.__('<span class="hidden-xs">Export to</span> Excel'),
+            . ' ' . __('<span class="hidden-xs">Export to</span> Excel'),
             array('action' => 'exportExcel'),
             array('class' => 'btn btn-default', 'escape' => false)
         );
         echo $this->Form->postLink(
             $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-envelope'))
-            .' '.__('<span class="hidden-xs">Send</span> all'),
+            . ' ' . __('<span class="hidden-xs">Send</span> all'),
             array('action' => 'sendEmails'),
             array('id' => 'sendEmailsButton', 'class' => 'btn btn-warning', 'escape' => false),
             __('Do you really want to send all cards at once?')
         );
         echo $this->Form->postLink(
             $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-trash'))
-            .' '.__('<span class="hidden-xs">Delete</span> selected'),
+            . ' ' . __('<span class="hidden-xs">Delete</span> selected'),
             array('action' => 'delete'),
             array('id' => 'deleteMultipleButton', 'class' => 'btn btn-danger', 'style' => 'display:none', 'escape' => false),
             __('Do you really want to delete the specified recipients?')
-        );?>
+        ); ?>
     </div>
 </div>
 
@@ -56,7 +56,8 @@
         var letterSelector = $('#letterSelector');
         inputfield.fastLiveFilter('#people .person_name', {
             timeout: 200,
-                callback: function() { var text = inputfield.val();
+            callback: function () {
+                var text = inputfield.val();
                 if (text == '') {
                     letterSelector.show();
                     $('.person_row').show();
@@ -66,7 +67,8 @@
                     letterSelector.hide();
                     person_rows.has('.person_name p:hidden').hide();
                     $('.sectionHeading').hide();
-                } }
+                }
+            }
         });
     });
 </script>
@@ -100,7 +102,7 @@ foreach ($people as $person):
 
 	  <div class=\"col-sm-3 col-xs-12\"><p>" . $person['Person']['salutation'] . "</p></div>
 	  <div class=\"col-sm-3 col-xs-12\"><p>" . $person['Person']['email'] . "</p></div>
-	  <div class=\"col-sm-1 col-xs-4\"><a href=\"#\" class=\"thumbnail\" style=\"margin-bottom:10px;\"><img src=\"" . $thumbnail_path . "?". $time. "\"><span class=\"hidden\">" . $person['Person']['id'] . "</span></a>
+	  <div class=\"col-sm-1 col-xs-4\"><a href=\"#\" class=\"thumbnail\" style=\"margin-bottom:10px;\"><img src=\"" . $thumbnail_path . "?" . $time . "\"><span class=\"hidden\">" . $person['Person']['id'] . "</span></a>
 	  </div>
 	  <div class=\"col-sm-2 col-xs-4\">
 		<div class=\"btn-group\">";
@@ -111,12 +113,12 @@ foreach ($people as $person):
     );
     echo "<button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
 				<span class=\"caret\"></span>
-				<span class=\"sr-only\">".__('Toggle dropdown')."</span>
+				<span class=\"sr-only\">" . __('Toggle dropdown') . "</span>
 			</button>
 			<ul class=\"dropdown-menu\">
 			<li>";
     echo $this->Form->postLink(
-        $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-envelope')).' '.__('Send'),
+        $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-envelope')) . ' ' . __('Send'),
         array('action' => 'sendEmails', $person['Person']['id']),
         array('class' => '', 'escape' => false),
         __('Do you really want to send this card?')
@@ -125,7 +127,7 @@ foreach ($people as $person):
 			<li role=\"separator\" class=\"divider\"></li>
 			<li>";
     echo $this->Form->postLink(
-        $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-trash')).' '.__('Delete'),
+        $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-trash')) . ' ' . __('Delete'),
         array('action' => 'delete', $person['Person']['id']),
         array('class' => '', 'escape' => false),
         __('Do you really want to delete this recipient?')
@@ -161,7 +163,8 @@ foreach ($people as $person):
         var title = $(this).parent('a').attr("title");
         $('.modal-title').html(title);
         var person_id = $(this).children('span').html();
-        var img_src = '<?php echo $this->webroot."images/"?>' + person_id + '.png'
+        var seconds = new Date().getTime() / 1000;
+        var img_src = '<?php echo $this->webroot."images/"?>' + person_id + '.png?'+seconds;
         $('.modal-body a img').attr('src', img_src);
         $('#myModal').modal({show: true});
     });
@@ -178,14 +181,14 @@ foreach ($people as $person):
             <? echo "var buttonMessage = '<span class=\"glyphicon glyphicon-envelope\"></span> ".__('<span class="hidden-xs">Send</span> all')."';" ?>
             sendEmailsButton.html(buttonMessage);
         } else {
-            for (i=0; i < checked.length; i++) {
+            for (var i = 0; i < checked.length; i++) {
                 ids += $(checked[i]).attr('id');
-                if (i != checked.length-1) {
+                if (i != checked.length - 1) {
                     ids += ',';
                 }
             }
-            var sendText = '<input type="hidden" id="sendEmailsInput" name="data[ids]" value="'+ids+'"/>';
-            var deleteText = '<input type="hidden" id="deleteMultipleInput" name="data[ids]" value="'+ids+'"/>';
+            var sendText = '<input type="hidden" id="sendEmailsInput" name="data[ids]" value="' + ids + '"/>';
+            var deleteText = '<input type="hidden" id="deleteMultipleInput" name="data[ids]" value="' + ids + '"/>';
             if (sendEmailsInput.length == 0) {
                 sendEmailsButton.prev().append(sendText);
                 deleteMultipleButton.prev().append(deleteText);

@@ -1,9 +1,8 @@
-
 <div class="row">
     <div class="btn-toolbar col-sm-offset-1" role="toolbar">
         <? echo $this->Html->link(
             $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-plus'))
-            .' '.__('New card type'),
+            . ' ' . __('New card type'),
             array('action' => 'add'),
             array('class' => 'btn btn-primary', 'escape' => false)
         ); ?>
@@ -33,37 +32,37 @@ foreach ($cardtypes as $cardtype):
     );
     echo "
           </div>
-          <p style=\"font-weight:bold; margin-top: 5px; margin-left: 90px;\">".$cardtype['CardType']['description']."</p>
+          <p style=\"font-weight:bold; margin-top: 5px; margin-left: 90px;\">" . $cardtype['CardType']['description'] . "</p>
         </div>
         <div class=\"panel-body\">
           <div class=\"row\">
             <div class=\"col-sm-4 col-xs-5\">
-              <p style=\"font-weight:bold\">".__('Image')."</p>
-              <div class=\"thumbnail\"><img src=\"".$this->webroot."files/".$cardtype['Image']['id']."/".$cardtype['Image']['name']."\"></div>
+              <p style=\"font-weight:bold\">" . __('Image') . "</p>
+              <div class=\"thumbnail\"><img src=\"" . $this->webroot . "files/" . $cardtype['Image']['id'] . "/" . $cardtype['Image']['name'] . "\"></div>
             </div>
             <div class=\"col-sm-8 col-xs-12\">
               <div class=\"row\" style=\"margin-bottom:15px;margin-top:30px;\">
                 <div class=\"col-sm-6 col-xs-6\">
-                  <p style=\"font-weight:bold\">".__('Font')."</p><img src=\"".$this->webroot."files/".$cardtype['Font']['id']."/preview.png\">
+                  <p style=\"font-weight:bold\">" . __('Font') . "</p><img src=\"" . $this->webroot . "files/" . $cardtype['Font']['id'] . "/preview.png\">
                 </div>
                 <div class=\"col-sm-6 col-xs-6\">
-                  <p style=\"font-weight:bold\">".__('Horizontal starting position')."</p>".$cardtype['CardType']['x_position']."
+                  <p style=\"font-weight:bold\">" . __('Horizontal starting position') . "</p>" . $cardtype['CardType']['x_position'] . "
                 </div>
               </div>
               <div class=\"row\" style=\"margin-bottom:15px;\">
               <div class=\"col-sm-6 col-xs-6\">
-                  <p style=\"font-weight:bold\">".__('Font size')."</p>".$cardtype['CardType']['font_size']."
+                  <p style=\"font-weight:bold\">" . __('Font size') . "</p>" . $cardtype['CardType']['font_size'] . "
                 </div>
 
-                <div class=\"col-sm-6 col-xs-6\"><p style=\"font-weight:bold\">".__('Vertical starting position')."</p>".$cardtype['CardType']['y_position']."
+                <div class=\"col-sm-6 col-xs-6\"><p style=\"font-weight:bold\">" . __('Vertical starting position') . "</p>" . $cardtype['CardType']['y_position'] . "
                 </div>
               </div>
               <div class=\"row\">
                 <div class=\"col-sm-6 col-xs-6\">
-                  <p style=\"font-weight:bold\">".__('Font color')."</p><div class=\"thumbnail\" style=\"height:40px; width:60px;\"><div style=\"height:30px; width:50px; border: 1px solid lightgrey; background-color:".$cardtype['CardType']['font_color_hex']."\"></div></div>
+                  <p style=\"font-weight:bold\">" . __('Font color') . "</p><div class=\"thumbnail\" style=\"height:40px; width:60px;\"><div style=\"height:30px; width:50px; border: 1px solid lightgrey; background-color:" . $cardtype['CardType']['font_color_hex'] . "\"></div></div>
                 </div>
                 <div class=\"col-sm-6 col-xs-6\">
-                  <p style=\"font-weight:bold\">".__('Rotation')."</p>".$cardtype['CardType']['rotation']."
+                  <p style=\"font-weight:bold\">" . __('Rotation') . "</p>" . $cardtype['CardType']['rotation'] . "
                 </div>
               </div>
             </div>

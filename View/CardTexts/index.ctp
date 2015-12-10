@@ -2,7 +2,7 @@
     <div class="btn-toolbar" role="toolbar">
         <? echo $this->Html->link(
             $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-plus'))
-            .' '.__('New card text'),
+            . ' ' . __('New card text'),
             array('action' => 'add'),
             array('class' => 'btn btn-primary', 'escape' => false)
         ); ?>
@@ -19,7 +19,7 @@ foreach ($cardtexts as $cardtext):
     $currentCardType = $cardtext['CardType']['description'];
     if ($currentCardType != $currentSectionTitle) {
         $currentSectionTitle = $currentCardType;
-        echo "<div class=\"row\" style=\"margin-top: 20px; margin-bottom:10px;\"><div class=\"col-sm-12 col-xs-12\"><a name=\"section".$currentSectionTitle."\">".$currentSectionTitle."</a></div></div>";
+        echo "<div class=\"row\" style=\"margin-top: 20px; margin-bottom:10px;\"><div class=\"col-sm-12 col-xs-12\"><a name=\"section" . $currentSectionTitle . "\">" . $currentSectionTitle . "</a></div></div>";
     }
 
     echo "<div class=\"row\" style=\"margin-bottom:20px\">
@@ -39,7 +39,7 @@ foreach ($cardtexts as $cardtext):
     );
     echo "
    </div>
-   <div class=\"col-sm-6 col-sm-pull-1 col-xs-12\"><p>".$cardtext['CardText']['text']."</p></div>
+   <div class=\"col-sm-6 col-sm-pull-1 col-xs-12\"><p>" . $cardtext['CardText']['text'] . "</p></div>
  </div>";
     ?>
 <?php endforeach; ?>
