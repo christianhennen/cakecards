@@ -34,8 +34,7 @@ echo $this->Form->input('password', array('label' => DEFAULT_LABEL_OPTIONS + arr
 
 ?>
 <script type="text/javascript">
-
-    <? echo "var templateTitle = '".__('Signature image')."';";
+    <?php echo "var templateTitle = '".__('Signature image')."';";
 echo "var templateDesc = '".__('The following placeholder will be inserted into the signature.')."';";
 ?>
     $(document).ready(function () {

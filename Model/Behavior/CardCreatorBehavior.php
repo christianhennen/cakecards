@@ -1,4 +1,10 @@
 <?php
+$vendor = App::path('Vendor');
+require_once($vendor[0] . 'stil/gd-text/src/Box.php');
+require_once($vendor[0] . 'stil/gd-text/src/Color.php');
+require_once($vendor[0] . 'stil/gd-text/src/TextWrapping.php');
+require_once($vendor[0] . 'stil/gd-text/src/VerticalAlignment.php');
+require_once($vendor[0] . 'stil/gd-text/src/HorizontalAlignment.php');
 
 class CardCreatorBehavior extends ModelBehavior
 {
@@ -44,9 +50,8 @@ class CardCreatorBehavior extends ModelBehavior
                 )
             ),
             "conditions" => $conditions,
-            "fields" => array('Person.id', 'Person.id', 'Person.salutation', 'CardText.id', 'CardText.text', 'CardType.id',
-                'CardType.description', 'CardType.font_size', 'CardType.x_position',
-                'CardType.y_position', 'CardType.font_color_rgb', 'CardType.rotation', 'Image.id', 'Image.name', 'Font.id', 'Font.name'),
+            "fields" => array('Person.id', 'Person.id', 'Person.salutation', 'CardText.id', 'CardText.text', 'CardType.font_size', 'CardType.x_position',
+                'CardType.y_position', 'CardType.width', 'CardType.height', 'CardType.text_align_horizontal', 'CardType.text_align_vertical', 'CardType.line_height', 'CardType.font_color_rgb', 'Image.id', 'Image.name', 'Font.id', 'Font.name'),
         ));
         foreach ($people as $person) {
             $this->createCard($person);
@@ -60,7 +65,7 @@ class CardCreatorBehavior extends ModelBehavior
         $thumbnail_path = "images/thumbnails/" . $person['Person']['id'] . ".png";
         $cardtypeimage_path = "files/" . $person['Image']['id'] . "/" . $person['Image']['name'];
         $color = explode(',', $person['CardType']['font_color_rgb'], 3);
-        $text = "" . $person['Person']['salutation'] . "\n\n" . $person['CardText']['text'];
+        $text = "" . $person['Person']['salutation'] . "\n" . $person['CardText']['text'];
 
         $image = null;
         $ext = substr($person['Image']['name'], strrpos($person['Image']['name'], '.') + 1);
@@ -69,8 +74,18 @@ class CardCreatorBehavior extends ModelBehavior
         } else {
             $image = imagecreatefrompng($cardtypeimage_path);
         }
-        $font_color = ImageColorAllocate($image, $color[0], $color[1], $color[2]);
-        imagettftext($image, $person['CardType']['font_size'], $person['CardType']['rotation'], $person['CardType']['x_position'], $person['CardType']['y_position'], $font_color, "files/" . $person['Font']['id'] . "/" . $person['Font']['name'], $text);
+        $x = $person['CardType']['x_position'];
+        $y = $person['CardType']['y_position'];
+        $width = $person['CardType']['width'];
+        $height = $person['CardType']['height'];
+        $box = new GDText\Box($image);
+        $box->setFontFace("files/" . $person['Font']['id'] . "/" . $person['Font']['name']);
+        $box->setFontColor(new GDText\Color($color[0], $color[1], $color[2]));
+        $box->setFontSize($person['CardType']['font_size']);
+        $box->setLineHeight($person['CardType']['line_height']);
+        $box->setBox($x, $y, $width, $height);
+        $box->setTextAlign($person['CardType']['text_align_horizontal'], $person['CardType']['text_align_vertical']);
+        $box->draw($text);
         imagepng($image, $image_path);
         $orig_width = imagesx($image);
         $orig_height = imagesy($image);

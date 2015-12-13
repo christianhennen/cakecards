@@ -10,7 +10,7 @@ class CardText extends AppModel
     public $hasMany = 'Person';
     public $validate = array(
         'text' => array(
-            'rule' => 'notEmpty',
+            'rule' => 'notBlank',
             'required' => true,
             'allowEmpty' => false,
             'message' => 'Please enter a text!'

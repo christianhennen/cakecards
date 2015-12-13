@@ -1,2 +1,2 @@
 <?php
-echo "<div class=\"col-sm-12 thumbnail\"><img src=\"" . $this->webroot . $image_path . "\"></div>";
+echo "<img id=\"cardPreviewImg\" src=\"" . $this->webroot . $image_path . "\">";

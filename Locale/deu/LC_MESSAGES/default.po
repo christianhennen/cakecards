@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-07-19 10:05+0200\n"
-"PO-Revision-Date: 2015-07-19 10:09+0200\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-12-13 22:52+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: EMAIL@ADDRESS\n"
 "Language: de_DE\n"
@@ -13,9 +13,165 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.2\n"
+"X-Generator: Poedit 1.8.4\n"
 
-#: /CardTexts/add.ctp:5 /CardTexts/edit.ctp:5
+#: /CardTextsController.php:23;38
+msgid "Card text has successfully been saved."
+msgstr "Der Kartentext wurde erfolgreich gespeichert."
+
+#: /CardTextsController.php:26;41
+msgid "Card text could not be saved!"
+msgstr "Der Kartentext konnte nicht gespeichert werden!"
+
+#: /CardTextsController.php:34
+msgid "The specified card text was not found!"
+msgstr "Der angegebene Kartentext konnte nicht gefunden werden!"
+
+#: /CardTextsController.php:53
+msgid "Card text has successfully been deleted."
+msgstr "Der Kartentext wurde erfolgreich gelöscht."
+
+#: /CardTypesController.php:28;42
+msgid "Card type has successfully been saved."
+msgstr "Der Kartentyp wurde erfolgreich gespeichert."
+
+#: /CardTypesController.php:31;45
+msgid "Card type could not be saved!"
+msgstr "Der Kartentyp konnte nicht gespeichert werden!"
+
+#: /CardTypesController.php:38
+msgid "The specified card type was not found!"
+msgstr "Der angegebene Kartentyp konnte nicht gefunden werden!"
+
+#: /CardTypesController.php:60
+msgid "Card type has successfully been deleted."
+msgstr "Der Kartentyp wurde erfolgreich gelöscht."
+
+#: /OptionsController.php:25;41
+msgid "Mailing options have successfully been saved."
+msgstr "Die Versandoptionen wurden erfolgreich gespeichert."
+
+#: /OptionsController.php:28;44
+msgid "Mailing options could not be saved!"
+msgstr "Die Versandoptionen konnten nicht gespeichert werden!"
+
+#: /OptionsController.php:37
+msgid "The specified mailing options set was not found!"
+msgstr "Das angegebene Versandoptionen-Set wurde nicht gefunden!"
+
+#: /OptionsController.php:61
+msgid ""
+"Mailing mode has been set to productive configuration. Mails are sent "
+"directly to recipients!"
+msgstr ""
+"Der Versandmodus wurde auf die produktive Konfiguration geändert. Die E-"
+"Mails werden direkt an die Empfänger gesendet!"
+
+#: /OptionsController.php:69
+msgid ""
+"Mailing mode has been set to test configuration. However, mails are sent "
+"directly to recipients!"
+msgstr ""
+"Der Versandmodus wurde auf die Test-Konfiguration geändert. Bitte beachten "
+"Sie, dass die E-Mails dennoch direkt an die Empfänger gehen!"
+
+#: /OptionsController.php:77
+msgid ""
+"Mailing mode has been set to test configuration. Mails are sent to the "
+"sender specified in the mailing options. Recipients do not receive any mail!"
+msgstr ""
+"Der Versandmodus wurde auf die Test-Konfiguration geändert. E-Mails werden "
+"nur an den Absender versendet. Empfänger erhalten somit keine E-Mail!"
+
+#: /PeopleController.php:27;43
+msgid "Recipient has successfully been saved."
+msgstr "Der Empfänger wurde erfolgreich gespeichert."
+
+#: /PeopleController.php:30;46
+msgid "Recipient could not be saved!"
+msgstr "Der Empfänger konnte nicht gespeichert werden!"
+
+#: /PeopleController.php:39;107;117
+msgid "The specified recipient was not found!"
+msgstr "Der angegebene Empfänger konnte nicht gefunden werden!"
+
+#: /PeopleController.php:64
+msgid "Recipients have successfully been deleted."
+msgstr "Die Empfänger wurden erfolgreich gelöscht."
+
+#: /PeopleController.php:66
+msgid "Recipients could not be deleted."
+msgstr "Die Empfänger konnten nicht gelöscht werden."
+
+#: /PeopleController.php:72
+msgid "Recipient has successfully been deleted."
+msgstr "Der Empfänger wurde erfolgreich gelöscht."
+
+#: /PeopleController.php:74
+msgid "Recipient could not be deleted."
+msgstr "Der Empfänger konnte nicht gelöscht werden"
+
+#: /UploadsController.php:108
+msgid "An error occured during file upload!"
+msgstr "Während des Uploads trat ein Fehler auf!"
+
+#: /UploadsController.php:114
+msgid "Error: Could not save file"
+msgstr "Fehler: Konnte die Datei nicht speichern"
+
+#: /UploadsController.php:121
+msgid ""
+"Error: Only files under 20Mb in .jpg .png or .ttf format are accepted for "
+"upload!"
+msgstr ""
+"Fehler: Es können nur Dateien kleiner als 20Mb im .jpg, .png oder .ttf-"
+"Format hochgeladen werden!"
+
+#: /UploadsController.php:127
+msgid "Error: No file uploaded!"
+msgstr "Fehler: Keine Datei hochgeladen!"
+
+#: /UploadsController.php:140
+msgid "The specified upload was not found!"
+msgstr "Der angegebene Upload wurde nicht gefunden!"
+
+#: /UploadsController.php:144
+msgid "Upload has successfully been saved."
+msgstr "Upload wurde erfolgreich gespeichert."
+
+#: /UploadsController.php:147
+msgid "Upload could not be saved!"
+msgstr "Upload konnte nicht gespeichert werden!"
+
+#: /UsersController.php:31;45
+msgid "User has successfully been saved."
+msgstr "Der Benutzer wurde erfolgreich gespeichert."
+
+#: /UsersController.php:34;48
+msgid "User could not be saved!"
+msgstr "Der Benutzer konnte nicht gespeichert werden!"
+
+#: /UsersController.php:41;58
+msgid "The specified user was not found!"
+msgstr "Der angegebene Benutzer konnte nicht gefunden werden!"
+
+#: /UsersController.php:61
+msgid "You can't delete your own user account!"
+msgstr "Es ist nicht möglich Ihren eigenen Benutzer-Account zu löschen!"
+
+#: /UsersController.php:65
+msgid "User has successfully been deleted."
+msgstr "Der Benutzer wurde erfolgreich gelöscht."
+
+#: /UsersController.php:68
+msgid "User could not be deleted."
+msgstr "Der Benutzer konnte nicht gelöscht werden!"
+
+#: /UsersController.php:81
+msgid "Wrong username or password!"
+msgstr "Falscher Benutzername oder Kennwort!"
+
+#: /CardTexts/add.ctp:4 /CardTexts/edit.ctp:4
 msgid "Add card text"
 msgstr "Kartentext hinzufügen"
 
@@ -23,8 +179,7 @@ msgstr "Kartentext hinzufügen"
 msgid "New card text"
 msgstr "Neuer Kartentext"
 
-#: /CardTexts/index.ctp:14 /Helper/NavHelper.php:15
-#: /People/export_excel.ctp:38
+#: /CardTexts/index.ctp:14 /Helper/NavHelper.php:20 /People/export_excel.ctp:37
 msgid "Card texts"
 msgstr "Kartentexte"
 
@@ -32,81 +187,104 @@ msgstr "Kartentexte"
 msgid "Do you really want to delete this card text?"
 msgstr "Wollen Sie diesen Kartentext wirklich löschen?"
 
-#: /CardTypes/add.ctp:5
+#: /CardTypes/add.ctp:4
 msgid "Add card type"
 msgstr "Kartentyp hinzufügen"
 
-#: /CardTypes/edit.ctp:5
+#: /CardTypes/edit.ctp:4
 msgid "Edit card type"
 msgstr "Kartentyp bearbeiten"
 
-#: /CardTypes/index.ctp:6
+#: /CardTypes/index.ctp:5
 msgid "New card type"
 msgstr "Neuer Kartentyp"
 
-#: /CardTypes/index.ctp:15 /Helper/NavHelper.php:19
-#: /People/export_excel.ctp:63
+#: /CardTypes/index.ctp:14 /Helper/NavHelper.php:24 /People/export_excel.ctp:62
 msgid "Card types"
 msgstr "Kartentypen"
 
-#: /CardTypes/index.ctp:32
+#: /CardTypes/index.ctp:31
 msgid "Do you really want to delete this card type?"
 msgstr "Wollen Sie diesen Kartentyp wirklich löschen?"
 
-#: /CardTypes/index.ctp:41 /Elements/card_type_form.ctp:7
+#: /CardTypes/index.ctp:40 /Elements/card_type_form.ctp:10
 #: /Elements/option_form.ctp:10
 msgid "Image"
 msgstr "Bild"
 
-#: /CardTypes/index.ctp:47 /Elements/card_type_form.ctp:22
+#: /CardTypes/index.ctp:46 /Elements/card_type_form.ctp:25
 msgid "Font"
 msgstr "Schriftart"
 
-#: /CardTypes/index.ctp:50 /Elements/card_type_form.ctp:39
-msgid "Horizontal starting position"
-msgstr "Horizontale Startposition"
-
-#: /CardTypes/index.ctp:55 /Elements/card_type_form.ctp:36
+#: /CardTypes/index.ctp:51 /Elements/card_type_form.ctp:39
 msgid "Font size"
 msgstr "Schriftgröße"
 
-#: /CardTypes/index.ctp:58 /Elements/card_type_form.ctp:40
-msgid "Vertical starting position"
-msgstr "Vertikale Startposition"
-
-#: /CardTypes/index.ctp:63 /Elements/card_type_form.ctp:37
+#: /CardTypes/index.ctp:56 /Elements/card_type_form.ctp:40
 msgid "Font color"
 msgstr "Schriftfarbe"
 
-#: /CardTypes/index.ctp:66 /Elements/card_type_form.ctp:41
-msgid "Rotation"
-msgstr "Drehung"
-
-#: /Elements/card_text_form.ctp:3 /Elements/option_form.ctp:4
-#: /People/export_excel.ctp:12
+#: /Elements/card_text_form.ctp:2 /Elements/option_form.ctp:4
+#: /People/export_excel.ctp:11
 msgid "Card type"
 msgstr "Kartentyp"
 
-#: /Elements/card_text_form.ctp:4 /Elements/person_form_footer.ctp:7
-#: /People/export_excel.ctp:42
+#: /Elements/card_text_form.ctp:3 /Elements/person_form_footer.ctp:6
+#: /People/export_excel.ctp:41
 msgid "Text"
 msgstr "Text"
 
-#: /Elements/card_type_form.ctp:3 /Elements/upload_form.ctp:4
+#: /Elements/card_type_form.ctp:3
+msgid "Left"
+msgstr "Links"
+
+#: /Elements/card_type_form.ctp:3;4
+msgid "Center"
+msgstr "Mitte"
+
+#: /Elements/card_type_form.ctp:3
+msgid "Right"
+msgstr "Rechts"
+
+#: /Elements/card_type_form.ctp:4
+msgid "Top"
+msgstr "Oben"
+
+#: /Elements/card_type_form.ctp:4
+msgid "Bottom"
+msgstr "Unten"
+
+#: /Elements/card_type_form.ctp:6 /Elements/upload_form.ctp:3
 msgid "Name"
 msgstr "Name"
 
-#: /Elements/card_type_form.ctp:9;24 /Elements/option_form.ctp:12
+#: /Elements/card_type_form.ctp:12;27 /Elements/option_form.ctp:12
 msgid "Choose..."
 msgstr "Auswählen…"
 
-#: /Elements/card_type_form.ctp:17 /Elements/option_form.ctp:20
-msgid "Current image"
-msgstr "Aktuelles Bild"
+#: /Elements/card_type_form.ctp:20
+msgid "Current image - click to select textarea"
+msgstr "Aktuelles Bild - Klicken um den Textbereich festzulegen"
 
-#: /Elements/card_type_form.ctp:32
+#: /Elements/card_type_form.ctp:35
 msgid "Current font"
 msgstr "Aktuelle Schriftart"
+
+#: /Elements/card_type_form.ctp:46
+msgid "Line Height"
+msgstr "Zeilenhöhe"
+
+#: /Elements/card_type_form.ctp:47;48
+msgid "--Please select--"
+msgstr "—Bitte wählen—"
+
+#: /Elements/card_type_form.ctp:47
+msgid "Horizontal Text Alignment"
+msgstr "Horizontale Textausrichtung"
+
+#: /Elements/card_type_form.ctp:48
+msgid "Vertical Text Alignment"
+msgstr "Vertikale Textausrichtung"
 
 #: /Elements/form-footer.ctp:2 /People/send_emails.ctp:11
 msgid "Cancel"
@@ -124,19 +302,27 @@ msgstr "Speichern"
 msgid "Media Gallery"
 msgstr "Medien-Galerie"
 
-#: /Elements/media_gallery.ctp:10
+#: /Elements/media_gallery.ctp:16
 msgid "Choose from file system"
 msgstr "Von Festplatte wählen"
 
-#: /Elements/media_gallery.ctp:11
+#: /Elements/media_gallery.ctp:18
 msgid "Choose from image gallery"
 msgstr "Von Galerie wählen"
 
-#: /Elements/media_gallery.ctp:70 /People/index.ctp:153
+#: /Elements/media_gallery.ctp:31
+msgid "Add files..."
+msgstr "Dateien hinzufügen"
+
+#: /Elements/media_gallery.ctp:37;41
+msgid "Upload %d files"
+msgstr "%d Dateien hochladen"
+
+#: /Elements/media_gallery.ctp:75 /People/index.ctp:155
 msgid "Close"
 msgstr "Schließen"
 
-#: /Elements/option_form.ctp:5 /People/export_excel.ctp:67
+#: /Elements/option_form.ctp:5 /People/export_excel.ctp:66
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -147,6 +333,10 @@ msgstr "Betreff"
 #: /Elements/option_form.ctp:7
 msgid "Is this a test configuration?"
 msgstr "Ist dies eine Test-Konfiguration?"
+
+#: /Elements/option_form.ctp:20
+msgid "Current image"
+msgstr "Aktuelles Bild"
 
 #: /Elements/option_form.ctp:25
 msgid "Signature"
@@ -176,90 +366,90 @@ msgstr "Absender-Adresse"
 msgid "Sender name"
 msgstr "Absender-Name"
 
-#: /Elements/option_form.ctp:32 /Elements/user_form.ctp:2
-#: /Options/index.ctp:89 /Users/login.ctp:9
+#: /Elements/option_form.ctp:32 /Elements/user_form.ctp:2 /Options/index.ctp:89
+#: /Users/login.ctp:9
 msgid "Username"
 msgstr "Benutzername"
 
-#: /Elements/option_form.ctp:33 /Elements/user_form.ctp:3
-#: /Options/index.ctp:92 /Users/login.ctp:11
+#: /Elements/option_form.ctp:33 /Elements/user_form.ctp:3 /Options/index.ctp:92
+#: /Users/login.ctp:11
 msgid "Password"
 msgstr "Passwort"
 
-#: /Elements/option_form.ctp:38
+#: /Elements/option_form.ctp:37
 msgid "Signature image"
 msgstr "Signatur-Bild"
 
-#: /Elements/option_form.ctp:39
+#: /Elements/option_form.ctp:38
 msgid "The following placeholder will be inserted into the signature."
 msgstr "Der folgende Platzhalter wird in die Signatur eingefügt."
 
-#: /Elements/person_form.ctp:3 /People/export_excel.ctp:9
+#: /Elements/person_form.ctp:2 /People/export_excel.ctp:8
 msgid "Prename"
 msgstr "Vorname"
 
-#: /Elements/person_form.ctp:4 /People/export_excel.ctp:10
+#: /Elements/person_form.ctp:3 /People/export_excel.ctp:9
 msgid "Surname"
 msgstr "Name"
 
-#: /Elements/person_form.ctp:5 /People/export_excel.ctp:11
+#: /Elements/person_form.ctp:4 /People/export_excel.ctp:10
 msgid "Salutation"
 msgstr "Begrüßung"
 
-#: /Elements/person_form.ctp:6
+#: /Elements/person_form.ctp:5
 msgid "E-mail address"
 msgstr "E-Mail Adresse"
 
-#: /Elements/person_form.ctp:7
+#: /Elements/person_form.ctp:6
 msgid "Text number (see below)"
 msgstr "Text-Nr. (s.u.)"
 
-#: /Elements/person_form_footer.ctp:5
+#: /Elements/person_form_footer.ctp:4
 msgid "Text number"
 msgstr "Text-Nr."
 
-#: /Elements/person_form_footer.ctp:6 /Elements/upload_form.ctp:3
-#: /People/export_excel.ctp:43
+#: /Elements/person_form_footer.ctp:5 /Elements/upload_form.ctp:2
+#: /People/export_excel.ctp:42
 msgid "Type"
 msgstr "Typ"
 
-#: /Elements/upload_form.ctp:5
+#: /Elements/upload_form.ctp:4
 msgid "Size"
 msgstr "Größe"
 
-#: /Helper/NavHelper.php:11 /People/export_excel.ctp:5 /People/index.ctp:76
+#: /Helper/NavHelper.php:16 /People/export_excel.ctp:4 /People/index.ctp:78
 msgid "Recipients"
 msgstr "Empfänger"
 
-#: /Helper/NavHelper.php:23 /Options/index.ctp:14
+#: /Helper/NavHelper.php:28 /Options/index.ctp:14
 msgid "Mailing options"
 msgstr "Versandoptionen"
 
-#: /Helper/NavHelper.php:27 /Users/index.ctp:14
+#: /Helper/NavHelper.php:32 /Users/index.ctp:14
 msgid "Security"
 msgstr "Sicherheit"
 
-#: /Helper/NavHelper.php:34
+#: /Helper/NavHelper.php:39
 msgid "Logout"
 msgstr "Abmelden"
 
-#: /Helper/NavHelper.php:41
+#: /Helper/NavHelper.php:46
 msgid "Toggle navigation"
 msgstr "Navigation ausklappen"
 
-#: /Layouts/default.ctp:115
+#: /Layouts/default.ctp:117
 msgid "Yes"
 msgstr "Ja"
 
-#: /Layouts/default.ctp:115
+#: /Layouts/default.ctp:117
 msgid "No"
 msgstr "Nein"
 
-#: /Options/add.ctp:5
+#: /Options/add.ctp:4
 msgid "Add mailing options"
 msgstr "Versandoptionen hinzufügen"
 
-#: /Options/edit.ctp:5
+#: /Options/edit.ctp:4
 msgid "Edit mailing options"
 msgstr "Versandoptionen bearbeiten"
 
@@ -283,19 +473,19 @@ msgstr "TLS verwenden"
 msgid "Timeout"
 msgstr "Timeout"
 
-#: /People/add.ctp:5 /People/edit.ctp:5
+#: /People/add.ctp:4 /People/edit.ctp:4
 msgid "Add a recipient"
 msgstr "Empfänger hinzufügen"
 
-#: /People/export_excel.ctp:8;41;66
+#: /People/export_excel.ctp:7;40;65
 msgid "ID"
 msgstr "ID"
 
-#: /People/export_excel.ctp:13
+#: /People/export_excel.ctp:12
 msgid "Card text"
 msgstr "Kartentext"
 
-#: /People/export_excel.ctp:14
+#: /People/export_excel.ctp:13
 msgid "E-Mail address"
 msgstr "E-Mail Adresse"
 
@@ -311,7 +501,7 @@ msgstr "<span class=„hidden-xs“>Neuer</span> Empfänger"
 msgid "<span class=\"hidden-xs\">Export to</span> Excel"
 msgstr "Excel<span class=„hidden-xs“>-Export</span>"
 
-#: /People/index.ctp:23;178
+#: /People/index.ctp:23;181
 msgid "<span class=\"hidden-xs\">Send</span> all"
 msgstr "Alle <span class=„hidden-xs“>senden</span>"
 
@@ -327,43 +517,43 @@ msgstr "Gewählte <span class=\"hidden-xs\">löschen</span>"
 msgid "Do you really want to delete the specified recipients?"
 msgstr "Wollen Sie wirklich die gewählten Empfänger löschen?"
 
-#: /People/index.ctp:108 /Users/index.ctp:23
+#: /People/index.ctp:110 /Users/index.ctp:23
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: /People/index.ctp:114
+#: /People/index.ctp:116
 msgid "Toggle dropdown"
 msgstr "Dropdown öffnen"
 
-#: /People/index.ctp:119
+#: /People/index.ctp:121
 msgid "Send"
 msgstr "Senden"
 
-#: /People/index.ctp:122
+#: /People/index.ctp:124
 msgid "Do you really want to send this card?"
 msgstr "Wollen Sie diese Karte wirklich verschicken?"
 
-#: /People/index.ctp:128 /Users/index.ctp:31
+#: /People/index.ctp:130 /Users/index.ctp:31
 msgid "Delete"
 msgstr "Löschen"
 
-#: /People/index.ctp:131
+#: /People/index.ctp:133
 msgid "Do you really want to delete this recipient?"
 msgstr "Wollen Sie diesen Empfänger wirklich löschen?"
 
-#: /People/index.ctp:147
+#: /People/index.ctp:149
 msgid "Detail view"
 msgstr "Detailansicht"
 
-#: /People/index.ctp:197
+#: /People/index.ctp:200
 msgid "<span class=\"hidden-xs\">Send</span> selected"
 msgstr "Gewählte <span class=\"hidden-xs\">senden</span>"
 
-#: /People/send_email.ctp:4
+#: /People/send_email.ctp:3
 msgid "Success!"
 msgstr "Erfolg!"
 
-#: /People/send_email.ctp:6
+#: /People/send_email.ctp:5
 msgid "Error!"
 msgstr "Fehler!"
 
@@ -387,19 +577,15 @@ msgstr "Empfänger"
 msgid "E-mail(s) successfully send!"
 msgstr "E-Mail(s) erfolgreich versendet!"
 
-#: /Uploads/add.ctp:5
-msgid "Add upload"
-msgstr "Upload hinzufügen"
-
-#: /Uploads/edit.ctp:5
+#: /Uploads/edit.ctp:4
 msgid "Edit upload"
 msgstr "Upload bearbeiten"
 
-#: /Users/add.ctp:5
+#: /Users/add.ctp:4
 msgid "Add a user"
 msgstr "Benutzer hinzufügen"
 
-#: /Users/edit.ctp:5
+#: /Users/edit.ctp:4
 msgid "Edit user"
 msgstr "Benutzer bearbeiten"
 
@@ -415,129 +601,17 @@ msgstr "Wollen Sie diesen Benutzer wirklich löschen?"
 msgid "Login"
 msgstr "Login"
 
-#: /CardTextsController.php:15;29
-msgid "Card text has successfully been saved."
-msgstr "Der Kartentext wurde erfolgreich gespeichert."
+#~ msgid "Horizontal starting position"
+#~ msgstr "Horizontale Startposition"
 
-#: /CardTextsController.php:18;32
-msgid "Card text could not be saved!"
-msgstr "Der Kartentext konnte nicht gespeichert werden!"
+#~ msgid "Vertical starting position"
+#~ msgstr "Vertikale Startposition"
 
-#: /CardTextsController.php:25
-msgid "The specified card text was not found!"
-msgstr "Der angegebene Kartentext konnte nicht gefunden werden!"
+#~ msgid "Rotation"
+#~ msgstr "Drehung"
 
-#: /CardTextsController.php:43
-msgid "Card text has successfully been deleted."
-msgstr "Der Kartentext wurde erfolgreich gelöscht."
-
-#: /CardTypesController.php:14;27
-msgid "Card type has successfully been saved."
-msgstr "Der Kartentyp wurde erfolgreich gespeichert."
-
-#: /CardTypesController.php:17;30
-msgid "Card type could not be saved!"
-msgstr "Der Kartentyp konnte nicht gespeichert werden!"
-
-#: /CardTypesController.php:23
-msgid "The specified card type was not found!"
-msgstr "Der angegebene Kartentyp konnte nicht gefunden werden!"
-
-#: /CardTypesController.php:41
-msgid "Card type has successfully been deleted."
-msgstr "Der Kartentyp wurde erfolgreich gelöscht."
-
-#: /OptionsController.php:16;31
-msgid "Mailing options have successfully been saved."
-msgstr "Die Versandoptionen wurden erfolgreich gespeichert."
-
-#: /OptionsController.php:19;34
-msgid "Mailing options could not be saved!"
-msgstr "Die Versandoptionen konnten nicht gespeichert werden!"
-
-#: /OptionsController.php:27
-msgid "The specified mailing options set was not found!"
-msgstr "Das angegebene Versandoptionen-Set wurde nicht gefunden!"
-
-#: /OptionsController.php:50
-msgid ""
-"Mailing mode has been set to productive configuration. Mails are sent "
-"directly to recipients!"
-msgstr ""
-"Der Versandmodus wurde auf die produktive Konfiguration geändert. Die E-"
-"Mails werden direkt an die Empfänger gesendet!"
-
-#: /OptionsController.php:58
-msgid ""
-"Mailing mode has been set to test configuration. However, mails are sent "
-"directly to recipients!"
-msgstr ""
-"Der Versandmodus wurde auf die Test-Konfiguration geändert. Bitte beachten "
-"Sie, dass die E-Mails dennoch direkt an die Empfänger gehen!"
-
-#: /OptionsController.php:66
-msgid ""
-"Mailing mode has been set to test configuration. Mails are sent to the "
-"sender specified in the mailing options. Recipients do not receive any mail!"
-msgstr ""
-"Der Versandmodus wurde auf die Test-Konfiguration geändert. E-Mails werden "
-"nur an den Absender versendet. Empfänger erhalten somit keine E-Mail!"
-
-#: /PeopleController.php:15;30 /UploadsController.php:25;38
-msgid "Recipient has successfully been saved."
-msgstr "Der Empfänger wurde erfolgreich gespeichert."
-
-#: /PeopleController.php:18;33 /UploadsController.php:28;41
-msgid "Recipient could not be saved!"
-msgstr "Der Empfänger konnte nicht gespeichert werden!"
-
-#: /PeopleController.php:26;91;100 /UploadsController.php:34
-msgid "The specified recipient was not found!"
-msgstr "Der angegebene Empfänger konnte nicht gefunden werden!"
-
-#: /PeopleController.php:50
-msgid "Recipients have successfully been deleted."
-msgstr "Die Empfänger wurden erfolgreich gelöscht."
-
-#: /PeopleController.php:52
-msgid "Recipients could not be deleted."
-msgstr "Die Empfänger konnten nicht gelöscht werden."
-
-#: /PeopleController.php:58
-msgid "Recipient has successfully been deleted."
-msgstr "Der Empfänger wurde erfolgreich gelöscht."
-
-#: /PeopleController.php:60
-msgid "Recipient could not be deleted."
-msgstr "Der Empfänger konnte nicht gelöscht werden"
-
-#: /UsersController.php:22;35
-msgid "User has successfully been saved."
-msgstr "Der Benutzer wurde erfolgreich gespeichert."
-
-#: /UsersController.php:25;38
-msgid "User could not be saved!"
-msgstr "Der Benutzer konnte nicht gespeichert werden!"
-
-#: /UsersController.php:31;47
-msgid "The specified user was not found!"
-msgstr "Der angegebene Benutzer konnte nicht gefunden werden!"
-
-#: /UsersController.php:50
-msgid "You can't delete your own user account!"
-msgstr "Es ist nicht möglich Ihren eigenen Benutzer-Account zu löschen!"
-
-#: /UsersController.php:54
-msgid "User has successfully been deleted."
-msgstr "Der Benutzer wurde erfolgreich gelöscht."
-
-#: /UsersController.php:57
-msgid "User could not be deleted."
-msgstr "Der Benutzer konnte nicht gelöscht werden!"
-
-#: /UsersController.php:69
-msgid "Wrong username or password!"
-msgstr "Falscher Benutzername oder Kennwort!"
+#~ msgid "Add upload"
+#~ msgstr "Upload hinzufügen"
 
 #~ msgid "The specified mailing option set was not found!"
 #~ msgstr "Die angegebenen Versandoptionen konnten nicht gefunden werden!"

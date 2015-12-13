@@ -1,5 +1,10 @@
 <?php
-
+$vendor = App::path('Vendor');
+require_once($vendor[0].'stil/gd-text/src/Box.php');
+require_once($vendor[0].'stil/gd-text/src/Color.php');
+require_once($vendor[0].'stil/gd-text/src/TextWrapping.php');
+require_once($vendor[0].'stil/gd-text/src/VerticalAlignment.php');
+require_once($vendor[0].'stil/gd-text/src/HorizontalAlignment.php');
 /**
  * @property CardType $CardType
  * @property mixed Message
@@ -8,7 +13,6 @@
  */
 class CardTypesController extends AppController
 {
-
     public $helpers = array('Html', 'Form');
     public $components = array('Message');
 
@@ -39,6 +43,9 @@ class CardTypesController extends AppController
                 $this->redirect(array('action' => 'index'));
             }
             $this->Message->display(__('Card type could not be saved!'), 'danger');
+            print_r($this->CardType->validationErrors); //show validationErrors
+
+            debug($this->CardType->getDataSource()->getLog(false, false)); //show last sql query
         }
         $this->request->data = $cardtype;
         $this->set('cardtype', $cardtype);
@@ -57,6 +64,7 @@ class CardTypesController extends AppController
 
     public function preview($id)
     {
+        //TODO: Integrate this with CardCreatorBehavior
         $cardtype = $this->request->data;
         $this->layout = 'ajax';
         $this->loadModel('Person');
@@ -67,7 +75,7 @@ class CardTypesController extends AppController
         $image_path = "images/card_previews/" . $id . ".png";
         $cardtypeimage_path = "files/" . $cardImage['Upload']['id'] . "/" . $cardImage['Upload']['name'];
         $color = explode(',', $cardtype['CardType']['font_color_rgb'], 3);
-        $text = "" . $person['Person']['salutation'] . "\n\n" . $person['CardText']['text'];
+        $text = "" . $person['Person']['salutation'] . "\n" . $person['CardText']['text'];
         $image = null;
         $ext = substr($cardImage['Upload']['name'], strrpos($cardImage['Upload']['name'], '.') + 1);
         if ($ext == "jpg" || $ext == "jpeg") {
@@ -75,8 +83,18 @@ class CardTypesController extends AppController
         } else {
             $image = imagecreatefrompng($cardtypeimage_path);
         }
-        $font_color = ImageColorAllocate($image, $color[0], $color[1], $color[2]);
-        imagettftext($image, $cardtype['CardType']['font_size'], $cardtype['CardType']['rotation'], $cardtype['CardType']['x_position'], $cardtype['CardType']['y_position'], $font_color, "files/" . $font['Upload']['id'] . "/" . $font['Upload']['name'], $text);
+        $x = $cardtype['CardType']['x_position'];
+        $y = $cardtype['CardType']['y_position'];
+        $width = $cardtype['CardType']['width'];
+        $height = $cardtype['CardType']['height'];
+        $box = new GDText\Box($image);
+        $box->setFontFace("files/" . $font['Upload']['id'] . "/" . $font['Upload']['name']);
+        $box->setFontColor(new GDText\Color($color[0], $color[1], $color[2]));
+        $box->setFontSize($cardtype['CardType']['font_size']);
+        $box->setLineHeight($cardtype['CardType']['line_height']);
+        $box->setBox($x,$y,$width,$height);
+        $box->setTextAlign($cardtype['CardType']['text_align_horizontal'], $cardtype['CardType']['text_align_vertical']);
+        $box->draw($text);
         imagepng($image, $image_path);
         $this->set('image_path', $image_path . "?" . time());
     }

@@ -9,19 +9,19 @@ class Person extends AppModel
     public $belongsTo = 'CardText';
     public $validate = array(
         'prename' => array(
-            'rule' => 'notEmpty',
+            'rule' => 'notBlank',
             'required' => true,
             'allowEmpty' => false,
             'message' => 'Please provide a valid prename!'
         ),
         'surname' => array(
-            'rule' => 'notEmpty',
+            'rule' => 'notBlank',
             'required' => true,
             'allowEmpty' => false,
             'message' => 'Please provide a valid surname!'
         ),
         'salutation' => array(
-            'rule' => 'notEmpty',
+            'rule' => 'notBlank',
             'required' => true,
             'allowEmpty' => false,
             'message' => 'Please provide a salutation for this recipient!'

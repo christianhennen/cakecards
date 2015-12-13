@@ -12,7 +12,8 @@
         "slywalker/boost_cake": "~1.0",
         "composer/installers": "~1.0",
         "josegonzalez/cakephp-upload": "~1.1.1",
-        "PHPOffice/PHPExcel": "~1.7"
+        "PHPOffice/PHPExcel": "~1.7",
+        "stil/gd-text": "dev-master#34f87b2"
     },
     "config":{
         "vendor-dir":"Vendor"

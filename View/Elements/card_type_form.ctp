@@ -1,4 +1,8 @@
 <?php
+
+$textAlignmentHorizontal = array('left'=>__('Left'), 'center' => __('Center'), 'right' => __('Right'));
+$textAlignmentVertical = array('top' => __('Top'), 'center' => __('Center'), 'bottom' => __('Bottom'));
+
 echo $this->Form->input('description', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Name'))));
 echo $this->Form->input('image_upload_id', array('id' => 'cardUploadId', 'type' => 'hidden'));
 echo $this->Form->input('font_upload_id', array('id' => 'fontUploadId', 'type' => 'hidden'));
@@ -13,7 +17,7 @@ if (isset($cardtype)) {
     echo $this->webroot . "files/" . $cardtype['Image']['id'] . "/" . $cardtype['Image']['name'];
 }
 echo "\">
-    <div class=\"caption\">" . __('Current image') . "</div>
+    <div class=\"caption\">" . __('Current image - click to select textarea') . "</div>
 </div>
 </div>
 </div>";
@@ -35,6 +39,10 @@ echo "\">
 echo $this->Form->input('font_size', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Font size'))));
 echo $this->Form->input('font_color_hex', array('id' => 'font-color-hex', 'label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Font color'))));
 echo $this->Form->input('font_color_rgb', array('id' => 'font-color-rgb', 'type' => 'hidden'));
-echo $this->Form->input('x_position', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Horizontal starting position'))));
-echo $this->Form->input('y_position', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Vertical starting position'))));
-echo $this->Form->input('rotation', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Rotation'))));
+echo $this->Form->input('x_position', array('id' => 'x-position', 'type' => 'hidden'));
+echo $this->Form->input('y_position', array('id' => 'y-position', 'type' => 'hidden'));
+echo $this->Form->input('width', array('id' => 'width', 'type' => 'hidden'));
+echo $this->Form->input('height', array('id' => 'height', 'type' => 'hidden'));
+echo $this->Form->input('line_height', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Line Height'))));
+echo $this->Form->input('text_align_horizontal', array('type'=>'select','options' => $textAlignmentHorizontal, 'empty' => __('--Please select--'), 'label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Horizontal Text Alignment'))));
+echo $this->Form->input('text_align_vertical', array('type' => 'select','options' => $textAlignmentVertical, 'empty' => __('--Please select--'), 'label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Vertical Text Alignment'))));

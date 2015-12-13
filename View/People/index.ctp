@@ -45,7 +45,7 @@
 
     function appendLetter(letter) {
         $('#letterSelector').append('<a href="#section' + letter + '">' + letter + '</a> ');
-        $('a[href="#section' + letter + '"]').click(function () {
+        $('a[href="#section' + letter + '"]').click(function (event) {
             event.preventDefault();
             scrollToLetter(letter);
         });
@@ -83,7 +83,7 @@ foreach ($people as $person):
 
     $thumbnail_path = $this->webroot . "images/thumbnails/" . $person['Person']['id'] . ".png";
 
-    $currentSurnameLetter = String::truncate($person['Person']['surname'], 1, array('ellipsis' => '', 'exact' => true, 'html' => false));
+    $currentSurnameLetter = CakeText::truncate($person['Person']['surname'], 1, array('ellipsis' => '', 'exact' => true, 'html' => false));
     if ($currentSurnameLetter != $currentSectionLetter) {
         $currentSectionLetter = $currentSurnameLetter;
         echo "<div class=\"row sectionHeading\" style=\"margin-top: 20px; margin-bottom:10px;\"><div class=\"col-sm-12 col-xs-12\"><a name=\"section" . $currentSectionLetter . "\">" . $currentSectionLetter . "</a></div></div>";
@@ -158,7 +158,7 @@ foreach ($people as $person):
     </div>
 </div>
 <script type="text/javascript">
-    $(document).on('click', '.thumbnail', function () {
+    $(document).on('click', '.thumbnail', function (event) {
         event.preventDefault();
         var title = $(this).parent('a').attr("title");
         $('.modal-title').html(title);

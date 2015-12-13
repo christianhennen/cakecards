@@ -1,31 +1,33 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6edb4030f5527560e010e5f103ac93d2",
+    "hash": "151dade8d88ab2f790de6f10bfc094fe",
+    "content-hash": "03c8fae8fe4c7976f1eab5e993f18d2b",
     "packages": [
         {
             "name": "cakephp/cakephp",
-            "version": "2.5.6",
+            "version": "2.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/cakephp.git",
-                "reference": "c151ea585ddfb5791235c2b230cc06d07407c016"
+                "reference": "7aa6908800e9388d7fc7fdac37e8ae4ddc01ad7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/c151ea585ddfb5791235c2b230cc06d07407c016",
-                "reference": "c151ea585ddfb5791235c2b230cc06d07407c016",
+                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/7aa6908800e9388d7fc7fdac37e8ae4ddc01ad7a",
+                "reference": "7aa6908800e9388d7fc7fdac37e8ae4ddc01ad7a",
                 "shasum": ""
             },
             "require": {
                 "ext-mcrypt": "*",
-                "php": ">=5.2.8"
+                "php": ">=5.3.0"
             },
             "require-dev": {
-                "cakephp/debug_kit": "2.2.*",
+                "cakephp/cakephp-codesniffer": "^1.0.0",
+                "cakephp/debug_kit": "^2.2.0",
                 "phpunit/phpunit": "3.7.*"
             },
             "bin": [
@@ -47,21 +49,24 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2014-11-08 01:35:12"
+            "time": "2015-11-23 02:29:57"
         },
         {
             "name": "composer/installers",
-            "version": "v1.0.19",
+            "version": "v1.0.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "89d77bfbee79e16653f7162c86e602cc188471db"
+                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/89d77bfbee79e16653f7162c86e602cc188471db",
-                "reference": "89d77bfbee79e16653f7162c86e602cc188471db",
+                "url": "https://api.github.com/repos/composer/installers/zipball/bd9b14f094c89c8b5804a4e41edeb7853bb85046",
+                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046",
                 "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "1.0.0"
             },
             "replace": {
                 "roundcube/plugin-installer": "*",
@@ -71,9 +76,9 @@
                 "composer/composer": "1.0.*@dev",
                 "phpunit/phpunit": "4.1.*"
             },
-            "type": "composer-installer",
+            "type": "composer-plugin",
             "extra": {
-                "class": "Composer\\Installers\\Installer",
+                "class": "Composer\\Installers\\Plugin",
                 "branch-alias": {
                     "dev-master": "1.0-dev"
                 }
@@ -102,9 +107,11 @@
                 "Hurad",
                 "MODX Evo",
                 "OXID",
+                "SMF",
                 "Thelia",
                 "WolfCMS",
                 "agl",
+                "aimeos",
                 "annotatecms",
                 "bitrix",
                 "cakephp",
@@ -140,7 +147,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2014-11-29 01:29:17"
+            "time": "2015-10-29 23:28:48"
         },
         {
             "name": "josegonzalez/cakephp-upload",
@@ -307,16 +314,16 @@
         },
         {
             "name": "phpoffice/phpexcel",
-            "version": "1.8.0",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPOffice/PHPExcel.git",
-                "reference": "e69a5e4d0ffa7fb6f171859e0a04346e580df30b"
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/e69a5e4d0ffa7fb6f171859e0a04346e580df30b",
-                "reference": "e69a5e4d0ffa7fb6f171859e0a04346e580df30b",
+                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
                 "shasum": ""
             },
             "require": {
@@ -360,7 +367,7 @@
                 "xls",
                 "xlsx"
             ],
-            "time": "2014-03-02 15:22:49"
+            "time": "2015-05-01 07:00:55"
         },
         {
             "name": "slywalker/boost_cake",
@@ -402,13 +409,48 @@
                 "twitter"
             ],
             "time": "2014-11-07 10:36:43"
+        },
+        {
+            "name": "stil/gd-text",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stil/gd-text.git",
+                "reference": "34f87b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stil/gd-text/zipball/18d22b7dad8d80a2bcb49ff88fa9a1f0e747b527",
+                "reference": "34f87b2",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GDText\\": "src/",
+                    "GDText\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A class drawing multiline and aligned text on pictures. Uses GD extension.",
+            "time": "2015-10-30 12:29:42"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "stil/gd-text": 20
+    },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
