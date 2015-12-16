@@ -136,7 +136,7 @@ $(document).on('click', '#mediaGalleryButton', function (event) {
             $('#mediaGallery').html(data);
         },
         error: function (xhr, textStatus, error) {
-            alert(textStatus);
+            console.log(textStatus);
         }
     });
     modal.modal({show: true});

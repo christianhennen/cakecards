@@ -7,6 +7,7 @@
  */
 class UploadsController extends AppController
 {
+    private $types = array('card','font','signature');
     public $helpers = array('Html', 'Form');
     public $components = array('Message', 'RequestHandler');
 
@@ -27,7 +28,7 @@ class UploadsController extends AppController
             $this->set(array(
                 'uploads' => $this->Upload->findAllById($id),
                 '_serialize' => array('uploads')));
-        } elseif (!$id AND $type) {
+        } elseif (!$id AND $type AND in_array($type,$this->types)) {
             $this->set(array(
                 'uploads' => $this->Upload->findAllByType($type),
                 '_serialize' => array('uploads')));
