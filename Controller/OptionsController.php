@@ -28,7 +28,7 @@ class OptionsController extends AppController
             $this->Message->display(__('Mailing options could not be saved!'), 'danger');
         }
         $this->set('cardtypes', $this->Option->CardType->find('list'));
-        $this->set('uploads', $this->Option->Upload->findAllByType('signature')); //TODO: Replace enum type with array
+        $this->set('uploads', $this->Option->Upload->findAllByType('signature'));
     }
 
     public function edit($id = null)

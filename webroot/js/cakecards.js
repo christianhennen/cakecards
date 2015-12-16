@@ -72,7 +72,7 @@ $(document).on('click', '#previewButton', function (event) {
     });
     $.ajax({
         type: 'POST',
-        url: myBaseUrl + 'cardtypes/preview/' + id,
+        url: myBaseUrl + 'card_types/preview/' + id,
         data: form.serialize(),
         success: function (data, textStatus, xhr) {
             $('#cardPreview').html(data).show();
@@ -100,6 +100,7 @@ $(document).on('click', '#cardThumbnail', function (event) {
         var height = $('#height');
         var x2 = Number(x.val())+Number(width.val());
         var y2 = Number(y.val())+Number(height.val());
+        //TODO: Standard value if form fields are empty
         textSelectionImg.imgAreaSelect({ x1:Number(x.val()), y1:Number(y.val()), x2:x2, y2:y2, imageHeight:textSelectionImg[0].naturalHeight, imageWidth:textSelectionImg[0].naturalWidth, parent:'.modal-content', handles: true , show: true,
             onSelectEnd: function (img, selection) {
             x.val(selection.x1);
