@@ -18,11 +18,11 @@ class NavHelper extends AppHelper
             ),
             array(
                 'title' => '<span class="glyphicon glyphicon-comment"></span> ' . __('Card texts'),
-                'url' => array('controller' => 'cardtexts', 'action' => 'index', '')
+                'url' => array('controller' => 'card_texts', 'action' => 'index', '')
             ),
             array(
                 'title' => '<span class="glyphicon glyphicon-picture"></span> ' . __('Card types'),
-                'url' => array('controller' => 'cardtypes', 'action' => 'index', '')
+                'url' => array('controller' => 'card_types', 'action' => 'index', '')
             ),
             array(
                 'title' => '<span class="glyphicon glyphicon-envelope"></span> ' . __('Mailing options'),

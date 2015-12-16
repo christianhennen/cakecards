@@ -1,7 +1,7 @@
 <div class="row center-block">
     <div id="mails" class="col-sm-11 center-block" style="float:none">
 
-        <? echo "<h1>" . __('Results of mail delivery') . "</h1>";
+        <?php echo "<h1>" . __('Results of mail delivery') . "</h1>";
 
         $counter = count($people);
 

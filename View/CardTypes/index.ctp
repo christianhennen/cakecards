@@ -1,6 +1,6 @@
 <div class="row">
     <div class="btn-toolbar col-sm-offset-1" role="toolbar">
-        <? echo $this->Html->link(
+        <?php echo $this->Html->link(
             $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-plus'))
             . ' ' . __('New card type'),
             array('action' => 'add'),

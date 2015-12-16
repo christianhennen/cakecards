@@ -53,8 +53,7 @@ class AppController extends Controller
                 'home'
             )
         ),
-        'Session',
-        'DebugKit.Toolbar' => array('autoRun' => false)
+        'Session'
     );
     public $helpers = array(
         'Nav',

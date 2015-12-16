@@ -114,7 +114,7 @@ date_default_timezone_set('Etc/UTC');
                 });
                 return false;
             });
-            <? echo "var ontext ='".__('Yes')."'; var offtext = '".__('No')."';" ?>
+            <?php echo "var ontext ='".__('Yes')."'; var offtext = '".__('No')."';" ?>
             $("#OptionEditForm").find(":checkbox").bootstrapSwitch({onText: ontext, offText: offtext});
             $("#OptionAddForm").find(":checkbox").bootstrapSwitch({onText: ontext, offText: offtext});
             $("#mailingOptionSwitches").find(":checkbox").bootstrapSwitch({onText: ontext, offText: offtext});

@@ -4,7 +4,7 @@ foreach ($uploads as $upload) :
     if ($upload['Upload']['type'] == 'font') {
         $path = $this->webroot . 'files/' . $upload['Upload']['id'] . '/preview.png';
     }
-    echo '<div class="col-sm-6"><a href="" class="thumbnail" upload_id="' . $upload['Upload']['id'] . '">
+    echo '<div class="col-sm-6"><a href="" class="thumbnail" type="' . $upload['Upload']['type'] . '" upload_id="' . $upload['Upload']['id'] . '">
     <img src="' . $path . '"></a>
     </div>';
 endforeach;

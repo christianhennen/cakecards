@@ -18,7 +18,7 @@ $(function () {
     $('#fileupload').fileupload({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
-        //url: '/cakecards/uploads/add/'
+        //url: ''
     });
 
     // Enable iframe cross-domain access via redirect option:

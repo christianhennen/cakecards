@@ -1,6 +1,6 @@
 <div class="row">
     <div class="btn-toolbar" role="toolbar">
-        <? echo $this->Html->link(
+        <?php echo $this->Html->link(
             $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-plus'))
             . ' ' . __('New user'),
             array('action' => 'add'),

@@ -79,6 +79,7 @@ $this->assign('title', __('Recipients'));
 $currentSectionLetter = '';
 $time = time();
 echo "<div id=\"people\">";
+//TODO: Add a placeholder when there is no person in the DB. Link to Card Type Creation first, then to Card Text Creation.
 foreach ($people as $person):
 
     $thumbnail_path = $this->webroot . "images/thumbnails/" . $person['Person']['id'] . ".png";
@@ -178,7 +179,7 @@ foreach ($people as $person):
         if (checked.length == 0) {
             sendEmailsInput.remove();
             deleteMultipleButton.hide();
-            <? echo "var buttonMessage = '<span class=\"glyphicon glyphicon-envelope\"></span> ".__('<span class="hidden-xs">Send</span> all')."';" ?>
+            <?php echo "var buttonMessage = '<span class=\"glyphicon glyphicon-envelope\"></span> ".__('<span class="hidden-xs">Send</span> all')."';" ?>
             sendEmailsButton.html(buttonMessage);
         } else {
             for (var i = 0; i < checked.length; i++) {
@@ -197,7 +198,7 @@ foreach ($people as $person):
                 deleteMultipleInput.attr('value', ids);
 
             }
-            <? echo "var buttonMessage = '<span class=\"glyphicon glyphicon-envelope\"></span> ".__('<span class="hidden-xs">Send</span> selected')."';" ?>
+            <?php echo "var buttonMessage = '<span class=\"glyphicon glyphicon-envelope\"></span> ".__('<span class="hidden-xs">Send</span> selected')."';" ?>
             sendEmailsButton.html(buttonMessage);
             deleteMultipleButton.show();
 
