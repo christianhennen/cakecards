@@ -671,8 +671,9 @@ $.imgAreaSelect = function (img, options) {
     while ($p.length) {
         zIndex = max(zIndex,
             !isNaN($p.css('z-index')) ? $p.css('z-index') : zIndex);
-        if ($p.css('position') == 'fixed')
-            position = 'fixed';
+        // Commented out because of bootstrap modal window issues
+        //if ($p.css('position') == 'fixed')
+        //    position = 'fixed';
 
         $p = $p.parent(':not(body)');
     }
