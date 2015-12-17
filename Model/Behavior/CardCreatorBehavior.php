@@ -61,6 +61,12 @@ class CardCreatorBehavior extends ModelBehavior
 
     public function createCard($person)
     {
+        if(!file_exists('images/')) {
+            mkdir('images',0755);
+        }
+        if(!file_exists('images/thumbnails/')) {
+            mkdir('images/thumbnails',0755);
+        }
         $image_path = "images/" . $person['Person']['id'] . ".png";
         $thumbnail_path = "images/thumbnails/" . $person['Person']['id'] . ".png";
         $cardtypeimage_path = "files/" . $person['Image']['id'] . "/" . $person['Image']['name'];

@@ -65,6 +65,10 @@ class CardTypesController extends AppController
     public function preview($id)
     {
         //TODO: Integrate this with CardCreatorBehavior
+
+        if(!file_exists('images/card_previews/')) {
+            mkdir('images/card_previews',0755);
+        }
         $cardtype = $this->request->data;
         $this->layout = 'ajax';
         $this->loadModel('Person');

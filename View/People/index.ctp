@@ -56,18 +56,24 @@
         var letterSelector = $('#letterSelector');
         inputfield.fastLiveFilter('#people .person_name', {
             timeout: 200,
-            callback: function () {
+            callback: function (total) {
                 var text = inputfield.val();
-                if (text == '') {
-                    letterSelector.show();
-                    $('.person_row').show();
-                } else {
+                if (text != '') {
                     var person_rows = $('.person_row');
                     person_rows.show();
                     letterSelector.hide();
                     person_rows.has('.person_name p:hidden').hide();
                     $('.sectionHeading').hide();
                 }
+            }
+        });
+        inputfield.on('input', function(event) {
+            // Listen to the input event in case the user clicks the clear button in MSIE,
+            // since it only fires the input event and the fastLiveFilter callback therefore isn't called
+            if (event.target.value == '') {
+                letterSelector.show();
+                $('.person_row').show();
+                $('.person_name p:hidden').show();
             }
         });
     });
