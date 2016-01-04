@@ -103,16 +103,16 @@ unset($option); ?>
 <script type="text/javascript">
     $('#testModeSwitch').on('switchChange.bootstrapSwitch', function (event, state) {
         if (this.checked) {
-            window.location = myBaseUrl + "/options/changeMailingMode/2";
+            window.location = myBaseUrl + "options/changeMailingMode/2";
         } else {
-            window.location = myBaseUrl + "/options/changeMailingMode/0";
+            window.location = myBaseUrl + "options/changeMailingMode/0";
         }
     });
     $('#recipientModeSwitch').on('switchChange.bootstrapSwitch', function (event, state) {
         if (this.checked) {
-            window.location = myBaseUrl + "/options/changeMailingMode/2";
+            window.location = myBaseUrl + "options/changeMailingMode/2";
         } else {
-            window.location = myBaseUrl + "/options/changeMailingMode/1";
+            window.location = myBaseUrl + "options/changeMailingMode/1";
         }
     });
 </script>

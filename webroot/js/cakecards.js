@@ -97,7 +97,6 @@ $(document).on('click', '#cardThumbnail', function (event) {
         var y = $('#y-position');
         var width = $('#width');
         var height = $('#height');
-        console.log('x:'+x.val()+' , y: '+y.val()+' , width: '+width.val()+' , height: '+height.val());
         if (x.val()=='' && y.val()=='' && width.val()=='' && height.val()=='') {
             x.val(20); y.val(20); width.val(textSelectionImg[0].naturalWidth/2); height.val(textSelectionImg[0].naturalHeight/2);
         }
