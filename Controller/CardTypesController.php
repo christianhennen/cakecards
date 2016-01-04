@@ -62,7 +62,7 @@ class CardTypesController extends AppController
         }
     }
 
-    public function preview($id)
+    public function preview()
     {
         //TODO: Integrate this with CardCreatorBehavior
 
@@ -76,7 +76,7 @@ class CardTypesController extends AppController
         $person = $this->Person->find('first');
         $cardImage = $this->Upload->findById($cardtype['CardType']['image_upload_id']);
         $font = $this->Upload->findById($cardtype['CardType']['font_upload_id']);
-        $image_path = "images/card_previews/" . $id . ".png";
+        $image_path = "images/card_previews/preview.png";
         $cardtypeimage_path = "files/" . $cardImage['Upload']['id'] . "/" . $cardImage['Upload']['name'];
         $color = explode(',', $cardtype['CardType']['font_color_rgb'], 3);
         $text = "" . $person['Person']['salutation'] . "\n" . $person['CardText']['text'];

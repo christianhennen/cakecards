@@ -66,13 +66,12 @@ $(document).on('click', '#previewButton', function (event) {
     $('#mediaGallery').hide();
     $('#mediaGalleryNav').hide();
     $('#textSelection').hide();
-    var id = $('#CardTypeId').val();
     var form = $('form').filter(function () {
         return this.id.match(/CardType[A-z]*Form/g);
     });
     $.ajax({
         type: 'POST',
-        url: myBaseUrl + 'card_types/preview/' + id,
+        url: myBaseUrl + 'card_types/preview/',
         data: form.serialize(),
         success: function (data, textStatus, xhr) {
             $('#cardPreview').html(data).show();
@@ -156,7 +155,7 @@ $(document).on('click', '#fromGallery', function (event) {
     $('#cardPreview').hide();
     $('#textSelection').hide();
 });
-$(document).on('click', '#mediaGallery .thumbnail', function (event) {
+$(document).on('click', '#mediaGallery .thumbnail , #mediaGalleryFilesystem .thumbnail', function (event) {
     event.preventDefault();
     var modal = $('#myModal');
     var type = modal.attr('type');
