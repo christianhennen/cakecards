@@ -97,9 +97,12 @@ $(document).on('click', '#cardThumbnail', function (event) {
         var y = $('#y-position');
         var width = $('#width');
         var height = $('#height');
+        console.log('x:'+x.val()+' , y: '+y.val()+' , width: '+width.val()+' , height: '+height.val());
+        if (x.val()=='' && y.val()=='' && width.val()=='' && height.val()=='') {
+            x.val(20); y.val(20); width.val(textSelectionImg[0].naturalWidth/2); height.val(textSelectionImg[0].naturalHeight/2);
+        }
         var x2 = Number(x.val())+Number(width.val());
         var y2 = Number(y.val())+Number(height.val());
-        //TODO: Standard value if form fields are empty
         textSelectionImg.imgAreaSelect({ x1:Number(x.val()), y1:Number(y.val()), x2:x2, y2:y2, imageHeight:textSelectionImg[0].naturalHeight, imageWidth:textSelectionImg[0].naturalWidth, parent:'.modal-content', handles: true , show: true,
             onSelectEnd: function (img, selection) {
             x.val(selection.x1);
