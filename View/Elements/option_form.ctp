@@ -13,7 +13,7 @@ echo $this->Form->button(__('Choose...'), array('id' => 'mediaGalleryButton', 't
 echo "</div>
 <div class=\"col-sm-3\">
 <div class=\"thumbnail\" style=\"min-width:200px;\"><img id=\"signatureThumbnail\" src=\"";
-if (isset($option)) {
+if (isset($option) && $option['Option']['upload_id'] != '') {
     echo $this->webroot . "files/" . $option['Option']['upload_id'] . "/" . $option['Upload']['name'];
 }
 echo "\">

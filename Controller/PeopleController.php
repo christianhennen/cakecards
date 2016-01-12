@@ -163,22 +163,27 @@ class PeopleController extends AppController
             $email->to(array($person['Person']['email'] => $person['Person']['prename'] . ' ' . $person['Person']['surname']));
         }
 
-
-        $email->attachments(array(
+        $attachments = array(
             'card.png' => array(
                 'file' => 'images/' . $person['Person']['id'] . '.png',
                 'mimetype' => 'image/png',
                 'contentId' => 'card'
-            ),
-            'signature.png' => array(
-                'file' => 'files/' . $option['Upload']['id'] . DS . $option['Upload']['name'],
-                'mimetype' => 'image/png',
-                'contentId' => 'signature'
-            )
-        ));
-
-        $signature = str_replace("[signature_image]", "<img src=\"cid:signature\">", $option['Option']['signature']);
-
+            ));
+        if ($option['Upload']['id'] != '') {
+            if (strpos($option['Option']['signature'], '[signature_image]') != false) {
+                $signature = str_replace("[signature_image]", "<img src=\"cid:signature\">", $option['Option']['signature']);
+                $attachments['signature.png'] = array(
+                    'file' => 'files/' . $option['Upload']['id'] . DS . $option['Upload']['name'],
+                    'mimetype' => 'image/png',
+                    'contentId' => 'signature'
+                );
+            } else {
+                $signature = $option['Option']['signature'];
+            }
+        } else{
+            $signature = str_replace("[signature_image]", "", $option['Option']['signature']);
+        }
+        $email->attachments($attachments);
 
         $text = "" . $person['Person']['salutation'] . "\n\n" . $person['CardText']['text'];
         $html = '<span class="preheader" style="display: none !important; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">';
