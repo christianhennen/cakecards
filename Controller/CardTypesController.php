@@ -70,33 +70,44 @@ class CardTypesController extends AppController
         $this->layout = 'ajax';
         $this->loadModel('Person');
         $this->loadModel('Upload');
+
         $person = $this->Person->find('first');
+        if (empty($person)) {
+            $text = __("Dear recipient,\nThis is a test text for the card preview\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\nGreetings\nCakeCards");
+        } else {
+            $text = "" . $person['Person']['salutation'] . "\n" . $person['CardText']['text'];
+        }
+
         $cardImage = $this->Upload->findById($cardtype['CardType']['image_upload_id']);
         $font = $this->Upload->findById($cardtype['CardType']['font_upload_id']);
-        $image_path = "images/card_preview.png";
-        $cardtypeimage_path = "files/" . $cardImage['Upload']['id'] . "/" . $cardImage['Upload']['name'];
-        $color = explode(',', $cardtype['CardType']['font_color_rgb'], 3);
-        $text = "" . $person['Person']['salutation'] . "\n" . $person['CardText']['text'];
-        $image = null;
-        $ext = substr($cardImage['Upload']['name'], strrpos($cardImage['Upload']['name'], '.') + 1);
-        if ($ext == "jpg" || $ext == "jpeg") {
-            $image = imagecreatefromjpeg($cardtypeimage_path);
+        if (!empty($cardImage) && !empty($font)) {
+            $image_path = "images/card_preview.png";
+            $cardtypeimage_path = "files/" . $cardImage['Upload']['id'] . "/" . $cardImage['Upload']['name'];
+            $color = explode(',', $cardtype['CardType']['font_color_rgb'], 3);
+
+            $image = null;
+            $ext = substr($cardImage['Upload']['name'], strrpos($cardImage['Upload']['name'], '.') + 1);
+            if ($ext == "jpg" || $ext == "jpeg") {
+                $image = imagecreatefromjpeg($cardtypeimage_path);
+            } else {
+                $image = imagecreatefrompng($cardtypeimage_path);
+            }
+            $x = $cardtype['CardType']['x_position'];
+            $y = $cardtype['CardType']['y_position'];
+            $width = $cardtype['CardType']['width'];
+            $height = $cardtype['CardType']['height'];
+            $box = new GDText\Box($image);
+            $box->setFontFace("files/" . $font['Upload']['id'] . "/" . $font['Upload']['name']);
+            $box->setFontColor(new GDText\Color($color[0], $color[1], $color[2]));
+            $box->setFontSize($cardtype['CardType']['font_size']);
+            $box->setLineHeight($cardtype['CardType']['line_height']);
+            $box->setBox($x, $y, $width, $height);
+            $box->setTextAlign($cardtype['CardType']['text_align_horizontal'], $cardtype['CardType']['text_align_vertical']);
+            $box->draw($text);
+            imagepng($image, $image_path);
+            $this->set('image_path', $image_path . "?" . time());
         } else {
-            $image = imagecreatefrompng($cardtypeimage_path);
+            $this->set('message',__('There is no card image or font defined. Preview could not be generated.'));
         }
-        $x = $cardtype['CardType']['x_position'];
-        $y = $cardtype['CardType']['y_position'];
-        $width = $cardtype['CardType']['width'];
-        $height = $cardtype['CardType']['height'];
-        $box = new GDText\Box($image);
-        $box->setFontFace("files/" . $font['Upload']['id'] . "/" . $font['Upload']['name']);
-        $box->setFontColor(new GDText\Color($color[0], $color[1], $color[2]));
-        $box->setFontSize($cardtype['CardType']['font_size']);
-        $box->setLineHeight($cardtype['CardType']['line_height']);
-        $box->setBox($x,$y,$width,$height);
-        $box->setTextAlign($cardtype['CardType']['text_align_horizontal'], $cardtype['CardType']['text_align_vertical']);
-        $box->draw($text);
-        imagepng($image, $image_path);
-        $this->set('image_path', $image_path . "?" . time());
     }
 }
