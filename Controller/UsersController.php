@@ -41,6 +41,10 @@ class UsersController extends AppController
     {
         if (($this->User->find('count') == 0 || $this->Auth->user('is_admin') == 1)) {
             if ($this->request->is('post')) {
+                if ($this->request->data['User']['password'] != $this->request->data['User']['passwd']) {
+                    $this->Message->display(__('Passwords do not match. Please try again!'), 'danger');
+                    $this->redirect(array('action' => 'add'));
+                }
                 if ($this->User->save($this->request->data)) {
                     $this->Message->display(__('User has successfully been saved.'), 'success');
                     $this->redirect(array('action' => 'index'));
@@ -80,6 +84,10 @@ class UsersController extends AppController
         }
         if (($this->Auth->user('is_admin') == 1) || $this->Auth->user('id') == $id) {
             if ($this->request->is(array('post', 'put'))) {
+                if ($this->request->data['User']['password'] != $this->request->data['User']['passwd']) {
+                    $this->Message->display(__('Passwords do not match. Please try again!'), 'danger');
+                    $this->redirect(array('action' => 'change_password', $id));
+                }
                 if ($this->User->save($this->request->data)) {
                     $this->Message->display(__('Password has successfully been changed.'), 'success');
                     $this->redirect(array('action' => 'index'));

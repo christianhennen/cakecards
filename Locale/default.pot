@@ -97,59 +97,87 @@ msgstr ""
 msgid "Recipient could not be deleted."
 msgstr ""
 
-#: /UploadsController.php:108
+#: /UploadsController.php:109
 msgid "An error occured during file upload!"
 msgstr ""
 
-#: /UploadsController.php:114
+#: /UploadsController.php:115
 msgid "Error: Could not save file"
 msgstr ""
 
-#: /UploadsController.php:121
+#: /UploadsController.php:122
 msgid "Error: Only files under 20Mb in .jpg .png or .ttf format are accepted for upload!"
 msgstr ""
 
-#: /UploadsController.php:127
+#: /UploadsController.php:128
 msgid "Error: No file uploaded!"
 msgstr ""
 
-#: /UploadsController.php:140
+#: /UploadsController.php:141
 msgid "The specified upload was not found!"
 msgstr ""
 
-#: /UploadsController.php:144
+#: /UploadsController.php:145
 msgid "Upload has successfully been saved."
 msgstr ""
 
-#: /UploadsController.php:147
+#: /UploadsController.php:148
 msgid "Upload could not be saved!"
 msgstr ""
 
-#: /UsersController.php:31;45
+#: /UsersController.php:45;88
+msgid "Passwords do not match. Please try again!"
+msgstr ""
+
+#: /UsersController.php:49;68
 msgid "User has successfully been saved."
 msgstr ""
 
-#: /UsersController.php:34;48
+#: /UsersController.php:52;71
 msgid "User could not be saved!"
 msgstr ""
 
-#: /UsersController.php:41;58
+#: /UsersController.php:55
+msgid "Only administrators can add other user accounts!"
+msgstr ""
+
+#: /UsersController.php:63;83;108
 msgid "The specified user was not found!"
 msgstr ""
 
-#: /UsersController.php:61
+#: /UsersController.php:75
+msgid "Only administrators can edit other user accounts!"
+msgstr ""
+
+#: /UsersController.php:92
+msgid "Password has successfully been changed."
+msgstr ""
+
+#: /UsersController.php:95
+msgid "Password could not be changed!"
+msgstr ""
+
+#: /UsersController.php:100
+msgid "Only administrators can change other user's passwords!"
+msgstr ""
+
+#: /UsersController.php:111
 msgid "You can't delete your own user account!"
 msgstr ""
 
-#: /UsersController.php:65
+#: /UsersController.php:116
 msgid "User has successfully been deleted."
 msgstr ""
 
-#: /UsersController.php:68
+#: /UsersController.php:119
 msgid "User could not be deleted."
 msgstr ""
 
-#: /UsersController.php:81
+#: /UsersController.php:122
+msgid "Only administrators can delete other user accounts!"
+msgstr ""
+
+#: /UsersController.php:136
 msgid "Wrong username or password!"
 msgstr ""
 
@@ -248,7 +276,6 @@ msgid "Bottom"
 msgstr ""
 
 #: /Elements/card_type_form.ctp:6
-#: /Elements/upload_form.ctp:3
 msgid "Name"
 msgstr ""
 
@@ -315,7 +342,7 @@ msgid "Upload %d files"
 msgstr ""
 
 #: /Elements/media_gallery.ctp:75
-#: /People/index.ctp:155
+#: /People/index.ctp:162
 msgid "Close"
 msgstr ""
 
@@ -377,7 +404,7 @@ msgid "Username"
 msgstr ""
 
 #: /Elements/option_form.ctp:33
-#: /Elements/user_form.ctp:3
+#: /Elements/user_passwords.ctp:2
 #: /Options/index.ctp:92
 #: /Users/login.ctp:11
 msgid "Password"
@@ -419,18 +446,21 @@ msgid "Text number"
 msgstr ""
 
 #: /Elements/person_form_footer.ctp:5
-#: /Elements/upload_form.ctp:2
 #: /People/export_excel.ctp:42
 msgid "Type"
 msgstr ""
 
-#: /Elements/upload_form.ctp:4
-msgid "Size"
+#: /Elements/user_form.ctp:4
+msgid "Is this an admin account?"
+msgstr ""
+
+#: /Elements/user_passwords.ctp:3
+msgid "Re-enter Password"
 msgstr ""
 
 #: /Helper/NavHelper.php:16
 #: /People/export_excel.ctp:4
-#: /People/index.ctp:78
+#: /People/index.ctp:84
 msgid "Recipients"
 msgstr ""
 
@@ -452,11 +482,11 @@ msgstr ""
 msgid "Toggle navigation"
 msgstr ""
 
-#: /Layouts/default.ctp:117
+#: /Layouts/default.ctp:110
 msgid "Yes"
 msgstr ""
 
-#: /Layouts/default.ctp:117
+#: /Layouts/default.ctp:110
 msgid "No"
 msgstr ""
 
@@ -517,7 +547,7 @@ msgstr ""
 msgid "<span class=\"hidden-xs\">Export to</span> Excel"
 msgstr ""
 
-#: /People/index.ctp:23;181
+#: /People/index.ctp:23;188
 msgid "<span class=\"hidden-xs\">Send</span> all"
 msgstr ""
 
@@ -533,37 +563,37 @@ msgstr ""
 msgid "Do you really want to delete the specified recipients?"
 msgstr ""
 
-#: /People/index.ctp:110
+#: /People/index.ctp:117
 #: /Users/index.ctp:23
 msgid "Edit"
 msgstr ""
 
-#: /People/index.ctp:116
+#: /People/index.ctp:123
 msgid "Toggle dropdown"
 msgstr ""
 
-#: /People/index.ctp:121
+#: /People/index.ctp:128
 msgid "Send"
 msgstr ""
 
-#: /People/index.ctp:124
+#: /People/index.ctp:131
 msgid "Do you really want to send this card?"
 msgstr ""
 
-#: /People/index.ctp:130
-#: /Users/index.ctp:31
+#: /People/index.ctp:137
+#: /Users/index.ctp:40
 msgid "Delete"
 msgstr ""
 
-#: /People/index.ctp:133
+#: /People/index.ctp:140
 msgid "Do you really want to delete this recipient?"
 msgstr ""
 
-#: /People/index.ctp:149
+#: /People/index.ctp:156
 msgid "Detail view"
 msgstr ""
 
-#: /People/index.ctp:200
+#: /People/index.ctp:207
 msgid "<span class=\"hidden-xs\">Send</span> selected"
 msgstr ""
 
@@ -595,12 +625,13 @@ msgstr ""
 msgid "E-mail(s) successfully send!"
 msgstr ""
 
-#: /Uploads/edit.ctp:4
-msgid "Edit upload"
-msgstr ""
-
 #: /Users/add.ctp:4
 msgid "Add a user"
+msgstr ""
+
+#: /Users/change_password.ctp:4
+#: /Users/index.ctp:32
+msgid "Change password"
 msgstr ""
 
 #: /Users/edit.ctp:4
@@ -611,7 +642,7 @@ msgstr ""
 msgid "New user"
 msgstr ""
 
-#: /Users/index.ctp:34
+#: /Users/index.ctp:43
 msgid "Do you really want to delete this user?"
 msgstr ""
 
