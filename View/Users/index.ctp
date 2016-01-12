@@ -26,6 +26,15 @@ foreach ($users as $user):
     );
     echo "
    </div>
+    <div class=\"col-sm-3 col-xs-2\">";
+    echo $this->Html->link(
+        $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-lock'))
+        . '<span class=\"hidden-xs\"> ' . __('Change password') . '</span>',
+        array('action' => 'change_password', $user['User']['id']),
+        array('class' => 'btn btn-default', 'escape' => false)
+    );
+    echo "
+   </div>
    <div class=\"col-sm-2 col-xs-2\">";
     echo $this->Form->postLink(
         $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-trash')) . "<span class=\"hidden-xs\"> " . __('Delete') . "</span>",

@@ -1,7 +1,7 @@
 <?php
 
 App::uses('AppModel', 'Model');
-App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
+App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 
 class User extends AppModel
 {
@@ -12,11 +12,8 @@ class User extends AppModel
                 'message' => 'Username cannot be empty!'
             )
         ),
-        'password' => array(
-            'required' => array(
-                'rule' => array('notBlank'),
-                'message' => 'Password cannot be empty'
-            )
+        'is_admin' => array(
+            'rule' => 'boolean'
         ),
         'testmode_active' => array(
             'rule' => 'boolean'
@@ -29,7 +26,7 @@ class User extends AppModel
     public function beforeSave($options = array())
     {
         if (isset($this->data[$this->alias]['password'])) {
-            $passwordHasher = new SimplePasswordHasher();
+            $passwordHasher = new BlowfishPasswordHasher();
             $this->data[$this->alias]['password'] = $passwordHasher->hash(
                 $this->data[$this->alias]['password']
             );

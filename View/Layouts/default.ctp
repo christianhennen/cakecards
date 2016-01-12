@@ -111,6 +111,8 @@ date_default_timezone_set('Etc/UTC');
             $("#OptionEditForm").find(":checkbox").bootstrapSwitch({onText: ontext, offText: offtext});
             $("#OptionAddForm").find(":checkbox").bootstrapSwitch({onText: ontext, offText: offtext});
             $("#mailingOptionSwitches").find(":checkbox").bootstrapSwitch({onText: ontext, offText: offtext});
+            $("#UserAddForm").find(":checkbox").bootstrapSwitch({onText: ontext, offText: offtext});
+            $("#UserEditForm").find(":checkbox").bootstrapSwitch({onText: ontext, offText: offtext});
         });
 
         $('#header > div.alert').delay(1000).hide('highlight', {color: '#66cc66'}, 1500);
