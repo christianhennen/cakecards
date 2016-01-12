@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-01-12 14:59+0100\n"
+"PO-Revision-Date: 2016-01-12 21:49+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: EMAIL@ADDRESS\n"
 "Language: de_DE\n"
@@ -14,192 +14,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.4\n"
-
-#: /CardTextsController.php:23;38
-msgid "Card text has successfully been saved."
-msgstr "Der Kartentext wurde erfolgreich gespeichert."
-
-#: /CardTextsController.php:26;41
-msgid "Card text could not be saved!"
-msgstr "Der Kartentext konnte nicht gespeichert werden!"
-
-#: /CardTextsController.php:34
-msgid "The specified card text was not found!"
-msgstr "Der angegebene Kartentext konnte nicht gefunden werden!"
-
-#: /CardTextsController.php:53
-msgid "Card text has successfully been deleted."
-msgstr "Der Kartentext wurde erfolgreich gelöscht."
-
-#: /CardTypesController.php:28;42
-msgid "Card type has successfully been saved."
-msgstr "Der Kartentyp wurde erfolgreich gespeichert."
-
-#: /CardTypesController.php:31;45
-msgid "Card type could not be saved!"
-msgstr "Der Kartentyp konnte nicht gespeichert werden!"
-
-#: /CardTypesController.php:38
-msgid "The specified card type was not found!"
-msgstr "Der angegebene Kartentyp konnte nicht gefunden werden!"
-
-#: /CardTypesController.php:60
-msgid "Card type has successfully been deleted."
-msgstr "Der Kartentyp wurde erfolgreich gelöscht."
-
-#: /OptionsController.php:25;41
-msgid "Mailing options have successfully been saved."
-msgstr "Die Versandoptionen wurden erfolgreich gespeichert."
-
-#: /OptionsController.php:28;44
-msgid "Mailing options could not be saved!"
-msgstr "Die Versandoptionen konnten nicht gespeichert werden!"
-
-#: /OptionsController.php:37
-msgid "The specified mailing options set was not found!"
-msgstr "Das angegebene Versandoptionen-Set wurde nicht gefunden!"
-
-#: /OptionsController.php:61
-msgid ""
-"Mailing mode has been set to productive configuration. Mails are sent "
-"directly to recipients!"
-msgstr ""
-"Der Versandmodus wurde auf die produktive Konfiguration geändert. Die E-"
-"Mails werden direkt an die Empfänger gesendet!"
-
-#: /OptionsController.php:69
-msgid ""
-"Mailing mode has been set to test configuration. However, mails are sent "
-"directly to recipients!"
-msgstr ""
-"Der Versandmodus wurde auf die Test-Konfiguration geändert. Bitte beachten "
-"Sie, dass die E-Mails dennoch direkt an die Empfänger gehen!"
-
-#: /OptionsController.php:77
-msgid ""
-"Mailing mode has been set to test configuration. Mails are sent to the "
-"sender specified in the mailing options. Recipients do not receive any mail!"
-msgstr ""
-"Der Versandmodus wurde auf die Test-Konfiguration geändert. E-Mails werden "
-"nur an den Absender versendet. Empfänger erhalten somit keine E-Mail!"
-
-#: /PeopleController.php:27;43
-msgid "Recipient has successfully been saved."
-msgstr "Der Empfänger wurde erfolgreich gespeichert."
-
-#: /PeopleController.php:30;46
-msgid "Recipient could not be saved!"
-msgstr "Der Empfänger konnte nicht gespeichert werden!"
-
-#: /PeopleController.php:39;107;117
-msgid "The specified recipient was not found!"
-msgstr "Der angegebene Empfänger konnte nicht gefunden werden!"
-
-#: /PeopleController.php:64
-msgid "Recipients have successfully been deleted."
-msgstr "Die Empfänger wurden erfolgreich gelöscht."
-
-#: /PeopleController.php:66
-msgid "Recipients could not be deleted."
-msgstr "Die Empfänger konnten nicht gelöscht werden."
-
-#: /PeopleController.php:72
-msgid "Recipient has successfully been deleted."
-msgstr "Der Empfänger wurde erfolgreich gelöscht."
-
-#: /PeopleController.php:74
-msgid "Recipient could not be deleted."
-msgstr "Der Empfänger konnte nicht gelöscht werden"
-
-#: /UploadsController.php:109
-msgid "An error occured during file upload!"
-msgstr "Während des Uploads trat ein Fehler auf!"
-
-#: /UploadsController.php:115
-msgid "Error: Could not save file"
-msgstr "Fehler: Konnte die Datei nicht speichern"
-
-#: /UploadsController.php:122
-msgid ""
-"Error: Only files under 20Mb in .jpg .png or .ttf format are accepted for "
-"upload!"
-msgstr ""
-"Fehler: Es können nur Dateien kleiner als 20Mb im .jpg, .png oder .ttf-"
-"Format hochgeladen werden!"
-
-#: /UploadsController.php:128
-msgid "Error: No file uploaded!"
-msgstr "Fehler: Keine Datei hochgeladen!"
-
-#: /UploadsController.php:141
-msgid "The specified upload was not found!"
-msgstr "Der angegebene Upload wurde nicht gefunden!"
-
-#: /UploadsController.php:145
-msgid "Upload has successfully been saved."
-msgstr "Upload wurde erfolgreich gespeichert."
-
-#: /UploadsController.php:148
-msgid "Upload could not be saved!"
-msgstr "Upload konnte nicht gespeichert werden!"
-
-#: /UsersController.php:45;88
-msgid "Passwords do not match. Please try again!"
-msgstr ""
-"Die angegebenen Passwörter stimmen nicht überein. Bitte versuchen Sie es "
-"erneut!"
-
-#: /UsersController.php:49;68
-msgid "User has successfully been saved."
-msgstr "Der Benutzer wurde erfolgreich gespeichert."
-
-#: /UsersController.php:52;71
-msgid "User could not be saved!"
-msgstr "Der Benutzer konnte nicht gespeichert werden!"
-
-#: /UsersController.php:55
-msgid "Only administrators can add other user accounts!"
-msgstr "Nur Administratoren dürfen andere Benutzerkonten hinzufügen!"
-
-#: /UsersController.php:63;83;108
-msgid "The specified user was not found!"
-msgstr "Der angegebene Benutzer konnte nicht gefunden werden!"
-
-#: /UsersController.php:75
-msgid "Only administrators can edit other user accounts!"
-msgstr "Nur Administratoren dürfen andere Benutzerkonten editieren!"
-
-#: /UsersController.php:92
-msgid "Password has successfully been changed."
-msgstr "Das Passwort wurde erfolgreich geändert."
-
-#: /UsersController.php:95
-msgid "Password could not be changed!"
-msgstr "Das Passwort konnte nicht geändert werden!"
-
-#: /UsersController.php:100
-msgid "Only administrators can change other user's passwords!"
-msgstr "Nur Administratoren dürfen das Passwort anderer Benutzer ändern!"
-
-#: /UsersController.php:111
-msgid "You can't delete your own user account!"
-msgstr "Es ist nicht möglich Ihren eigenen Benutzer-Account zu löschen!"
-
-#: /UsersController.php:116
-msgid "User has successfully been deleted."
-msgstr "Der Benutzer wurde erfolgreich gelöscht."
-
-#: /UsersController.php:119
-msgid "User could not be deleted."
-msgstr "Der Benutzer konnte nicht gelöscht werden!"
-
-#: /UsersController.php:122
-msgid "Only administrators can delete other user accounts!"
-msgstr "Nur Administratoren dürfen andere Benutzer löschen!"
-
-#: /UsersController.php:136
-msgid "Wrong username or password!"
-msgstr "Falscher Benutzername oder Kennwort!"
 
 #: /CardTexts/add.ctp:4 /CardTexts/edit.ctp:4
 msgid "Add card text"
@@ -633,6 +447,222 @@ msgstr "Wollen Sie diesen Benutzer wirklich löschen?"
 #: /Users/login.ctp:5;14
 msgid "Login"
 msgstr "Login"
+
+#: /CardTextsController.php:23;38
+msgid "Card text has successfully been saved."
+msgstr "Der Kartentext wurde erfolgreich gespeichert."
+
+#: /CardTextsController.php:26;41
+msgid "Card text could not be saved!"
+msgstr "Der Kartentext konnte nicht gespeichert werden!"
+
+#: /CardTextsController.php:34
+msgid "The specified card text was not found!"
+msgstr "Der angegebene Kartentext konnte nicht gefunden werden!"
+
+#: /CardTextsController.php:53
+msgid "Card text has successfully been deleted."
+msgstr "Der Kartentext wurde erfolgreich gelöscht."
+
+#: /CardTypesController.php:28;42
+msgid "Card type has successfully been saved."
+msgstr "Der Kartentyp wurde erfolgreich gespeichert."
+
+#: /CardTypesController.php:31;45
+msgid "Card type could not be saved!"
+msgstr "Der Kartentyp konnte nicht gespeichert werden!"
+
+#: /CardTypesController.php:38
+msgid "The specified card type was not found!"
+msgstr "Der angegebene Kartentyp konnte nicht gefunden werden!"
+
+#: /CardTypesController.php:60
+msgid "Card type has successfully been deleted."
+msgstr "Der Kartentyp wurde erfolgreich gelöscht."
+
+#: /CardTypesController.php:76
+msgid ""
+"Dear recipient,\n"
+"This is a test text for the card preview\n"
+"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy "
+"eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam "
+"voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet "
+"clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit "
+"amet.\n"
+"\n"
+"Greetings\n"
+"CakeCards"
+msgstr ""
+"Lieber Empfänger,\n"
+"Dies ist ein Test der Karten-Vorschau.\n"
+"Loren ipsum dolor ist atmet, consetetur sadipscing Elite, sed dicm nonumy "
+"eirmod Tempo invidunt ut labore et doller magna aliquyam erat, sed dicm "
+"voluptua. At verroh los et accusam et just duo dolleres et ea rebum. Stet "
+"clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit "
+"amet.\n"
+"\n"
+"Grüße\n"
+"CakeCards"
+
+#: /CardTypesController.php:110
+msgid "There is no card image or font defined. Preview could not be generated."
+msgstr ""
+"Es ist kein Karten-Bild oder keine Schriftart für den Kartentyp definiert. "
+"Die Vorschau konnte daher nicht generiert werden."
+
+#: /OptionsController.php:25;41
+msgid "Mailing options have successfully been saved."
+msgstr "Die Versandoptionen wurden erfolgreich gespeichert."
+
+#: /OptionsController.php:28;44
+msgid "Mailing options could not be saved!"
+msgstr "Die Versandoptionen konnten nicht gespeichert werden!"
+
+#: /OptionsController.php:37
+msgid "The specified mailing options set was not found!"
+msgstr "Das angegebene Versandoptionen-Set wurde nicht gefunden!"
+
+#: /OptionsController.php:61
+msgid ""
+"Mailing mode has been set to productive configuration. Mails are sent "
+"directly to recipients!"
+msgstr ""
+"Der Versandmodus wurde auf die produktive Konfiguration geändert. Die E-"
+"Mails werden direkt an die Empfänger gesendet!"
+
+#: /OptionsController.php:69
+msgid ""
+"Mailing mode has been set to test configuration. However, mails are sent "
+"directly to recipients!"
+msgstr ""
+"Der Versandmodus wurde auf die Test-Konfiguration geändert. Bitte beachten "
+"Sie, dass die E-Mails dennoch direkt an die Empfänger gehen!"
+
+#: /OptionsController.php:77
+msgid ""
+"Mailing mode has been set to test configuration. Mails are sent to the "
+"sender specified in the mailing options. Recipients do not receive any mail!"
+msgstr ""
+"Der Versandmodus wurde auf die Test-Konfiguration geändert. E-Mails werden "
+"nur an den Absender versendet. Empfänger erhalten somit keine E-Mail!"
+
+#: /PeopleController.php:27;43
+msgid "Recipient has successfully been saved."
+msgstr "Der Empfänger wurde erfolgreich gespeichert."
+
+#: /PeopleController.php:30;46
+msgid "Recipient could not be saved!"
+msgstr "Der Empfänger konnte nicht gespeichert werden!"
+
+#: /PeopleController.php:39;107;117
+msgid "The specified recipient was not found!"
+msgstr "Der angegebene Empfänger konnte nicht gefunden werden!"
+
+#: /PeopleController.php:64
+msgid "Recipients have successfully been deleted."
+msgstr "Die Empfänger wurden erfolgreich gelöscht."
+
+#: /PeopleController.php:66
+msgid "Recipients could not be deleted."
+msgstr "Die Empfänger konnten nicht gelöscht werden."
+
+#: /PeopleController.php:72
+msgid "Recipient has successfully been deleted."
+msgstr "Der Empfänger wurde erfolgreich gelöscht."
+
+#: /PeopleController.php:74
+msgid "Recipient could not be deleted."
+msgstr "Der Empfänger konnte nicht gelöscht werden"
+
+#: /UploadsController.php:109
+msgid "An error occured during file upload!"
+msgstr "Während des Uploads trat ein Fehler auf!"
+
+#: /UploadsController.php:115
+msgid "Error: Could not save file"
+msgstr "Fehler: Konnte die Datei nicht speichern"
+
+#: /UploadsController.php:122
+msgid ""
+"Error: Only files under 20Mb in .jpg .png or .ttf format are accepted for "
+"upload!"
+msgstr ""
+"Fehler: Es können nur Dateien kleiner als 20Mb im .jpg, .png oder .ttf-"
+"Format hochgeladen werden!"
+
+#: /UploadsController.php:128
+msgid "Error: No file uploaded!"
+msgstr "Fehler: Keine Datei hochgeladen!"
+
+#: /UploadsController.php:141
+msgid "The specified upload was not found!"
+msgstr "Der angegebene Upload wurde nicht gefunden!"
+
+#: /UploadsController.php:145
+msgid "Upload has successfully been saved."
+msgstr "Upload wurde erfolgreich gespeichert."
+
+#: /UploadsController.php:148
+msgid "Upload could not be saved!"
+msgstr "Upload konnte nicht gespeichert werden!"
+
+#: /UsersController.php:45;88
+msgid "Passwords do not match. Please try again!"
+msgstr ""
+"Die angegebenen Passwörter stimmen nicht überein. Bitte versuchen Sie es "
+"erneut!"
+
+#: /UsersController.php:49;68
+msgid "User has successfully been saved."
+msgstr "Der Benutzer wurde erfolgreich gespeichert."
+
+#: /UsersController.php:52;71
+msgid "User could not be saved!"
+msgstr "Der Benutzer konnte nicht gespeichert werden!"
+
+#: /UsersController.php:55
+msgid "Only administrators can add other user accounts!"
+msgstr "Nur Administratoren dürfen andere Benutzerkonten hinzufügen!"
+
+#: /UsersController.php:63;83;108
+msgid "The specified user was not found!"
+msgstr "Der angegebene Benutzer konnte nicht gefunden werden!"
+
+#: /UsersController.php:75
+msgid "Only administrators can edit other user accounts!"
+msgstr "Nur Administratoren dürfen andere Benutzerkonten editieren!"
+
+#: /UsersController.php:92
+msgid "Password has successfully been changed."
+msgstr "Das Passwort wurde erfolgreich geändert."
+
+#: /UsersController.php:95
+msgid "Password could not be changed!"
+msgstr "Das Passwort konnte nicht geändert werden!"
+
+#: /UsersController.php:100
+msgid "Only administrators can change other user's passwords!"
+msgstr "Nur Administratoren dürfen das Passwort anderer Benutzer ändern!"
+
+#: /UsersController.php:111
+msgid "You can't delete your own user account!"
+msgstr "Es ist nicht möglich Ihren eigenen Benutzer-Account zu löschen!"
+
+#: /UsersController.php:116
+msgid "User has successfully been deleted."
+msgstr "Der Benutzer wurde erfolgreich gelöscht."
+
+#: /UsersController.php:119
+msgid "User could not be deleted."
+msgstr "Der Benutzer konnte nicht gelöscht werden!"
+
+#: /UsersController.php:122
+msgid "Only administrators can delete other user accounts!"
+msgstr "Nur Administratoren dürfen andere Benutzer löschen!"
+
+#: /UsersController.php:136
+msgid "Wrong username or password!"
+msgstr "Falscher Benutzername oder Kennwort!"
 
 #~ msgid "Size"
 #~ msgstr "Größe"
