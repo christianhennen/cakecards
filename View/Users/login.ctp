@@ -1,6 +1,6 @@
 <?php
 
-echo $this->element('form-header', array(
+echo $this->element('form_header', array(
     'modelName' => 'User',
     'heading' => __('Login')
 ));

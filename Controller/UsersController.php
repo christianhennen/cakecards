@@ -3,11 +3,12 @@
 /**
  * @property User $User
  * @property mixed Message
+ * @property mixed Permission
+ * @property mixed ProjectMembership
  */
 class UsersController extends AppController
 {
-
-    public $components = array('Message');
+    public $components = array('Message','Permission');
 
     public function beforeFilter()
     {
@@ -16,13 +17,13 @@ class UsersController extends AppController
             $this->Auth->allow('logout', 'add');
         } else {
             $this->Auth->allow('logout');
-            $admins = $this->User->findAllByIsAdmin('1');
+            $superadmins = $this->User->findAllByIsSuperadmin('1');
             /* If there is no admin defined (either because the database was upgraded before the admin flag was introduced
              or because setting the admin flag has been forgotten on first start) the first user in the database will be set as admin */
-            if (empty($admins)) {
+            if (empty($superadmins)) {
                 $user = $this->User->find('first');
-                $this->User->read('is_admin', $user['User']['id']);
-                $this->User->set('is_admin', '1');
+                $this->User->read('is_superadmin', $user['User']['id']);
+                $this->User->set('is_superadmin', '1');
                 $this->User->save();
             }
         }
@@ -30,16 +31,21 @@ class UsersController extends AppController
 
     public function index()
     {
-        if (($this->Auth->user('is_admin') == 1)) {
+        if ($this->Permission->superAdmin()) {
             $this->set('users', $this->User->find('all'));
-        } else {
+        } elseif ($this->Permission->admin()) {
+            $this->loadModel('ProjectMembership');
+            $pm = $this->ProjectMembership->findAllByProjectId($this->Auth->user('project_id'));
+            $this->set('users', $pm);
+        }
+        else {
             $this->set('users', array('User' => $this->User->findById($this->Auth->user('id'))));
         }
     }
 
     public function add()
     {
-        if (($this->User->find('count') == 0 || $this->Auth->user('is_admin') == 1)) {
+        if ($this->User->find('count') == 0 || $this->Permission->superAdmin() || $this->Permission->admin()) {
             if ($this->request->is('post')) {
                 if ($this->request->data['User']['password'] != $this->request->data['User']['passwd']) {
                     $this->Message->display(__('Passwords do not match. Please try again!'), 'danger');
@@ -62,7 +68,7 @@ class UsersController extends AppController
         if (!$id OR !$this->User->findById($id)) {
             throw new NotFoundException(__('The specified user was not found!'));
         }
-        if (($this->Auth->user('is_admin') == 1) || $this->Auth->user('id') == $id) {
+        if ($this->Permission->superAdmin() || $this->Permission->admin() || $this->Auth->user('id') == $id) {
             if ($this->request->is(array('post', 'put'))) {
                 if ($this->User->save($this->request->data)) {
                     $this->Message->display(__('User has successfully been saved.'), 'success');
@@ -82,7 +88,7 @@ class UsersController extends AppController
         if (!$id OR !$this->User->findById($id)) {
             throw new NotFoundException(__('The specified user was not found!'));
         }
-        if (($this->Auth->user('is_admin') == 1) || $this->Auth->user('id') == $id) {
+        if ($this->Permission->superAdmin() || $this->Permission->admin() || $this->Auth->user('id') == $id) {
             if ($this->request->is(array('post', 'put'))) {
                 if ($this->request->data['User']['password'] != $this->request->data['User']['passwd']) {
                     $this->Message->display(__('Passwords do not match. Please try again!'), 'danger');
@@ -111,7 +117,7 @@ class UsersController extends AppController
                 $this->Message->display(__('You can\'t delete your own user account!'), 'danger');
                 $this->redirect(array('action' => 'index'));
             }
-            if ($this->Auth->user('is_admin') == 1) {
+            if ($this->Permission->superAdmin() || $this->Permission->admin()) {
                 if ($this->User->delete($id)) {
                     $this->Message->display(__('User has successfully been deleted.'), 'success');
                     $this->redirect(array('action' => 'index'));

@@ -8,8 +8,8 @@
             <div class="modal-body row">
                 <div class="col-sm-12 thumbnail" id="cardPreview" style="display: none"><img id="cardPreviewImg" src=""></div>
                 <div class="col-sm-12" id="textSelection" style="display: none"><img class="col-sm-12" id="textSelectionImg" style="padding:0" src="
-                <?php if (isset($cardtype)) {
-                        echo $this->webroot . "files/" . $cardtype['Image']['id'] . "/" . $cardtype['Image']['name'];
+                <?php if (isset($card)) {
+                        echo $this->webroot . "files/" . $card['Image']['id'] . "/" . $card['Image']['name'];
                     }?>
                     "></div>
                 <div class="col-sm-5" id="mediaGalleryNav">

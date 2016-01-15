@@ -13,24 +13,28 @@ class NavHelper extends AppHelper
     {
         $this->navItems = array(
             array(
-                'title' => '<span class="glyphicon glyphicon-user"></span> ' . __('Recipients'),
-                'url' => array('controller' => 'people', 'action' => 'index', '')
+                'title' => '<span class="glyphicon glyphicon-th-list"></span> ' . __('Recipients'),
+                'url' => array('controller' => 'recipients', 'action' => 'index', '')
             ),
             array(
-                'title' => '<span class="glyphicon glyphicon-comment"></span> ' . __('Card texts'),
-                'url' => array('controller' => 'card_texts', 'action' => 'index', '')
+                'title' => '<span class="glyphicon glyphicon-comment"></span> ' . __('Texts'),
+                'url' => array('controller' => 'texts', 'action' => 'index', '')
             ),
             array(
-                'title' => '<span class="glyphicon glyphicon-picture"></span> ' . __('Card types'),
-                'url' => array('controller' => 'card_types', 'action' => 'index', '')
+                'title' => '<span class="glyphicon glyphicon-picture"></span> ' . __('Cards'),
+                'url' => array('controller' => 'cards', 'action' => 'index', '')
             ),
             array(
                 'title' => '<span class="glyphicon glyphicon-envelope"></span> ' . __('Mailing options'),
-                'url' => array('controller' => 'options', 'action' => 'index', '')
+                'url' => array('controller' => 'mailing_options', 'action' => 'index', '')
             ),
             array(
-                'title' => '<span class="glyphicon glyphicon-lock"></span> ' . __('Security'),
+                'title' => '<span class="glyphicon glyphicon-user"></span> ' . __('Users'),
                 'url' => array('controller' => 'users', 'action' => 'index', '')
+            ),
+            array(
+                'title' => '<span class="glyphicon glyphicon-folder-open"></span> ' . __('Projects'),
+                'url' => array('controller' => 'projects', 'action' => 'index', '')
             )
         );
         if (AuthComponent::user('id')) {

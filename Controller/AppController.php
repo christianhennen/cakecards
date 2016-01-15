@@ -44,7 +44,7 @@ class AppController extends Controller
                 )
             ),
             'loginRedirect' => array(
-                'controller' => 'people',
+                'controller' => 'recipients',
                 'action' => 'index'
             ),
             'logoutRedirect' => array(

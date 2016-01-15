@@ -11,10 +11,9 @@
 
 <?php
 
-$this->assign('title', __('Security'));
+$this->assign('title', __('Users'));
 
 foreach ($users as $user):
-
     echo "<div class=\"row\" style=\"margin-bottom:10px;\">
    <div class=\"col-sm-2 col-xs-4\"><p>" . $user['User']['username'] . "</p></div>
    <div class=\"col-sm-3 col-xs-2\">";

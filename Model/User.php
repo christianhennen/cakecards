@@ -3,22 +3,29 @@
 App::uses('AppModel', 'Model');
 App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 
+/**
+ * @property MailingOption $MailingOption
+ */
+
 class User extends AppModel
 {
+    public $hasMany = array('ProjectMembership', 'MailingOption');
+    public $belongsTo = array('MailingOption', 'Project');
     public $validate = array(
         'username' => array(
-            'required' => array(
-                'rule' => array('notBlank'),
+            'usernameNotBlank' => array(
+                'rule' => 'notBlank',
                 'message' => 'Username cannot be empty!'
+            ),
+            'usernameUnique' => array(
+                'rule' => 'isUnique',
+                'message' => 'A user with this name already exists. Please choose another name.'
             )
         ),
-        'is_admin' => array(
+        'is_superadmin' => array(
             'rule' => 'boolean'
         ),
         'testmode_active' => array(
-            'rule' => 'boolean'
-        ),
-        'sender_is_recipient' => array(
             'rule' => 'boolean'
         )
     );

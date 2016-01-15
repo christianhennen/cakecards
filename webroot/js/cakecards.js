@@ -71,7 +71,7 @@ $(document).on('click', '#previewButton', function (event) {
     });
     $.ajax({
         type: 'POST',
-        url: myBaseUrl + 'card_types/preview/',
+        url: myBaseUrl + 'cards/preview/',
         data: form.serialize(),
         success: function (data, textStatus, xhr) {
             $('#cardPreview').html(data).show();

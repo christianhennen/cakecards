@@ -1,8 +1,8 @@
 <?php
 echo $this->element('form_header', array(
-    'modelName' => 'User',
-    'heading' => __('Change password')
+    'modelName' => 'Text',
+    'heading' => __('Edit card text')
 ));
 echo $this->Form->input('id', array('type' => 'hidden'));
-echo $this->element('user_passwords');
+echo $this->element('text_form');
 echo $this->element('form_footer');
