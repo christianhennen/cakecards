@@ -90,7 +90,7 @@ foreach ($recipients as $recipient):
 
     $thumbnail_path = $this->webroot . "images/thumbnails/" . $recipient['Recipient']['id'] . ".png";
 
-    $currentSurnameLetter = CakeText::truncate($recipient['Recipient']['surname'], 1, array('ellipsis' => '', 'exact' => true, 'html' => false));
+    $currentSurnameLetter = strtoupper(CakeText::truncate($recipient['Recipient']['surname'], 1, array('ellipsis' => '', 'exact' => true, 'html' => false)));
     if ($currentSurnameLetter != $currentSectionLetter) {
         $currentSectionLetter = $currentSurnameLetter;
         echo "<div class=\"row sectionHeading\" style=\"margin-top: 20px; margin-bottom:10px;\"><div class=\"col-sm-12 col-xs-12\"><a name=\"section" . $currentSectionLetter . "\">" . $currentSectionLetter . "</a></div></div>";

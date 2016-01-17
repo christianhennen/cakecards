@@ -6,7 +6,7 @@ class ProjectRelatedBehavior extends ModelBehavior
     public function beforeFind(Model $model, $query)
     {
         $pid = AuthComponent::user('project_id');
-        $query['conditions'] = array($model->alias.'.project_id' => $pid);
+        $query['conditions'][$model->alias . '.project_id']= $pid;
         return $query;
     }
 

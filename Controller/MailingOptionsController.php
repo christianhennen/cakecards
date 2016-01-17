@@ -52,10 +52,9 @@ class MailingOptionsController extends AppController
     public function changeMailingMode($mode = null)
     {
         $this->loadModel('User');
-        $currentUser = $this->User->findById($this->Auth->user('id'), array('id', 'testmode_active', 'sender_is_recipient'));
+        $currentUser = $this->User->findById($this->Auth->user('id'), array('id', 'testmode_active'));
         if ($mode == '0') {
             $currentUser['User']['testmode_active'] = 0;
-            $currentUser['User']['sender_is_recipient'] = 0;
             if ($this->User->save($currentUser)) {
                 $this->Message->display(
                     __('Mailing mode has been set to productive configuration. Mails are sent directly to recipients!'), 'warning'
@@ -63,18 +62,9 @@ class MailingOptionsController extends AppController
             }
         } else if ($mode == '1') {
             $currentUser['User']['testmode_active'] = 1;
-            $currentUser['User']['sender_is_recipient'] = 0;
             if ($this->User->save($currentUser)) {
                 $this->Message->display(
-                    __('Mailing mode has been set to test configuration. However, mails are sent directly to recipients!'), 'warning'
-                );
-            }
-        } else {
-            $currentUser['User']['testmode_active'] = 1;
-            $currentUser['User']['sender_is_recipient'] = 1;
-            if ($this->User->save($currentUser)) {
-                $this->Message->display(
-                    __('Mailing mode has been set to test configuration. Mails are sent to the sender specified in the mailing options. Recipients do not receive any mail!'), 'success'
+                    __('Mailing mode has been set to test configuration. Mails are sent to the sender specified in the active mailing options. Recipients do not receive any mail!'), 'success'
                 );
             }
         }
