@@ -13,144 +13,190 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: /CardTexts/add.ctp:4
-#: /CardTexts/edit.ctp:4
-msgid "Add card text"
-msgstr ""
-
-#: /CardTexts/index.ctp:5
-msgid "New card text"
-msgstr ""
-
-#: /CardTexts/index.ctp:14
-#: /Helper/NavHelper.php:20
-#: /People/export_excel.ctp:37
-msgid "Card texts"
-msgstr ""
-
-#: /CardTexts/index.ctp:38
-msgid "Do you really want to delete this card text?"
-msgstr ""
-
-#: /CardTypes/add.ctp:4
+#: /Cards/add.ctp:4
 msgid "Add card type"
 msgstr ""
 
-#: /CardTypes/edit.ctp:4
+#: /Cards/edit.ctp:4
 msgid "Edit card type"
 msgstr ""
 
-#: /CardTypes/index.ctp:5
+#: /Cards/index.ctp:5
 msgid "New card type"
 msgstr ""
 
-#: /CardTypes/index.ctp:14
+#: /Cards/index.ctp:14
 #: /Helper/NavHelper.php:24
-#: /People/export_excel.ctp:62
-msgid "Card types"
+msgid "Cards"
 msgstr ""
 
-#: /CardTypes/index.ctp:31
+#: /Cards/index.ctp:31
 msgid "Do you really want to delete this card type?"
 msgstr ""
 
-#: /CardTypes/index.ctp:40
-#: /Elements/card_type_form.ctp:10
-#: /Elements/option_form.ctp:10
+#: /Cards/index.ctp:40
+#: /Elements/card_form.ctp:10
+#: /Elements/mailing_option_form.ctp:10
 msgid "Image"
 msgstr ""
 
-#: /CardTypes/index.ctp:46
-#: /Elements/card_type_form.ctp:25
+#: /Cards/index.ctp:46
+#: /Elements/card_form.ctp:25
 msgid "Font"
 msgstr ""
 
-#: /CardTypes/index.ctp:51
-#: /Elements/card_type_form.ctp:39
+#: /Cards/index.ctp:51
+#: /Elements/card_form.ctp:39
 msgid "Font size"
 msgstr ""
 
-#: /CardTypes/index.ctp:56
-#: /Elements/card_type_form.ctp:40
+#: /Cards/index.ctp:56
+#: /Elements/card_form.ctp:40
 msgid "Font color"
 msgstr ""
 
-#: /Elements/card_text_form.ctp:2
-#: /Elements/option_form.ctp:4
-#: /People/export_excel.ctp:11
-msgid "Card type"
-msgstr ""
-
-#: /Elements/card_text_form.ctp:3
-#: /Elements/person_form_footer.ctp:6
-#: /People/export_excel.ctp:41
-msgid "Text"
-msgstr ""
-
-#: /Elements/card_type_form.ctp:3
+#: /Elements/card_form.ctp:3
 msgid "Left"
 msgstr ""
 
-#: /Elements/card_type_form.ctp:3;4
+#: /Elements/card_form.ctp:3;4
 msgid "Center"
 msgstr ""
 
-#: /Elements/card_type_form.ctp:3
+#: /Elements/card_form.ctp:3
 msgid "Right"
 msgstr ""
 
-#: /Elements/card_type_form.ctp:4
+#: /Elements/card_form.ctp:4
 msgid "Top"
 msgstr ""
 
-#: /Elements/card_type_form.ctp:4
+#: /Elements/card_form.ctp:4
 msgid "Bottom"
 msgstr ""
 
-#: /Elements/card_type_form.ctp:6
+#: /Elements/card_form.ctp:6
+#: /Elements/text_form.ctp:2
 msgid "Name"
 msgstr ""
 
-#: /Elements/card_type_form.ctp:12;27
-#: /Elements/option_form.ctp:12
+#: /Elements/card_form.ctp:12;27
+#: /Elements/mailing_option_form.ctp:12
 msgid "Choose..."
 msgstr ""
 
-#: /Elements/card_type_form.ctp:20
+#: /Elements/card_form.ctp:20
 msgid "Current image - click to select textarea"
 msgstr ""
 
-#: /Elements/card_type_form.ctp:35
+#: /Elements/card_form.ctp:35
 msgid "Current font"
 msgstr ""
 
-#: /Elements/card_type_form.ctp:46
+#: /Elements/card_form.ctp:46
 msgid "Line Height"
 msgstr ""
 
-#: /Elements/card_type_form.ctp:47;48
+#: /Elements/card_form.ctp:47;48
 msgid "--Please select--"
 msgstr ""
 
-#: /Elements/card_type_form.ctp:47
+#: /Elements/card_form.ctp:47
 msgid "Horizontal Text Alignment"
 msgstr ""
 
-#: /Elements/card_type_form.ctp:48
+#: /Elements/card_form.ctp:48
 msgid "Vertical Text Alignment"
 msgstr ""
 
-#: /Elements/form-footer.ctp:2
-#: /People/send_emails.ctp:11
+#: /Elements/form_footer.ctp:2
+#: /Recipients/send_emails.ctp:11
 msgid "Cancel"
 msgstr ""
 
-#: /Elements/form-footer.ctp:4
+#: /Elements/form_footer.ctp:4
 msgid "Preview"
 msgstr ""
 
-#: /Elements/form-footer.ctp:9
+#: /Elements/form_footer.ctp:9
 msgid "Save"
+msgstr ""
+
+#: /Elements/mailing_option_form.ctp:4
+#: /Recipients/export_excel.ctp:11
+msgid "Card type"
+msgstr ""
+
+#: /Elements/mailing_option_form.ctp:5
+#: /Recipients/export_excel.ctp:66
+msgid "Description"
+msgstr ""
+
+#: /Elements/mailing_option_form.ctp:6
+#: /MailingOptions/index.ctp:75
+msgid "Subject"
+msgstr ""
+
+#: /Elements/mailing_option_form.ctp:7
+msgid "Is this a test configuration?"
+msgstr ""
+
+#: /Elements/mailing_option_form.ctp:20
+msgid "Current image"
+msgstr ""
+
+#: /Elements/mailing_option_form.ctp:25
+msgid "Signature"
+msgstr ""
+
+#: /Elements/mailing_option_form.ctp:26
+#: /MailingOptions/index.ctp:51
+msgid "Mail server"
+msgstr ""
+
+#: /Elements/mailing_option_form.ctp:27
+#: /MailingOptions/index.ctp:54
+msgid "Port"
+msgstr ""
+
+#: /Elements/mailing_option_form.ctp:28
+msgid "Time until timeout in ms"
+msgstr ""
+
+#: /Elements/mailing_option_form.ctp:29
+msgid "Does the server use TLS?"
+msgstr ""
+
+#: /Elements/mailing_option_form.ctp:30
+#: /MailingOptions/index.ctp:72
+msgid "Sender address"
+msgstr ""
+
+#: /Elements/mailing_option_form.ctp:31
+#: /MailingOptions/index.ctp:69
+msgid "Sender name"
+msgstr ""
+
+#: /Elements/mailing_option_form.ctp:32
+#: /Elements/user_form.ctp:2
+#: /MailingOptions/index.ctp:80
+#: /Users/login.ctp:9
+msgid "Username"
+msgstr ""
+
+#: /Elements/mailing_option_form.ctp:33
+#: /Elements/user_passwords.ctp:2
+#: /MailingOptions/index.ctp:83
+#: /Users/login.ctp:11
+msgid "Password"
+msgstr ""
+
+#: /Elements/mailing_option_form.ctp:37
+msgid "Signature image"
+msgstr ""
+
+#: /Elements/mailing_option_form.ctp:38
+msgid "The following placeholder will be inserted into the signature."
 msgstr ""
 
 #: /Elements/media_gallery.ctp:6
@@ -174,112 +220,33 @@ msgid "Upload %d files"
 msgstr ""
 
 #: /Elements/media_gallery.ctp:75
-#: /People/index.ctp:162
+#: /Recipients/index.ctp:162
 msgid "Close"
 msgstr ""
 
-#: /Elements/option_form.ctp:5
-#: /People/export_excel.ctp:66
-msgid "Description"
-msgstr ""
-
-#: /Elements/option_form.ctp:6
-#: /Options/index.ctp:84
-msgid "Subject"
-msgstr ""
-
-#: /Elements/option_form.ctp:7
-msgid "Is this a test configuration?"
-msgstr ""
-
-#: /Elements/option_form.ctp:20
-msgid "Current image"
-msgstr ""
-
-#: /Elements/option_form.ctp:25
-msgid "Signature"
-msgstr ""
-
-#: /Elements/option_form.ctp:26
-#: /Options/index.ctp:60
-msgid "Mail server"
-msgstr ""
-
-#: /Elements/option_form.ctp:27
-#: /Options/index.ctp:63
-msgid "Port"
-msgstr ""
-
-#: /Elements/option_form.ctp:28
-msgid "Time until timeout in ms"
-msgstr ""
-
-#: /Elements/option_form.ctp:29
-msgid "Does the server use TLS?"
-msgstr ""
-
-#: /Elements/option_form.ctp:30
-#: /Options/index.ctp:81
-msgid "Sender address"
-msgstr ""
-
-#: /Elements/option_form.ctp:31
-#: /Options/index.ctp:78
-msgid "Sender name"
-msgstr ""
-
-#: /Elements/option_form.ctp:32
-#: /Elements/user_form.ctp:2
-#: /Options/index.ctp:89
-#: /Users/login.ctp:9
-msgid "Username"
-msgstr ""
-
-#: /Elements/option_form.ctp:33
-#: /Elements/user_passwords.ctp:2
-#: /Options/index.ctp:92
-#: /Users/login.ctp:11
-msgid "Password"
-msgstr ""
-
-#: /Elements/option_form.ctp:37
-msgid "Signature image"
-msgstr ""
-
-#: /Elements/option_form.ctp:38
-msgid "The following placeholder will be inserted into the signature."
-msgstr ""
-
-#: /Elements/person_form.ctp:2
-#: /People/export_excel.ctp:8
+#: /Elements/recipient_form.ctp:2
+#: /Recipients/export_excel.ctp:8
 msgid "Prename"
 msgstr ""
 
-#: /Elements/person_form.ctp:3
-#: /People/export_excel.ctp:9
+#: /Elements/recipient_form.ctp:3
+#: /Recipients/export_excel.ctp:9
 msgid "Surname"
 msgstr ""
 
-#: /Elements/person_form.ctp:4
-#: /People/export_excel.ctp:10
-msgid "Salutation"
-msgstr ""
-
-#: /Elements/person_form.ctp:5
+#: /Elements/recipient_form.ctp:4
 msgid "E-mail address"
 msgstr ""
 
-#: /Elements/person_form.ctp:6
-msgid "Text number (see below)"
+#: /Elements/recipient_form.ctp:5
+#: /Recipients/export_excel.ctp:10
+msgid "Salutation"
 msgstr ""
 
-#: /Elements/person_form_footer.ctp:4
-msgid "Text number"
-msgstr ""
-
-#: /Elements/person_form_footer.ctp:5
-#: /People/export_excel.ctp:42
-msgid "Type"
+#: /Elements/recipient_form.ctp:6
+#: /Elements/text_form.ctp:3
+#: /Recipients/export_excel.ctp:41
+msgid "Text"
 msgstr ""
 
 #: /Elements/user_form.ctp:4
@@ -291,26 +258,35 @@ msgid "Re-enter Password"
 msgstr ""
 
 #: /Helper/NavHelper.php:16
-#: /People/export_excel.ctp:4
-#: /People/index.ctp:84
+#: /Recipients/export_excel.ctp:4
+#: /Recipients/index.ctp:84
 msgid "Recipients"
 msgstr ""
 
+#: /Helper/NavHelper.php:20
+#: /Texts/index.ctp:14
+msgid "Texts"
+msgstr ""
+
 #: /Helper/NavHelper.php:28
-#: /Options/index.ctp:14
+#: /MailingOptions/index.ctp:14
 msgid "Mailing options"
 msgstr ""
 
 #: /Helper/NavHelper.php:32
 #: /Users/index.ctp:14
-msgid "Security"
+msgid "Users"
 msgstr ""
 
-#: /Helper/NavHelper.php:39
+#: /Helper/NavHelper.php:36
+msgid "Projects"
+msgstr ""
+
+#: /Helper/NavHelper.php:43
 msgid "Logout"
 msgstr ""
 
-#: /Helper/NavHelper.php:46
+#: /Helper/NavHelper.php:50
 msgid "Toggle navigation"
 msgstr ""
 
@@ -322,139 +298,166 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: /Options/add.ctp:4
+#: /MailingOptions/add.ctp:4
 msgid "Add mailing options"
 msgstr ""
 
-#: /Options/edit.ctp:4
+#: /MailingOptions/edit.ctp:4
 msgid "Edit mailing options"
 msgstr ""
 
-#: /Options/index.ctp:5
+#: /MailingOptions/index.ctp:5
 msgid "New mailing options"
 msgstr ""
 
-#: /Options/index.ctp:16
+#: /MailingOptions/index.ctp:16
 msgid "Is test mode active?"
 msgstr ""
 
-#: /Options/index.ctp:24
-msgid "Should mails be sent to the sender?"
-msgstr ""
-
-#: /Options/index.ctp:66
+#: /MailingOptions/index.ctp:57
 msgid "Use TLS"
 msgstr ""
 
-#: /Options/index.ctp:73
+#: /MailingOptions/index.ctp:64
 msgid "Timeout"
 msgstr ""
 
-#: /People/add.ctp:4
-#: /People/edit.ctp:4
+#: /Recipients/add.ctp:4
 msgid "Add a recipient"
 msgstr ""
 
-#: /People/export_excel.ctp:7;40;65
+#: /Recipients/edit.ctp:4
+msgid "Edit a recipient"
+msgstr ""
+
+#: /Recipients/export_excel.ctp:7;40;65
 msgid "ID"
 msgstr ""
 
-#: /People/export_excel.ctp:12
+#: /Recipients/export_excel.ctp:12
 msgid "Card text"
 msgstr ""
 
-#: /People/export_excel.ctp:13
+#: /Recipients/export_excel.ctp:13
 msgid "E-Mail address"
 msgstr ""
 
-#: /People/index.ctp:3
+#: /Recipients/export_excel.ctp:37
+msgid "Card texts"
+msgstr ""
+
+#: /Recipients/export_excel.ctp:42
+msgid "Type"
+msgstr ""
+
+#: /Recipients/export_excel.ctp:62
+msgid "Card types"
+msgstr ""
+
+#: /Recipients/index.ctp:3
 msgid "Search"
 msgstr ""
 
-#: /People/index.ctp:11
+#: /Recipients/index.ctp:11
 msgid "<span class=\"hidden-xs\">New</span> recipient"
 msgstr ""
 
-#: /People/index.ctp:17
+#: /Recipients/index.ctp:17
 msgid "<span class=\"hidden-xs\">Export to</span> Excel"
 msgstr ""
 
-#: /People/index.ctp:23;188
+#: /Recipients/index.ctp:23;188
 msgid "<span class=\"hidden-xs\">Send</span> all"
 msgstr ""
 
-#: /People/index.ctp:26
+#: /Recipients/index.ctp:26
 msgid "Do you really want to send all cards at once?"
 msgstr ""
 
-#: /People/index.ctp:30
+#: /Recipients/index.ctp:30
 msgid "<span class=\"hidden-xs\">Delete</span> selected"
 msgstr ""
 
-#: /People/index.ctp:33
+#: /Recipients/index.ctp:33
 msgid "Do you really want to delete the specified recipients?"
 msgstr ""
 
-#: /People/index.ctp:117
-#: /Users/index.ctp:23
+#: /Recipients/index.ctp:117
+#: /Users/index.ctp:22
 msgid "Edit"
 msgstr ""
 
-#: /People/index.ctp:123
+#: /Recipients/index.ctp:123
 msgid "Toggle dropdown"
 msgstr ""
 
-#: /People/index.ctp:128
+#: /Recipients/index.ctp:128
 msgid "Send"
 msgstr ""
 
-#: /People/index.ctp:131
+#: /Recipients/index.ctp:131
 msgid "Do you really want to send this card?"
 msgstr ""
 
-#: /People/index.ctp:137
-#: /Users/index.ctp:40
+#: /Recipients/index.ctp:137
+#: /Users/index.ctp:39
 msgid "Delete"
 msgstr ""
 
-#: /People/index.ctp:140
+#: /Recipients/index.ctp:140
 msgid "Do you really want to delete this recipient?"
 msgstr ""
 
-#: /People/index.ctp:156
+#: /Recipients/index.ctp:156
 msgid "Detail view"
 msgstr ""
 
-#: /People/index.ctp:207
+#: /Recipients/index.ctp:207
 msgid "<span class=\"hidden-xs\">Send</span> selected"
 msgstr ""
 
-#: /People/send_email.ctp:3
+#: /Recipients/send_email.ctp:3
 msgid "Success!"
 msgstr ""
 
-#: /People/send_email.ctp:5
+#: /Recipients/send_email.ctp:5
 msgid "Error!"
 msgstr ""
 
-#: /People/send_emails.ctp:4
+#: /Recipients/send_emails.ctp:4
 msgid "Results of mail delivery"
 msgstr ""
 
-#: /People/send_emails.ctp:9;30
+#: /Recipients/send_emails.ctp:9;30
 msgid "%d e-mail(s) to send"
 msgstr ""
 
-#: /People/send_emails.ctp:13
+#: /Recipients/send_emails.ctp:13
 msgid "Mail delivery"
 msgstr ""
 
-#: /People/send_emails.ctp:17
+#: /Recipients/send_emails.ctp:17
 msgid "Recipient"
 msgstr ""
 
-#: /People/send_emails.ctp:27
+#: /Recipients/send_emails.ctp:27
 msgid "E-mail(s) successfully send!"
+msgstr ""
+
+#: /Texts/add.ctp:4
+msgid "Add card text"
+msgstr ""
+
+#: /Texts/edit.ctp:4
+msgid "Edit card text"
+msgstr ""
+
+#: /Texts/index.ctp:5
+msgid "New card text"
+msgstr ""
+
+#: /Texts/index.ctp:31
+msgid "Do you really want to delete this card text?"
 msgstr ""
 
 #: /Users/add.ctp:4
@@ -462,7 +465,7 @@ msgid "Add a user"
 msgstr ""
 
 #: /Users/change_password.ctp:4
-#: /Users/index.ctp:32
+#: /Users/index.ctp:31
 msgid "Change password"
 msgstr ""
 
@@ -474,7 +477,7 @@ msgstr ""
 msgid "New user"
 msgstr ""
 
-#: /Users/index.ctp:43
+#: /Users/index.ctp:42
 msgid "Do you really want to delete this user?"
 msgstr ""
 
@@ -482,96 +485,93 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: /CardTextsController.php:23;38
-msgid "Card text has successfully been saved."
-msgstr ""
-
-#: /CardTextsController.php:26;41
-msgid "Card text could not be saved!"
-msgstr ""
-
-#: /CardTextsController.php:34
-msgid "The specified card text was not found!"
-msgstr ""
-
-#: /CardTextsController.php:53
-msgid "Card text has successfully been deleted."
-msgstr ""
-
-#: /CardTypesController.php:28;42
+#: /CardsController.php:28;42
 msgid "Card type has successfully been saved."
 msgstr ""
 
-#: /CardTypesController.php:31;45
+#: /CardsController.php:31;45
 msgid "Card type could not be saved!"
 msgstr ""
 
-#: /CardTypesController.php:38
+#: /CardsController.php:38
 msgid "The specified card type was not found!"
 msgstr ""
 
-#: /CardTypesController.php:60
+#: /CardsController.php:60
 msgid "Card type has successfully been deleted."
 msgstr ""
 
-#: /CardTypesController.php:76
+#: /CardsController.php:76
 msgid "Dear recipient,\nThis is a test text for the card preview\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\nGreetings\nCakeCards"
 msgstr ""
 
-#: /CardTypesController.php:110
+#: /CardsController.php:110
 msgid "There is no card image or font defined. Preview could not be generated."
 msgstr ""
 
-#: /OptionsController.php:25;41
+#: /MailingOptionsController.php:25;41
 msgid "Mailing options have successfully been saved."
 msgstr ""
 
-#: /OptionsController.php:28;44
+#: /MailingOptionsController.php:28;44
 msgid "Mailing options could not be saved!"
 msgstr ""
 
-#: /OptionsController.php:37
+#: /MailingOptionsController.php:37
 msgid "The specified mailing options set was not found!"
 msgstr ""
 
-#: /OptionsController.php:61
+#: /MailingOptionsController.php:60
 msgid "Mailing mode has been set to productive configuration. Mails are sent directly to recipients!"
 msgstr ""
 
-#: /OptionsController.php:69
-msgid "Mailing mode has been set to test configuration. However, mails are sent directly to recipients!"
+#: /MailingOptionsController.php:67
+msgid "Mailing mode has been set to test configuration. Mails are sent to the sender specified in the active mailing options. Recipients do not receive any mail!"
 msgstr ""
 
-#: /OptionsController.php:77
-msgid "Mailing mode has been set to test configuration. Mails are sent to the sender specified in the mailing options. Recipients do not receive any mail!"
-msgstr ""
-
-#: /PeopleController.php:27;43
+#: /RecipientsController.php:27;42
 msgid "Recipient has successfully been saved."
 msgstr ""
 
-#: /PeopleController.php:30;46
+#: /RecipientsController.php:30;45
 msgid "Recipient could not be saved!"
 msgstr ""
 
-#: /PeopleController.php:39;107;117
+#: /RecipientsController.php:38;111;121
 msgid "The specified recipient was not found!"
 msgstr ""
 
-#: /PeopleController.php:64
+#: /RecipientsController.php:62;73
+#: /TextsController.php:34;49
+msgid "The specified card text was not found!"
+msgstr ""
+
+#: /RecipientsController.php:65
 msgid "Recipients have successfully been deleted."
 msgstr ""
 
-#: /PeopleController.php:66
+#: /RecipientsController.php:67
 msgid "Recipients could not be deleted."
 msgstr ""
 
-#: /PeopleController.php:72
+#: /RecipientsController.php:76
 msgid "Recipient has successfully been deleted."
 msgstr ""
 
-#: /PeopleController.php:74
+#: /RecipientsController.php:78
 msgid "Recipient could not be deleted."
+msgstr ""
+
+#: /TextsController.php:24;38
+msgid "Card text has successfully been saved."
+msgstr ""
+
+#: /TextsController.php:27;41
+msgid "Card text could not be saved!"
+msgstr ""
+
+#: /TextsController.php:55
+msgid "Card text has successfully been deleted."
 msgstr ""
 
 #: /UploadsController.php:109
@@ -602,59 +602,59 @@ msgstr ""
 msgid "Upload could not be saved!"
 msgstr ""
 
-#: /UsersController.php:45;88
+#: /UsersController.php:51;94
 msgid "Passwords do not match. Please try again!"
 msgstr ""
 
-#: /UsersController.php:49;68
+#: /UsersController.php:55;74
 msgid "User has successfully been saved."
 msgstr ""
 
-#: /UsersController.php:52;71
+#: /UsersController.php:58;77
 msgid "User could not be saved!"
 msgstr ""
 
-#: /UsersController.php:55
+#: /UsersController.php:61
 msgid "Only administrators can add other user accounts!"
 msgstr ""
 
-#: /UsersController.php:63;83;108
+#: /UsersController.php:69;89;114
 msgid "The specified user was not found!"
 msgstr ""
 
-#: /UsersController.php:75
+#: /UsersController.php:81
 msgid "Only administrators can edit other user accounts!"
 msgstr ""
 
-#: /UsersController.php:92
+#: /UsersController.php:98
 msgid "Password has successfully been changed."
 msgstr ""
 
-#: /UsersController.php:95
+#: /UsersController.php:101
 msgid "Password could not be changed!"
 msgstr ""
 
-#: /UsersController.php:100
+#: /UsersController.php:106
 msgid "Only administrators can change other user's passwords!"
 msgstr ""
 
-#: /UsersController.php:111
+#: /UsersController.php:117
 msgid "You can't delete your own user account!"
 msgstr ""
 
-#: /UsersController.php:116
+#: /UsersController.php:122
 msgid "User has successfully been deleted."
 msgstr ""
 
-#: /UsersController.php:119
+#: /UsersController.php:125
 msgid "User could not be deleted."
 msgstr ""
 
-#: /UsersController.php:122
+#: /UsersController.php:128
 msgid "Only administrators can delete other user accounts!"
 msgstr ""
 
-#: /UsersController.php:136
+#: /UsersController.php:142
 msgid "Wrong username or password!"
 msgstr ""
 

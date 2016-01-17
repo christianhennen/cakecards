@@ -57,7 +57,9 @@ class AppController extends Controller
                 )
             )
         ),
-        'Session'
+        'Session',
+        'Message',
+        'Permission'
     );
     public $helpers = array(
         'Nav',

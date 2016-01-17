@@ -7,7 +7,7 @@
  */
 class Recipient extends AppModel
 {
-    public $actsAs = array('ProjectRelated');
+    public $actsAs = array('ProjectRelated','CardCreator');
     public $belongsTo = array('Text','Card','Project');
     public $validate = array(
         'prename' => array(

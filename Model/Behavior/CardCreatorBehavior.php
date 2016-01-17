@@ -1,10 +1,10 @@
 <?php
 $vendor = App::path('Vendor');
-require_once($vendor[0] . 'stil/gd-text/src/Box.php');
-require_once($vendor[0] . 'stil/gd-text/src/Color.php');
-require_once($vendor[0] . 'stil/gd-text/src/TextWrapping.php');
-require_once($vendor[0] . 'stil/gd-text/src/VerticalAlignment.php');
-require_once($vendor[0] . 'stil/gd-text/src/HorizontalAlignment.php');
+require_once $vendor[0] . 'stil/gd-text/src/Box.php';
+require_once $vendor[0] . 'stil/gd-text/src/Color.php';
+require_once $vendor[0] . 'stil/gd-text/src/TextWrapping.php';
+require_once $vendor[0] . 'stil/gd-text/src/VerticalAlignment.php';
+require_once $vendor[0] . 'stil/gd-text/src/HorizontalAlignment.php';
 
 class CardCreatorBehavior extends ModelBehavior
 {
@@ -25,14 +25,6 @@ class CardCreatorBehavior extends ModelBehavior
         $recipients = $recipientModel->find("all", array(
             "joins" => array(
                 array(
-                    "table" => "cards",
-                    "alias" => "Card",
-                    "type" => "LEFT",
-                    "conditions" => array(
-                        "Text.card_id = Card.id",
-                    )
-                ),
-                array(
                     "table" => "uploads",
                     "alias" => "Image",
                     "type" => "LEFT",
@@ -50,7 +42,7 @@ class CardCreatorBehavior extends ModelBehavior
                 )
             ),
             "conditions" => $conditions,
-            "fields" => array('Recipient.id', 'Recipient.id', 'Recipient.salutation', 'Text.id', 'Text.text', 'Card.font_size', 'Card.x_position',
+            "fields" => array('Recipient.id', 'Recipient.salutation', 'Text.id', 'Text.text', 'Card.font_size', 'Card.x_position',
                 'Card.y_position', 'Card.width', 'Card.height', 'Card.text_align_horizontal', 'Card.text_align_vertical', 'Card.line_height', 'Card.font_color_rgb', 'Image.id', 'Image.name', 'Font.id', 'Font.name'),
         ));
         foreach ($recipients as $recipient) {

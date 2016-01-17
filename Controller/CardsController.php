@@ -1,10 +1,10 @@
 <?php
 $vendor = App::path('Vendor');
-require_once($vendor[0].'stil/gd-text/src/Box.php');
-require_once($vendor[0].'stil/gd-text/src/Color.php');
-require_once($vendor[0].'stil/gd-text/src/TextWrapping.php');
-require_once($vendor[0].'stil/gd-text/src/VerticalAlignment.php');
-require_once($vendor[0].'stil/gd-text/src/HorizontalAlignment.php');
+require_once $vendor[0] . 'stil/gd-text/src/Box.php';
+require_once $vendor[0] . 'stil/gd-text/src/Color.php';
+require_once $vendor[0] . 'stil/gd-text/src/TextWrapping.php';
+require_once $vendor[0] . 'stil/gd-text/src/VerticalAlignment.php';
+require_once $vendor[0] . 'stil/gd-text/src/HorizontalAlignment.php';
 /**
  * @property Card $Card
  * @property mixed Message
@@ -13,9 +13,6 @@ require_once($vendor[0].'stil/gd-text/src/HorizontalAlignment.php');
  */
 class CardsController extends AppController
 {
-    public $helpers = array('Html', 'Form');
-    public $components = array('Message');
-
     public function index()
     {
         $this->set('cards', $this->Card->find('all'));

@@ -4,3 +4,4 @@ echo $this->Form->input('surname', array('label' => DEFAULT_LABEL_OPTIONS + arra
 echo $this->Form->input('email', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('E-mail address'))));
 echo $this->Form->input('salutation', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Salutation'))));
 echo $this->Form->input('text_id', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Text'))));
+echo $this->Form->input('card_id', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Card'))));

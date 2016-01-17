@@ -11,9 +11,7 @@
  */
 class RecipientsController extends AppController
 {
-
-    public $helpers = array('Html', 'Form', 'CakePHPExcel.PhpExcel');
-    public $components = array('Message','Permission');
+    public $helpers = array('CakePHPExcel.PhpExcel');
 
     public function index()
     {
@@ -30,6 +28,7 @@ class RecipientsController extends AppController
             $this->Message->display(__('Recipient could not be saved!'), 'danger');
         }
         $this->set('texts', $this->Recipient->Text->find('list'));
+        $this->set('cards', $this->Recipient->Card->find('list'));
     }
 
     public function edit($id = null)
@@ -45,6 +44,7 @@ class RecipientsController extends AppController
             $this->Message->display(__('Recipient could not be saved!'), 'danger');
         }
         $this->set('texts', $this->Recipient->Text->find('list'));
+        $this->set('cards', $this->Recipient->Card->find('list'));
         $this->request->data = $recipient;
     }
 

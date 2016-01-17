@@ -8,8 +8,7 @@
 class UploadsController extends AppController
 {
     private $types = array('card','font','signature');
-    public $helpers = array('Html', 'Form');
-    public $components = array('Message', 'RequestHandler');
+    public $components = array('RequestHandler');
 
     public function index($id = null)
     {

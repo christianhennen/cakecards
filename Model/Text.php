@@ -6,7 +6,7 @@
  */
 class Text extends AppModel
 {
-    public $actsAs = array('ProjectRelated');
+    public $actsAs = array('ProjectRelated','CardCreator');
     public $belongsTo = 'Project';
     public $hasMany = 'Recipient';
     public $displayField = 'name';

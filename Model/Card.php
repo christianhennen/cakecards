@@ -7,7 +7,7 @@
  */
 
 class Card extends AppModel {
-    public $actsAs = array('ProjectRelated');
+    public $actsAs = array('ProjectRelated', 'CardCreator');
     public $hasMany = 'Recipient';
     public $belongsTo = array(
         'Font' => array(

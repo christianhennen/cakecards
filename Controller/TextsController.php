@@ -7,10 +7,6 @@
  */
 class TextsController extends AppController
 {
-
-    public $helpers = array('Html', 'Form');
-    public $components = array('Message','Permission');
-
     public function index()
     {
         $this->set('texts', $this->Text->findAllByProjectId($this->Permission->pid()));
