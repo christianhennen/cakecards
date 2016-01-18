@@ -86,3 +86,7 @@ textarea {
 #fileupload {
     padding:10px;
 }
+
+hr {
+    border-color: #BBBBBB;
+}

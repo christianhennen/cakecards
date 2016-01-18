@@ -67,7 +67,7 @@ $(document).on('click', '#previewButton', function (event) {
     $('#mediaGalleryNav').hide();
     $('#textSelection').hide();
     var form = $('form').filter(function () {
-        return this.id.match(/CardType[A-z]*Form/g);
+        return this.id.match(/Card[A-z]*Form/g);
     });
     $.ajax({
         type: 'POST',

@@ -1,11 +1,11 @@
 <?php
 
-echo $this->Form->input('card_id', array('type' => 'select', 'options' => $cards, 'label' =>
-    DEFAULT_LABEL_OPTIONS + array('text' => __('Card type'))));
+echo $this->Form->input('project_id', array('id' => 'projectId', 'type' => 'hidden'));
 echo $this->Form->input('description', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Description'))));
 echo $this->Form->input('subject', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Subject'))));
-echo $this->Form->input('is_testmode', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Is this a test configuration?'))));
-
+echo $this->Form->input('is_projectwide', array('type' => 'checkbox', 'label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Is this configuration project-wide?'))));
+echo "<hr/>";
+echo $this->Form->input('signature', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Signature')), 'between' => '<div class="col-sm-9">'));
 echo "<div class=\"form-group\">";
 echo $this->Form->label('image_button', __('Image'), DEFAULT_LABEL_OPTIONS);
 echo "<div class=\"col-sm-2\">";
@@ -22,11 +22,12 @@ echo "\">
 </div>
 </div>";
 echo $this->Form->input('upload_id', array('id' => 'signatureUploadId', 'type' => 'hidden'));
-echo $this->Form->input('signature', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Signature')), 'between' => '<div class="col-sm-9">'));
+echo "<hr/>";
 echo $this->Form->input('server', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Mail server'))));
 echo $this->Form->input('port', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Port'))));
 echo $this->Form->input('timeout', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Time until timeout in ms'))));
 echo $this->Form->input('use_tls', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Does the server use TLS?'))));
+echo "<hr/>";
 echo $this->Form->input('from_adress', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Sender address'))));
 echo $this->Form->input('from_name', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Sender name'))));
 echo $this->Form->input('username', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Username'))));

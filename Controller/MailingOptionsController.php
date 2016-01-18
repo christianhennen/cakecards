@@ -8,9 +8,6 @@
 class MailingOptionsController extends AppController
 {
 
-    public $helpers = array('Html', 'Form');
-    public $components = array('Message');
-
     public function index()
     {
         $this->set('mailing_options', $this->MailingOption->find('all'));
@@ -27,7 +24,6 @@ class MailingOptionsController extends AppController
             }
             $this->Message->display(__('Mailing options could not be saved!'), 'danger');
         }
-        $this->set('cards', $this->MailingOption->Card->find('list'));
         $this->set('uploads', $this->MailingOption->Upload->findAllByType('signature'));
     }
 
@@ -43,7 +39,6 @@ class MailingOptionsController extends AppController
             }
             $this->Message->display(__('Mailing options could not be saved!'), 'danger');
         }
-        $this->set('cards', $this->MailingOption->Card->find('list'));
         $this->set('uploads', $this->MailingOption->Upload->findAllByType('signature'));
         $this->request->data = $mailing_option;
         $this->set('mailing_option', $mailing_option);

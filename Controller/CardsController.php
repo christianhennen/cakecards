@@ -68,7 +68,7 @@ class CardsController extends AppController
         $this->loadModel('Recipient');
         $this->loadModel('Upload');
 
-        $recipient = $this->Recipient->find('first');
+        $recipient = $this->Recipient->find('first', array('order' => 'rand()'));
         if (empty($recipient)) {
             $text = __("Dear recipient,\nThis is a test text for the card preview\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\nGreetings\nCakeCards");
         } else {

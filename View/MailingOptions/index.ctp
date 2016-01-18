@@ -21,20 +21,10 @@ if ($user['User']['testmode_active'] == '1') {
 echo ">";
 echo "</div>";
 
-$currentSectionTitle = '';
 foreach ($mailing_options as $mailing_option):
-    $currentCard = $mailing_option['Card']['description'];
-    if ($currentCard != $currentSectionTitle) {
-        $currentSectionTitle = $currentCard;
-        echo "<div class=\"row\" style=\"margin-top: 20px; margin-bottom:10px;\"><div class=\"col-sm-12 col-xs-12\"><a name=\"section" . $currentSectionTitle . "\">" . $currentSectionTitle . "</a></div></div>";
-    }
     echo
     "<div class=\"row\">";
-    if ($mailing_option['MailingOption']['is_testmode'] == $user['User']['testmode_active']) {
-        echo "<div class=\"panel panel-success\">";
-    } else {
-        echo "<div class=\"panel panel-danger\">";
-    }
+        echo "<div class=\"panel panel-default\">";
     echo "<div class=\"panel-heading\" style=\"min-height:55px;\">";
     echo $this->Html->link(
         $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-pencil')),
