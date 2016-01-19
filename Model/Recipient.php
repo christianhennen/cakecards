@@ -29,6 +29,7 @@ class Recipient extends AppModel
             'message' => 'Please provide a salutation for this recipient!'
         ),
         'email' => array(
+            //TODO: Fix this rule
             /*'emailUnique' => array(
                 'rule' => array('isUnique', array('email','prename', 'surname' , 'project_id'), false),
                 'message' => 'This recipient already exists. It doesn\'t need to be added.',

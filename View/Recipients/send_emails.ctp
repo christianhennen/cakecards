@@ -24,7 +24,7 @@
         {
           $(\"#recipient" . $recipient['Recipient']['id'] . "\").append(html); ";
             if ($counter == 0) {
-                echo "$('#mailstatus').text('" . __('E-mail(s) successfully send!') . "');
+                echo "$('#mailstatus').text('" . __('E-mail(s) successfully sent!') . "');
            $('#cancelButton').hide();";
             } else {
                 echo "$('#mailstatus').text('" . __('%d e-mail(s) to send', $counter) . "');";

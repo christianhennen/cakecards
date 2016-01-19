@@ -63,7 +63,7 @@ class UsersController extends AppController
 
     public function edit($id = null)
     {
-        if (!$id OR !$this->User->findById($id)) {
+        if (!$id OR !$user = $this->User->findById($id)) {
             throw new NotFoundException(__('The specified user was not found!'));
         }
         if ($this->Permission->superAdmin() || $this->Permission->admin() || $this->Auth->user('id') == $id) {
@@ -74,7 +74,8 @@ class UsersController extends AppController
                 }
                 $this->Message->display(__('User could not be saved!'), 'danger');
             }
-            $this->request->data = $this->User->read(null, $id);
+            $this->request->data = $user;
+            $this->set('user', $user);
         } else {
             $this->Message->display(__('Only administrators can edit other user accounts!'), 'danger');
             $this->redirect(array('action' => 'index'));

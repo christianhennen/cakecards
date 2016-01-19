@@ -4,13 +4,14 @@
  * @property MailingOption $MailingOption
  * @property mixed Message
  * @property mixed User
+ * @property mixed Permission
  */
 class MailingOptionsController extends AppController
 {
 
     public function index()
     {
-        $this->set('mailing_options', $this->MailingOption->find('all'));
+        $this->set('mailing_options', $this->MailingOption->find('all', array('order' => array('MailingOption.project_id' => 'asc'))));
     }
 
     public function add()
@@ -27,8 +28,10 @@ class MailingOptionsController extends AppController
 
     public function edit($id = null)
     {
-        if (!$id OR !$mailing_option = $this->MailingOption->findById($id)) {
-            throw new NotFoundException(__('The specified mailing options set was not found!'));
+        if (!$id OR !$mailing_option = $this->MailingOption->findById($id)
+            OR ($mailing_option[$this->MailingOption->alias]['project_id'] != $this->Permission->pid()
+                AND $mailing_option[$this->MailingOption->alias]['user_id'] == '')) {
+            throw new NotFoundException(__('The specified mailing option set was not found!'));
         }
         if ($this->request->is(array('post', 'put'))) {
             if ($this->MailingOption->save($this->request->data)) {
@@ -42,7 +45,42 @@ class MailingOptionsController extends AppController
         $this->set('mailing_option', $mailing_option);
     }
 
-    public function changeMailingMode($mode = null)
+    public function delete($id)
+    {
+        if (!$id OR !$mailing_option = $this->MailingOption->findById($id)
+            OR ($mailing_option[$this->MailingOption->alias]['project_id'] != $this->Permission->pid()
+                AND $mailing_option[$this->MailingOption->alias]['user_id'] == '')) {
+            throw new NotFoundException(__('The specified mailing option set was not found!'));
+        }
+        if ($this->request->is('get')) {
+            throw new MethodNotAllowedException();
+        }
+        if ($this->MailingOption->delete($id)) {
+            $this->Message->display(__('Mailing option set has successfully been deleted.'), 'success');
+            $this->redirect(array('action' => 'index'));
+        }
+    }
+
+    public function setActive($id = null)
+    {
+        if (!$id OR !$mailing_option = $this->MailingOption->findById($id)
+            OR ($mailing_option[$this->MailingOption->alias]['project_id'] != $this->Permission->pid()
+                AND $mailing_option[$this->MailingOption->alias]['user_id'] == '')
+        ) {
+            throw new NotFoundException(__('The specified mailing option set was not found!'));
+        }
+        $this->loadModel('User');
+        $currentUser = $this->User->findById($this->Auth->user('id'));
+        $currentUser[$this->User->alias]['mailing_option_id'] = $id;
+        if ($this->User->save($currentUser)) {
+            $this->Message->display(__('Mailing options have successfully been switched.'), 'success');
+            $this->redirect(array('action' => 'index'));
+        }
+        $this->Message->display(__('Mailing options could not be switched!'), 'danger');
+        $this->redirect(array('action' => 'index'));
+    }
+
+    public function changeTestMode($mode = null)
     {
         $this->loadModel('User');
         $currentUser = $this->User->findById($this->Auth->user('id'), array('id', 'testmode_active'));

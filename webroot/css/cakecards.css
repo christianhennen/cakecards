@@ -65,7 +65,7 @@ textarea {
     margin-bottom: 0px !important;
 }
 
-.settingsbar {
+.statusbar {
     position: fixed;
     right: 0;
     left: 0;
@@ -78,11 +78,22 @@ textarea {
     border-color: #BBBBBB;
 }
 
-.settingsbar p {
+.statusbar p {
     padding: 5px;
     padding-right: 15px;
     float: right;
-    color: #777777;
+}
+
+.statusbar-ok {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.statusbar-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
 }
 
 #fileupload {

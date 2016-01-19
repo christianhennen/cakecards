@@ -10,7 +10,7 @@ App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 class User extends AppModel
 {
     public $hasMany = array('ProjectMembership', 'MailingOption');
-    public $belongsTo = array('MailingOption',
+    public $belongsTo = array(
         'CurrentProject' => array(
             'className' => 'Project',
             'foreignKey' => 'project_id'
@@ -46,6 +46,17 @@ class User extends AppModel
                 $this->data[$this->alias]['password']
             );
         }
+        return true;
+    }
+
+    public function afterSave($created, $options = array())
+    {
+        parent::afterSave($created, $options);
+        App::uses('CakeSession', 'Model/Datasource');
+        $user = $this->read(null, AuthComponent::user('id'));
+        CakeSession::write('Auth', $user);
+        CakeSession::write('Auth.User.CurrentProject', $user['CurrentProject']);
+        CakeSession::write('Auth.User.CurrentMailingOption', $user['CurrentMailingOption']);
         return true;
     }
 }

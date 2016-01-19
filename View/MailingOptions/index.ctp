@@ -21,20 +21,45 @@ if (AuthComponent::user('testmode_active') == '1') {
 echo ">";
 echo "</div>";
 
+$currentSectionName = '';
+
 foreach ($mailing_options as $mailing_option):
+
+    if($mailing_option['Project']['name'] != null) {
+        $currentScope = __('Project-wide');
+    } else $currentScope = __('Personal');
+    if ($currentScope != $currentSectionName) {
+        $currentSectionName = $currentScope;
+        echo "<div class=\"row sectionHeading\" style=\"margin-top: 20px; margin-bottom:10px;\"><div class=\"col-sm-12 col-xs-12\"><a name=\"section" . $currentSectionName . "\">" . $currentSectionName . "</a></div></div>";
+    }
+
     echo "<div class=\"row\">";
     if ($mailing_option['MailingOption']['id'] == AuthComponent::user('mailing_option_id')) {
         echo "<div class=\"panel panel-success\">";
     } else {
         echo "<div class=\"panel panel-default\">";
     }
-    echo "<div class=\"panel-heading\" style=\"min-height:55px;\">";
+    echo "<div class=\"panel-heading\" style=\"min-height:55px;\">
+    <div class=\"btn-group\" style=\"float:left\">";
+    echo $this->Html->link(
+        $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-check')),
+        array('action' => 'setActive', $mailing_option['MailingOption']['id']),
+        array('class' => 'btn btn-default', 'style' => 'float:left', 'escape' => false)
+    );
     echo $this->Html->link(
         $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-pencil')),
         array('action' => 'edit', $mailing_option['MailingOption']['id']),
         array('class' => 'btn btn-default', 'style' => 'float:left', 'escape' => false)
     );
-    echo "<h3 class=\"panel-title\" style=\" margin-top: 7px; margin-left: 10px; float:left;\">" . $mailing_option['MailingOption']['description'] . "</h3>";
+    echo $this->Form->postLink(
+        $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-trash')),
+        array('action' => 'delete', $mailing_option['MailingOption']['id']),
+        array('class' => 'btn btn-danger', 'escape' => false),
+        __('Do you really want to delete this mailing option set?')
+    );
+    echo "
+    </div>
+    <h3 class=\"panel-title\" style=\" margin-top: 7px; margin-left: 10px; float:left;\">" . $mailing_option['MailingOption']['description'] . "</h3>";
     echo "
         </div>
         <div class=\"panel-body\">
@@ -87,9 +112,9 @@ unset($mailing_option); ?>
 <script type="text/javascript">
     $('#testModeSwitch').on('switchChange.bootstrapSwitch', function (event, state) {
         if (this.checked) {
-            window.location = myBaseUrl + "mailing_options/changeMailingMode/1";
+            window.location = myBaseUrl + "mailing_options/changeTestMode/1";
         } else {
-            window.location = myBaseUrl + "mailing_options/changeMailingMode/0";
+            window.location = myBaseUrl + "mailing_options/changeTestMode/0";
         }
     });
 </script>

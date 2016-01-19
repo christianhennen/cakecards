@@ -3,8 +3,7 @@
 /**
  * @property Recipient $Recipient
  * @property mixed Message
- * @property mixed MailingOption
- * @property mixed User
+ * @property mixed Upload
  * @property mixed Text
  * @property mixed Card
  * @property mixed Permission
@@ -61,7 +60,7 @@ class RecipientsController extends AppController
                     if ($recipient[$this->Recipient->alias]['project_id'] != $this->Permission->pid()) {
                         throw new NotFoundException(__('The specified card text was not found!'));
                     }
-                    if ($this->Recipient->delete($recipient['Recipient']['id'])) {
+                    if ($this->Recipient->delete($recipient[$this->Recipient->alias]['id'])) {
                         $this->Message->display(__('Recipients have successfully been deleted.'), 'success');
                     } else {
                         $this->Message->display(__('Recipients could not be deleted.'), 'danger');
@@ -120,75 +119,70 @@ class RecipientsController extends AppController
             throw new NotFoundException(__('The specified recipient was not found!'));
         }
         $this->set('recipient', $recipient);
-        $this->loadModel('User');
-        $user = $this->User->findById($this->Auth->user('id'), array('id', 'testmode_active', 'sender_is_recipient'));
-        if ($user['User']['testmode_active'] == '1') {
-            $testMode = 1;
-        } else {
-            $testMode = 0;
-        }
-        $this->loadModel('MailingOption');
-        $mailing_option = $this->MailingOption->findByCardIdAndIsTestmode($recipient['Text']['card_id'], $testMode);
+
+        $mailing_option = $this->Auth->user('CurrentMailingOption');
         $this->set('mailing_option', $mailing_option);
 
         App::uses('CakeEmail', 'Network/Email');
         $email = new CakeEmail();
         $tls = false;
-        if ($mailing_option['MailingOption']['use_tls'] == 1) {
+        if ($mailing_option['use_tls'] == 1) {
             $tls = true;
         }
 
         $email->config(array(
             'transport' => 'Smtp',
             'client' => null,
-            'log' => true,
+            'log' => false,
             'charset' => 'utf-8',
             'headerCharset' => 'utf-8',
             'emailFormat' => 'html',
-            'host' => $mailing_option['MailingOption']['server'],
-            'port' => $mailing_option['MailingOption']['port'],
+            'host' => $mailing_option['server'],
+            'port' => $mailing_option['port'],
             'tls' => $tls,
-            'timeout' => $mailing_option['MailingOption']['timeout'],
-            'username' => $mailing_option['MailingOption']['username'],
-            'password' => $mailing_option['MailingOption']['password'],
+            'timeout' => $mailing_option['timeout'],
+            'username' => $mailing_option['username'],
+            'password' => $mailing_option['password'],
         ));
 
-        $email->subject($mailing_option['MailingOption']['subject']);
+        $email->subject($mailing_option['subject']);
 
         $email->template('default', 'default');
         $email->emailFormat('both');
 
-        $email->from(array($mailing_option['MailingOption']['from_address'] => $mailing_option['MailingOption']['from_name']));
+        $email->from(array($mailing_option['from_address'] => $mailing_option['from_name']));
 
-        if ($user['User']['sender_is_recipient'] == 1) {
-            $email->to(array($mailing_option['MailingOption']['from_address'] => $mailing_option['MailingOption']['from_name']));
+        if ($this->Auth->user('testmode_active') == 1) {
+            $email->to(array($mailing_option['from_address'] => $mailing_option['from_name']));
         } else {
-            $email->to(array($recipient['Recipient']['email'] => $recipient['Recipient']['prename'] . ' ' . $recipient['Recipient']['surname']));
+            $email->to(array($recipient[$this->Recipient->alias]['email'] => $recipient[$this->Recipient->alias]['prename'] . ' ' . $recipient[$this->Recipient->alias]['surname']));
         }
 
         $attachments = array(
             'card.png' => array(
-                'file' => 'images/' . $recipient['Recipient']['id'] . '.png',
+                'file' => 'images/' . $recipient[$this->Recipient->alias]['id'] . '.png',
                 'mimetype' => 'image/png',
                 'contentId' => 'card'
             ));
-        if ($mailing_option['Upload']['id'] != '') {
-            if (strpos($mailing_option['MailingOption']['signature'], '[signature_image]') != false) {
-                $signature = str_replace("[signature_image]", "<img src=\"cid:signature\">", $mailing_option['MailingOption']['signature']);
+        $this->loadModel('Upload');
+        $upload = $this->Upload->findById($mailing_option['upload_id']);
+        if ($upload) {
+            if (strpos($mailing_option['signature'], '[signature_image]') != false) {
+                $signature = str_replace("[signature_image]", "<img src=\"cid:signature\">", $mailing_option['signature']);
                 $attachments['signature.png'] = array(
-                    'file' => 'files/' . $mailing_option['Upload']['id'] . DS . $mailing_option['Upload']['name'],
+                    'file' => 'files/' . $upload[$this->Upload->alias]['id'] . DS . $upload[$this->Upload->alias]['name'],
                     'mimetype' => 'image/png',
                     'contentId' => 'signature'
                 );
             } else {
-                $signature = $mailing_option['MailingOption']['signature'];
+                $signature = $mailing_option['signature'];
             }
         } else{
-            $signature = str_replace("[signature_image]", "", $mailing_option['MailingOption']['signature']);
+            $signature = str_replace("[signature_image]", "", $mailing_option['signature']);
         }
         $email->attachments($attachments);
 
-        $text = "" . $recipient['Recipient']['salutation'] . "\n\n" . $recipient['Text']['text'];
+        $text = "" . $recipient[$this->Recipient->alias]['salutation'] . "\n\n" . $recipient['Text']['text'];
         $html = '<span class="preheader" style="display: none !important; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">';
         $html .= $text . '</span><img src="cid:card" alt="' . $text . '"><br/>' . $signature;
         $email->viewVars(array('text' => $text, 'html' => $html));

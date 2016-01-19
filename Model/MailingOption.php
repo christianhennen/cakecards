@@ -40,8 +40,8 @@ class MailingOption extends AppModel
             'allowEmpty' => false,
             'message' => 'Please provide a valid email address!'
         ),
-        'from_address' => array(
-            'rule' => 'alphaNumeric',
+        'from_name' => array(
+            'rule' => 'notBlank',
             'required' => false,
             'allowEmpty' => true,
             'message' => 'Please provide a valid sender name!'

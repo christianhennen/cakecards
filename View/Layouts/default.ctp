@@ -134,10 +134,21 @@ date_default_timezone_set('Etc/UTC');
         <?php
         echo $this->Session->flash();
         echo $this->Nav->main(); ?>
-        <div class="settingsbar">
-            <p><?php echo __('Active project:') . " " . AuthComponent::user('CurrentProject.name')?></p>
-            <p><?php echo __('Active mailing options:') . " " . AuthComponent::user('CurrentMailingOption.description') ?></p>
-        </div>
+        <?php
+        if(AuthComponent::user('id')) {
+            if (AuthComponent::user('testmode_active') == 1) {
+                $testmode = '<p>' . __('Test mode is active!') . '</p>';
+                $class = 'statusbar statusbar-ok';
+            } else {
+                $testmode = '<p>' . __('Test mode is NOT active!') . '</p>';
+                $class = 'statusbar statusbar-warning';
+            }
+            echo "<div class=\"" . $class . "\">
+            <p>" . __('Active project:') . " " . AuthComponent::user('CurrentProject.name') . "</p>
+            <p>" . __('Active mailing options:') . " " . AuthComponent::user('CurrentMailingOption.description') . "</p>"
+                . $testmode . "
+        </div>";
+        } ?>
     </div>
     <div id="content" class="content-fluid col-sm-11 center-block">
         <?php echo $this->fetch('content'); ?>

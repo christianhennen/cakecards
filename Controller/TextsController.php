@@ -9,13 +9,12 @@ class TextsController extends AppController
 {
     public function index()
     {
-        $this->set('texts', $this->Text->findAllByProjectId($this->Permission->pid()));
+        $this->set('texts', $this->Text->find('all'));
     }
 
     public function add()
     {
         if ($this->request->is('post')) {
-            $this->request->data[$this->Text->alias]['project_id'] = $this->Permission->pid();
             if ($this->Text->save($this->request->data)) {
                 $this->Message->display(__('Card text has successfully been saved.'), 'success');
                 $this->redirect(array('action' => 'index'));
