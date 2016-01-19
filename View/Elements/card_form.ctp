@@ -1,6 +1,5 @@
 <?php
-
-$textAlignmentHorizontal = array('left'=>__('Left'), 'center' => __('Center'), 'right' => __('Right'));
+$textAlignmentHorizontal = array('left' => __('Left'), 'center' => __('Center'), 'right' => __('Right'));
 $textAlignmentVertical = array('top' => __('Top'), 'center' => __('Center'), 'bottom' => __('Bottom'));
 
 echo $this->Form->input('description', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Name'))));

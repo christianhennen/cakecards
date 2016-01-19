@@ -134,6 +134,10 @@ date_default_timezone_set('Etc/UTC');
         <?php
         echo $this->Session->flash();
         echo $this->Nav->main(); ?>
+        <div class="settingsbar">
+            <p><?php echo __('Active project:') . " " . AuthComponent::user('CurrentProject.name')?></p>
+            <p><?php echo __('Active mailing options:') . " " . AuthComponent::user('CurrentMailingOption.description') ?></p>
+        </div>
     </div>
     <div id="content" class="content-fluid col-sm-11 center-block">
         <?php echo $this->fetch('content'); ?>

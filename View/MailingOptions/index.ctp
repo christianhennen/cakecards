@@ -15,16 +15,19 @@ $this->assign('title', __('Mailing options'));
 
 echo "<div class=\"row btn-toolbar\" style='text-align: right' id=\"mailingOptionSwitches\"><label for='testModeSwitch'>" . __('Is test mode active?')
     . " </label> <input type='checkbox' id='testModeSwitch' ";
-if ($user['User']['testmode_active'] == '1') {
+if (AuthComponent::user('testmode_active') == '1') {
     echo "checked = 'true'";
 }
 echo ">";
 echo "</div>";
 
 foreach ($mailing_options as $mailing_option):
-    echo
-    "<div class=\"row\">";
+    echo "<div class=\"row\">";
+    if ($mailing_option['MailingOption']['id'] == AuthComponent::user('mailing_option_id')) {
+        echo "<div class=\"panel panel-success\">";
+    } else {
         echo "<div class=\"panel panel-default\">";
+    }
     echo "<div class=\"panel-heading\" style=\"min-height:55px;\">";
     echo $this->Html->link(
         $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-pencil')),
@@ -59,7 +62,7 @@ foreach ($mailing_options as $mailing_option):
                 <p style=\"font-weight:bold\">" . __('Sender name') . "</p><p>" . $mailing_option['MailingOption']['from_name'] . "</p>
               </div>
               <div class=\"row\"style=\"margin-top: 10px;\">
-                <p style=\"font-weight:bold\">" . __('Sender address') . "</p><p>" . $mailing_option['MailingOption']['from_adress'] . "</p>
+                <p style=\"font-weight:bold\">" . __('Sender address') . "</p><p>" . $mailing_option['MailingOption']['from_address'] . "</p>
               </div>
               <div class=\"row\"style=\"margin-top: 10px;\">
                 <p style=\"font-weight:bold\">" . __('Subject') . "</p><p>" . $mailing_option['MailingOption']['subject'] . "</p>

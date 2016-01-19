@@ -11,8 +11,6 @@ class MailingOptionsController extends AppController
     public function index()
     {
         $this->set('mailing_options', $this->MailingOption->find('all'));
-        $this->loadModel('User');
-        $this->set('user', $this->User->findById($this->Auth->user('id'), array('id', 'testmode_active')));
     }
 
     public function add()

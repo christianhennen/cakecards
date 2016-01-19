@@ -88,7 +88,6 @@ class RecipientsController extends AppController
         $this->set('recipients', $this->Recipient->find('all', array(
             'order' => array('Recipient.surname' => 'asc'))));
         $this->set('texts', $this->Text->find('all'));
-        $this->set('cards', $this->Card->find('all'));
     }
 
     public function sendEmails($id = null)
@@ -159,10 +158,10 @@ class RecipientsController extends AppController
         $email->template('default', 'default');
         $email->emailFormat('both');
 
-        $email->from(array($mailing_option['MailingOption']['from_adress'] => $mailing_option['MailingOption']['from_name']));
+        $email->from(array($mailing_option['MailingOption']['from_address'] => $mailing_option['MailingOption']['from_name']));
 
         if ($user['User']['sender_is_recipient'] == 1) {
-            $email->to(array($mailing_option['MailingOption']['from_adress'] => $mailing_option['MailingOption']['from_name']));
+            $email->to(array($mailing_option['MailingOption']['from_address'] => $mailing_option['MailingOption']['from_name']));
         } else {
             $email->to(array($recipient['Recipient']['email'] => $recipient['Recipient']['prename'] . ' ' . $recipient['Recipient']['surname']));
         }

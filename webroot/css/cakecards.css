@@ -54,7 +54,7 @@
 }
 
 body {
-    padding-top: 90px;
+    padding-top: 120px;
 }
 
 textarea {
@@ -64,7 +64,7 @@ textarea {
 .navbar {
     margin-bottom: 0px !important;
 }
-/*
+
 .settingsbar {
     position: fixed;
     right: 0;
@@ -72,16 +72,18 @@ textarea {
     top: 50px;
     height: 30px;
     z-index: 1030;
-    background-color: #e7e7e7;
+    background-color: #f8f8f8;
+    text-align: right;
     border-top: 1px solid;
-    border-bottom: 1px solid;
-    border-color: #777777;
+    border-color: #BBBBBB;
 }
 
 .settingsbar p {
     padding: 5px;
-    padding-left: 30px;
-}*/
+    padding-right: 15px;
+    float: right;
+    color: #777777;
+}
 
 #fileupload {
     padding:10px;

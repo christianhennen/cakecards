@@ -1,9 +1,13 @@
 <?php
-
+if (isset($mailing_option) && $mailing_option['MailingOption']['project_id'] != '' && $mailing_option['MailingOption']['user_id'] == '') {
+    $is_projectwide = true;
+} else {
+    $is_projectwide = false;
+}
 echo $this->Form->input('project_id', array('id' => 'projectId', 'type' => 'hidden'));
 echo $this->Form->input('description', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Description'))));
 echo $this->Form->input('subject', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Subject'))));
-echo $this->Form->input('is_projectwide', array('type' => 'checkbox', 'label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Is this configuration project-wide?'))));
+echo $this->Form->input('is_projectwide', array('type' => 'checkbox', 'checked' => $is_projectwide, 'label' => false, 'before' => '<label for="MailingOptionIsProjectwide" class="'.DEFAULT_LABEL_OPTIONS['class'].'">'. __('Is this configuration project-wide?') . '</label>'));
 echo "<hr/>";
 echo $this->Form->input('signature', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Signature')), 'between' => '<div class="col-sm-9">'));
 echo "<div class=\"form-group\">";
@@ -26,9 +30,9 @@ echo "<hr/>";
 echo $this->Form->input('server', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Mail server'))));
 echo $this->Form->input('port', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Port'))));
 echo $this->Form->input('timeout', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Time until timeout in ms'))));
-echo $this->Form->input('use_tls', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Does the server use TLS?'))));
+echo $this->Form->input('use_tls', array('label' => false, 'before' => '<label for="MailingOptionUseTls" class="' . DEFAULT_LABEL_OPTIONS['class'] . '">' . __('Does the server use TLS?') . '</label>'));
 echo "<hr/>";
-echo $this->Form->input('from_adress', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Sender address'))));
+echo $this->Form->input('from_address', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Sender address'))));
 echo $this->Form->input('from_name', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Sender name'))));
 echo $this->Form->input('username', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Username'))));
 echo $this->Form->input('password', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Password'))));
