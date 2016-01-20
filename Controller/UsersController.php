@@ -11,7 +11,7 @@ class UsersController extends AppController
     public function beforeFilter()
     {
         parent::beforeFilter();
-        if ($this->User->find('count') == 0) {
+        if ($this->User->find('count') == 0 || Configure::read('debug') > 0) {
             $this->Auth->allow('logout', 'add');
         } else {
             $this->Auth->allow('logout');
@@ -31,12 +31,16 @@ class UsersController extends AppController
     {
         if ($this->Permission->superAdmin()) {
             $this->set('users', $this->User->find('all'));
+            $this->set('superadmin',true);
         } elseif ($this->Permission->admin()) {
             $this->loadModel('ProjectMembership');
             $pm = $this->ProjectMembership->findAllByProjectId($this->Auth->user('project_id'));
             $this->set('users', $pm);
+            $this->set('admin', true);
         }
         else {
+            $this->set('superadmin', false);
+            $this->set('admin', false);
             $this->set('users', array('User' => $this->User->findById($this->Auth->user('id'))));
         }
     }
@@ -74,6 +78,7 @@ class UsersController extends AppController
                 }
                 $this->Message->display(__('User could not be saved!'), 'danger');
             }
+            $user[$this->User->alias]['password'] = null;
             $this->request->data = $user;
             $this->set('user', $user);
         } else {

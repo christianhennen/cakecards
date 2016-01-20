@@ -31,12 +31,14 @@ class NavHelper extends AppHelper
             array(
                 'title' => '<span class="glyphicon glyphicon-user"></span> ' . __('Users'),
                 'url' => array('controller' => 'users', 'action' => 'index', '')
-            ),
-            array(
-                'title' => '<span class="glyphicon glyphicon-folder-open"></span> ' . __('Projects'),
-                'url' => array('controller' => 'projects', 'action' => 'index', '')
             )
         );
+        if(AuthComponent::user('is_superadmin') == 1) {
+            array_push($this->navItems, array(
+                'title' => '<span class="glyphicon glyphicon-folder-open"></span> ' . __('Projects'),
+                'url' => array('controller' => 'projects', 'action' => 'index', '')
+            ));
+        }
         if (AuthComponent::user('id')) {
             $logoutButton = '<form class="navbar-form navbar-right" action="'
                 . $this->Html->url(array("controller" => "users", "action" => "logout")) .

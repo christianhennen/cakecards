@@ -7,7 +7,9 @@ if (isset($mailing_option) && $mailing_option['MailingOption']['project_id'] != 
 echo $this->Form->input('project_id', array('id' => 'projectId', 'type' => 'hidden'));
 echo $this->Form->input('description', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Description'))));
 echo $this->Form->input('subject', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Subject'))));
-echo $this->Form->input('is_projectwide', array('type' => 'checkbox', 'checked' => $is_projectwide, 'label' => false, 'before' => '<label for="MailingOptionIsProjectwide" class="'.DEFAULT_LABEL_OPTIONS['class'].'">'. __('Is this configuration project-wide?') . '</label>'));
+if ($superadmin || $admin) {
+    echo $this->Form->input('is_projectwide', array('type' => 'checkbox', 'checked' => $is_projectwide, 'label' => false, 'before' => '<label for="MailingOptionIsProjectwide" class="' . DEFAULT_LABEL_OPTIONS['class'] . '">' . __('Is this configuration project-wide?') . '</label>'));
+}
 echo "<hr/>";
 echo $this->Form->input('signature', array('label' => DEFAULT_LABEL_OPTIONS + array('text' => __('Signature')), 'between' => '<div class="col-sm-9">'));
 echo "<div class=\"form-group\">";

@@ -15,9 +15,12 @@ class PermissionComponent extends Component {
     }
 
     public function admin() {
-        $model = ClassRegistry::init('ProjectMembership');
-        $pm = $model->findByUserIdAndProjectId($this->Auth->user('id'), $this->pid());
-        if ($pm['ProjectMembership']['is_admin'] == 1) return true;
+        if($this->Auth->user('id')) {
+            $model = ClassRegistry::init('ProjectMembership');
+            $pm = $model->findByUserIdAndProjectId($this->Auth->user('id'), $this->pid());
+            if (isset($pm['ProjectMembership']) && $pm['ProjectMembership']['is_admin'] == 1) return true;
+            else return false;
+        }
         else return false;
     }
 

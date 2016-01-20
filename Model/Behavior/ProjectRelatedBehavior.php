@@ -10,7 +10,7 @@ class ProjectRelatedBehavior extends ModelBehavior
         if (!$query['conditions']) $query['conditions'] = array();
         if($model->alias == 'MailingOption') {
             $query['conditions']['OR'][$model->alias . '.user_id'] = $uid;
-            $query['conditions']['OR'][$model->alias . '.project_id'] = $pid;
+            if($pid) $query['conditions']['OR'][$model->alias . '.project_id'] = $pid;
         } else
             $query['conditions'][$model->alias . '.project_id'] = $pid;
         return $query;

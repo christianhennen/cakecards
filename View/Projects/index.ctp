@@ -13,17 +13,21 @@
 
 $this->assign('title', __('Projects'));
 
+echo "<div class=\"row\" style=\"margin-bottom:20px\">
+    <div class=\"col-sm-2 col-sm-push-6 col-xs-12\"><h4>" . __('Actions') . "</h4></div>
+   <div class=\"col-sm-2 col-sm-pull-2 col-xs-12\"><h4>" . __('Name') . "</h4></div>
+   <div class=\"col-sm-4 col-sm-pull-2 col-xs-12\"><h4>" . __('Description') . "</h4></div>
+ </div>";
+
 foreach ($projects as $project):
 
     echo "<div class=\"row\" style=\"margin-bottom:20px\">
-   <div class=\"col-sm-1 col-xs-2\">";
+   <div class=\"col-sm-2 col-sm-push-6 col-xs-12 btn-group\">";
     echo $this->Html->link(
         $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-pencil')),
         array('action' => 'edit', $project['Project']['id']),
         array('class' => 'btn btn-default', 'escape' => false)
     );
-    echo "</div>
-   <div class=\"col-sm-1 col-sm-push-6 col-xs-10\">";
     echo $this->Form->postLink(
         $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-trash')),
         array('action' => 'delete', $project['Project']['id']),
@@ -32,8 +36,8 @@ foreach ($projects as $project):
     );
     echo "
    </div>
-   <div class=\"col-sm-2 col-sm-pull-1 col-xs-12\"><p>" . $project['Project']['name'] . "</p></div>
-   <div class=\"col-sm-4 col-sm-pull-1 col-xs-12\"><p>" . $project['Project']['description'] . "</p></div>
+   <div class=\"col-sm-2 col-sm-pull-2 col-xs-12\"><p>" . $project['Project']['name'] . "</p></div>
+   <div class=\"col-sm-4 col-sm-pull-2 col-xs-12\"><p>" . $project['Project']['description'] . "</p></div>
  </div>";
     ?>
 <?php endforeach; ?>

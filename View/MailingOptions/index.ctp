@@ -46,17 +46,19 @@ foreach ($mailing_options as $mailing_option):
         array('action' => 'setActive', $mailing_option['MailingOption']['id']),
         array('class' => 'btn btn-default', 'style' => 'float:left', 'escape' => false)
     );
-    echo $this->Html->link(
-        $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-pencil')),
-        array('action' => 'edit', $mailing_option['MailingOption']['id']),
-        array('class' => 'btn btn-default', 'style' => 'float:left', 'escape' => false)
-    );
-    echo $this->Form->postLink(
-        $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-trash')),
-        array('action' => 'delete', $mailing_option['MailingOption']['id']),
-        array('class' => 'btn btn-danger', 'escape' => false),
-        __('Do you really want to delete this mailing option set?')
-    );
+    if($mailing_option['Project']['name'] == null || $superadmin || $admin) {
+        echo $this->Html->link(
+            $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-pencil')),
+            array('action' => 'edit', $mailing_option['MailingOption']['id']),
+            array('class' => 'btn btn-default', 'style' => 'float:left', 'escape' => false)
+        );
+        echo $this->Form->postLink(
+            $this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-trash')),
+            array('action' => 'delete', $mailing_option['MailingOption']['id']),
+            array('class' => 'btn btn-danger', 'escape' => false),
+            __('Do you really want to delete this mailing option set?')
+        );
+    }
     echo "
     </div>
     <h3 class=\"panel-title\" style=\" margin-top: 7px; margin-left: 10px; float:left;\">" . $mailing_option['MailingOption']['description'] . "</h3>";
