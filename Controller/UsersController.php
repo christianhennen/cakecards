@@ -29,18 +29,20 @@ class UsersController extends AppController
 
     public function index()
     {
-        if ($this->Permission->superAdmin()) {
+        $superadmin = $this->Permission->superAdmin();
+        $this->set('superadmin', $superadmin);
+        $admin = $this->Permission->admin();
+        $this->set('admin', $admin);
+        if ($superadmin) {
             $this->set('users', $this->User->find('all'));
-            $this->set('superadmin',true);
-        } elseif ($this->Permission->admin()) {
-            $this->loadModel('ProjectMembership');
-            $pm = $this->ProjectMembership->findAllByProjectId($this->Auth->user('project_id'));
-            $this->set('users', $pm);
-            $this->set('admin', true);
+        } elseif ($admin) {
+            $this->User->Behaviors->load('Containable');
+            $users = $this->User->find('all', array(
+                'contain' => array(
+                    'ProjectMembership.project_id = "'.$this->Permission->pid().'"')));
+            $this->set('users', $users);
         }
         else {
-            $this->set('superadmin', false);
-            $this->set('admin', false);
             $this->set('users', array('User' => $this->User->findById($this->Auth->user('id'))));
         }
     }
@@ -78,7 +80,7 @@ class UsersController extends AppController
                 }
                 $this->Message->display(__('User could not be saved!'), 'danger');
             }
-            $user[$this->User->alias]['password'] = null;
+            unset($user[$this->User->alias]['password']);
             $this->request->data = $user;
             $this->set('user', $user);
         } else {

@@ -4,6 +4,7 @@
  * @property Project $Project
  * @property mixed Message
  * @property mixed Permission
+ * @property mixed User
  */
 class ProjectsController extends AppController
 {
@@ -11,9 +12,15 @@ class ProjectsController extends AppController
     {
         if($this->Permission->superAdmin()) {
             $this->set('projects', $this->Project->find('all'));
+            $this->set('superadmin', true);
         } else {
-            $this->Message->display(__('Only super administrators can view projects!'), 'danger');
-            $this->redirect(array('controller' => 'recipients', 'action' => 'index'));
+            $this->Project->Behaviors->load('Containable');
+            $projects = $this->Project->find('all', array(
+                'contain' => array(
+                    'ProjectMembership' => array(
+                        'conditions' => array('ProjectMembership.user_id' => $this->Auth->user('id'))))));
+            $this->set('projects',$projects);
+            $this->set('superadmin', false);
         }
     }
 
@@ -51,6 +58,23 @@ class ProjectsController extends AppController
                 $this->Message->display(__('Only super administrators can edit projects!'), 'danger');
                 $this->redirect(array('controller' => 'recipients', 'action' => 'index'));
             }
+    }
+
+    public function setActive($id = null)
+    {
+        if (!$id OR !$project = $this->Project->findById($id)) {
+            throw new NotFoundException(__('The specified project was not found!'));
+        }
+        $this->loadModel('User');
+        $currentUser = $this->User->findById($this->Auth->user('id'));
+        $currentUser[$this->User->alias]['project_id'] = $id;
+        unset($currentUser[$this->User->alias]['password']);
+        if ($this->User->save($currentUser)) {
+            $this->Message->display(__('Project has successfully been switched.'), 'success');
+            $this->redirect(array('action' => 'index'));
+        }
+        $this->Message->display(__('Project could not be switched!'), 'danger');
+        $this->redirect(array('action' => 'index'));
     }
 
     public function delete($id)

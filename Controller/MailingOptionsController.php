@@ -81,7 +81,7 @@ class MailingOptionsController extends AppController
         $this->loadModel('User');
         $currentUser = $this->User->findById($this->Auth->user('id'));
         $currentUser[$this->User->alias]['mailing_option_id'] = $id;
-        $currentUser[$this->User->alias]['password'] = null;
+        unset($currentUser[$this->User->alias]['password']);
         if ($this->User->save($currentUser)) {
             $this->Message->display(__('Mailing options have successfully been switched.'), 'success');
             $this->redirect(array('action' => 'index'));
@@ -96,7 +96,7 @@ class MailingOptionsController extends AppController
         $currentUser = $this->User->findById($this->Auth->user('id'), array('id', 'testmode_active'));
         if ($mode == '0') {
             $currentUser['User']['testmode_active'] = 0;
-            $currentUser[$this->User->alias]['password'] = null;
+            unset($currentUser[$this->User->alias]['password']);
             if ($this->User->save($currentUser)) {
                 $this->Message->display(
                     __('Mailing mode has been set to productive configuration. Mails are sent directly to recipients!'), 'warning'
@@ -104,7 +104,7 @@ class MailingOptionsController extends AppController
             }
         } else if ($mode == '1') {
             $currentUser['User']['testmode_active'] = 1;
-            $currentUser[$this->User->alias]['password'] = null;
+            unset($currentUser[$this->User->alias]['password']);
             if ($this->User->save($currentUser)) {
                 $this->Message->display(
                     __('Mailing mode has been set to test configuration. Mails are sent to the sender specified in the active mailing options. Recipients do not receive any mail!'), 'success'

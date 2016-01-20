@@ -23,6 +23,7 @@ echo "<div class=\"row\" style=\"margin-bottom:10px;\">
    </div>";
 
 foreach ($users as $user):
+    if($user['ProjectMembership']):
     $role = __('User');
     foreach ($user['ProjectMembership'] as $pm) {
         if($pm['id'] == AuthComponent::user('project_id')) {
@@ -60,5 +61,6 @@ foreach ($users as $user):
    </div>
  </div>";
     ?>
-<?php endforeach; ?>
+<?php endif;
+endforeach; ?>
 <?php unset($user); ?>
