@@ -46,7 +46,7 @@ class CardsController extends AppController
             debug($this->Card->getDataSource()->getLog(false, false)); //show last sql query
         }
         $this->request->data = $card;
-        $this->set($this->Card->alias, $card);
+        $this->set('card', $card);
     }
 
     public function delete($id)

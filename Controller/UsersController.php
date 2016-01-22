@@ -74,6 +74,7 @@ class UsersController extends AppController
         }
         if ($this->Permission->superAdmin() || $this->Permission->admin(null) || $this->Auth->user('id') == $id) {
             if ($this->request->is(array('post', 'put'))) {
+                unset($user[$this->User->alias]['password']);
                 if ($this->User->save($this->request->data)) {
                     $this->Message->display(__('User has successfully been saved.'), 'success');
                     $this->redirect(array('action' => 'index'));
