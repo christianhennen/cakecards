@@ -13,7 +13,7 @@ class MailingOptionsController extends AppController
     {
         $this->set('mailing_options', $this->MailingOption->find('all', array('order' => array('MailingOption.project_id' => 'asc'))));
         $this->set('superadmin', $this->Permission->superAdmin());
-        $this->set('admin', $this->Permission->admin());
+        $this->set('admin', $this->Permission->admin(null));
     }
 
     public function add()
@@ -27,7 +27,7 @@ class MailingOptionsController extends AppController
         }
         $this->set('uploads', $this->MailingOption->Upload->findAllByType('signature'));
         $this->set('superadmin', $this->Permission->superAdmin());
-        $this->set('admin', $this->Permission->admin());
+        $this->set('admin', $this->Permission->admin(null));
     }
 
     public function edit($id = null)
@@ -35,7 +35,7 @@ class MailingOptionsController extends AppController
         if (!$id OR !$mailing_option = $this->MailingOption->findById($id)) {
             throw new NotFoundException(__('The specified mailing option set was not found!'));
         }
-        if ($this->Permission->superAdmin() || $this->Permission->admin() || $mailing_option[$this->MailingOption->alias]['user_id'] == $this->Auth->user('id')) {
+        if ($this->Permission->superAdmin() || $this->Permission->admin(null) || $mailing_option[$this->MailingOption->alias]['user_id'] == $this->Auth->user('id')) {
             if ($this->request->is(array('post', 'put'))) {
                 if ($this->MailingOption->save($this->request->data)) {
                     $this->Message->display(__('Mailing options have successfully been saved.'), 'success');
@@ -47,7 +47,7 @@ class MailingOptionsController extends AppController
             $this->request->data = $mailing_option;
             $this->set('mailing_option', $mailing_option);
             $this->set('superadmin', $this->Permission->superAdmin());
-            $this->set('admin', $this->Permission->admin());
+            $this->set('admin', $this->Permission->admin(null));
         } else {
             $this->Message->display(__('Only administrators can edit project-wide mailing options!'), 'danger');
             $this->redirect(array('action' => 'index'));
@@ -62,7 +62,7 @@ class MailingOptionsController extends AppController
         if ($this->request->is('get')) {
             throw new MethodNotAllowedException();
         }
-        if ($this->Permission->superAdmin() || $this->Permission->admin() || $mailing_option[$this->MailingOption->alias]['user_id'] == $this->Auth->user('id')) {
+        if ($this->Permission->superAdmin() || $this->Permission->admin(null) || $mailing_option[$this->MailingOption->alias]['user_id'] == $this->Auth->user('id')) {
             if ($this->MailingOption->delete($id)) {
                 $this->Message->display(__('Mailing option set has successfully been deleted.'), 'success');
                 $this->redirect(array('action' => 'index'));
@@ -75,6 +75,7 @@ class MailingOptionsController extends AppController
 
     public function setActive($id = null)
     {
+        //TODO: Check if user is allowed to switch to this mailing option
         if (!$id OR !$mailing_option = $this->MailingOption->findById($id)) {
             throw new NotFoundException(__('The specified mailing option set was not found!'));
         }

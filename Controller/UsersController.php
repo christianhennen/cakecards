@@ -11,7 +11,7 @@ class UsersController extends AppController
     public function beforeFilter()
     {
         parent::beforeFilter();
-        if ($this->User->find('count') == 0 || Configure::read('debug') > 0) {
+        if ($this->User->find('count') == 0) {
             $this->Auth->allow('logout', 'add');
         } else {
             $this->Auth->allow('logout');
@@ -31,7 +31,7 @@ class UsersController extends AppController
     {
         $superadmin = $this->Permission->superAdmin();
         $this->set('superadmin', $superadmin);
-        $admin = $this->Permission->admin();
+        $admin = $this->Permission->admin(null);
         $this->set('admin', $admin);
         if ($superadmin) {
             $this->set('users', $this->User->find('all'));
@@ -49,7 +49,7 @@ class UsersController extends AppController
 
     public function add()
     {
-        if ($this->User->find('count') == 0 || $this->Permission->superAdmin() || $this->Permission->admin()) {
+        if ($this->User->find('count') == 0 || $this->Permission->superAdmin() || $this->Permission->admin(null)) {
             if ($this->request->is('post')) {
                 if ($this->request->data['User']['password'] != $this->request->data['User']['passwd']) {
                     $this->Message->display(__('Passwords do not match. Please try again!'), 'danger');
@@ -72,7 +72,7 @@ class UsersController extends AppController
         if (!$id OR !$user = $this->User->findById($id)) {
             throw new NotFoundException(__('The specified user was not found!'));
         }
-        if ($this->Permission->superAdmin() || $this->Permission->admin() || $this->Auth->user('id') == $id) {
+        if ($this->Permission->superAdmin() || $this->Permission->admin(null) || $this->Auth->user('id') == $id) {
             if ($this->request->is(array('post', 'put'))) {
                 if ($this->User->save($this->request->data)) {
                     $this->Message->display(__('User has successfully been saved.'), 'success');
@@ -94,7 +94,7 @@ class UsersController extends AppController
         if (!$id OR !$this->User->findById($id)) {
             throw new NotFoundException(__('The specified user was not found!'));
         }
-        if ($this->Permission->superAdmin() || $this->Permission->admin() || $this->Auth->user('id') == $id) {
+        if ($this->Permission->superAdmin() || $this->Permission->admin(null) || $this->Auth->user('id') == $id) {
             if ($this->request->is(array('post', 'put'))) {
                 if ($this->request->data['User']['password'] != $this->request->data['User']['passwd']) {
                     $this->Message->display(__('Passwords do not match. Please try again!'), 'danger');
@@ -123,7 +123,7 @@ class UsersController extends AppController
                 $this->Message->display(__('You can\'t delete your own user account!'), 'danger');
                 $this->redirect(array('action' => 'index'));
             }
-            if ($this->Permission->superAdmin() || $this->Permission->admin()) {
+            if ($this->Permission->superAdmin() || $this->Permission->admin(null)) {
                 if ($this->User->delete($id)) {
                     $this->Message->display(__('User has successfully been deleted.'), 'success');
                     $this->redirect(array('action' => 'index'));
@@ -143,14 +143,16 @@ class UsersController extends AppController
     {
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
-                $this->redirect($this->Auth->redirectUrl());
+                $this->redirect(array('controller' => 'recipients', 'action' => 'index'));
+            } else {
+                $this->Message->display(__('Wrong username or password!'), 'danger');
             }
-            $this->Message->display(__('Wrong username or password!'), 'danger');
         }
     }
 
     public function logout()
     {
+        $this->Session->write('Auth.redirect', null);
         $this->redirect($this->Auth->logout());
     }
 

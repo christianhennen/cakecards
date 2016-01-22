@@ -42,10 +42,10 @@ class ProjectsController extends AppController
 
     public function edit($id = null)
     {
-        if($this->Permission->superAdmin()) {
-            if (!$id OR !$project = $this->Project->findById($id)) {
-                throw new NotFoundException(__('The specified Project was not found!'));
-            }
+        if (!$id OR !$project = $this->Project->findById($id)) {
+            throw new NotFoundException(__('The specified Project was not found!'));
+        }
+        if($this->Permission->superAdmin() || $this->Permission->admin($id)) {
             if ($this->request->is(array('post', 'put'))) {
                 if ($this->Project->save($this->request->data)) {
                     $this->Message->display(__('Project has successfully been saved.'), 'success');
@@ -54,6 +54,24 @@ class ProjectsController extends AppController
                 $this->Message->display(__('Project could not be saved!'), 'danger');
             }
             $this->request->data = $project;
+            if($this->Permission->superAdmin()){
+                /*$this->loadModel('User');
+                $this->set('users', $this->User->find('list'));
+                $this->set('pm',$this->Project->ProjectMembership->find('list',array(
+                    'fields' => array('ProjectMembership.user_id', 'ProjectMembership.is_admin'),
+                    'conditions' => array('ProjectMembership.project_id' => $id)
+                )));*/
+                $this->loadModel('User');
+                $this->User->Behaviors->load('Containable');
+                $users = $this->User->find('all',
+                    array('fields' => array('User.id', 'User.username'),
+                    'contain' => array(
+                        'ProjectMembership' => array(
+                            'fields' => array('ProjectMembership.id', 'ProjectMembership.user_id', 'ProjectMembership.project_id', 'ProjectMembership.is_admin'),
+                            'conditions' => array('ProjectMembership.user_id' => 'User.id',
+                                'ProjectMembership.project_id' => $id)))));
+                $this->set('users', $users);
+            }
         } else {
                 $this->Message->display(__('Only super administrators can edit projects!'), 'danger');
                 $this->redirect(array('controller' => 'recipients', 'action' => 'index'));
@@ -62,6 +80,7 @@ class ProjectsController extends AppController
 
     public function setActive($id = null)
     {
+        //TODO: Check if user is member of the selected project
         if (!$id OR !$project = $this->Project->findById($id)) {
             throw new NotFoundException(__('The specified project was not found!'));
         }
@@ -79,19 +98,19 @@ class ProjectsController extends AppController
 
     public function delete($id)
     {
-        if($this->Permission->superAdmin()) {
-            if (!$id OR !$project = $this->Project->findById($id)) {
-                throw new NotFoundException(__('The specified Project was not found!'));
-            }
-            if ($this->request->is('get')) {
-                throw new MethodNotAllowedException();
-            }
+        if (!$id OR !$project = $this->Project->findById($id)) {
+            throw new NotFoundException(__('The specified Project was not found!'));
+        }
+        if ($this->request->is('get')) {
+            throw new MethodNotAllowedException();
+        }
+        if($this->Permission->superAdmin() || $this->Permission->admin($id)) {
             if ($this->Project->delete($id)) {
                 $this->Message->display(__('Project has successfully been deleted.'), 'success');
                 $this->redirect(array('action' => 'index'));
             }
         } else {
-            $this->Message->display(__('Only super administrators can delete projects!'), 'danger');
+            $this->Message->display(__('Only administrators can delete projects!'), 'danger');
             $this->redirect(array('controller' => 'recipients', 'action' => 'index'));
         }
     }
