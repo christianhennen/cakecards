@@ -4,7 +4,7 @@ A greeting card creation and emailing application based on CakePHP, Bootstrap an
 
 ##Installation
 ### Prerequisites
-* PHP 5.3.0 or greater with:
+* PHP 5.6.0 or greater with:
   * PDO extension for the selected database type, e.g. PDOMySQL
   * mcrypt extension
 * MySQL 4 or greater (check the CakePHP documentation for other database options)
@@ -48,4 +48,19 @@ For more information about this file please consult the CakePHP Manual: http://b
 
 7. Enter the credentials you'd like to use for your main user of the application.
 
-**IMPORTANT:** Once you've created the first user you can add new ones after you've logged in with an existing account!
+**IMPORTANT:** 
+The first user you've just created will be assigned the role of a super admin. If you choose to add other users, they can be assigned this role as well. 
+Be aware that if you delete every user with super admin privileges, the first user in the database will automatically be promoted to super admin.
+
+##Upgrading
+Upgrading the application is pretty straighforward:
+1. Open a terminal and change to the installation directory (e.g. /var/www/htdocs/cakecards/)
+2. Pull the latest changes from the repository
+    ```
+        cd /var/www/htdocs/cakecards
+        git pull
+    ```
+3. Update the database schema (necessary if Config/schema.php has changed)
+    ```
+        Console/cake schema update
+    ```
