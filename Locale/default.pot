@@ -61,7 +61,7 @@ msgstr ""
 
 #: /Cards/index.ctp:43
 #: /Elements/card_form.ctp:9
-#: /Elements/mailing_option_form.ctp:14
+#: /Elements/mailing_option_form.ctp:16
 msgid "Image"
 msgstr ""
 
@@ -98,13 +98,14 @@ msgstr ""
 #: /Elements/card_form.ctp:5
 #: /Elements/project_form.ctp:2
 #: /Elements/text_form.ctp:2
+#: /Projects/index.ctp:18
 #: /Recipients/export_excel.ctp:40
 #: /Texts/index.ctp:18
 msgid "Name"
 msgstr ""
 
 #: /Elements/card_form.ctp:11;26
-#: /Elements/mailing_option_form.ctp:16
+#: /Elements/mailing_option_form.ctp:18
 msgid "Choose..."
 msgstr ""
 
@@ -135,74 +136,76 @@ msgstr ""
 
 #: /Elements/mailing_option_form.ctp:8
 #: /Elements/project_form.ctp:3
+#: /Projects/index.ctp:19
 msgid "Description"
 msgstr ""
 
 #: /Elements/mailing_option_form.ctp:9
-#: /MailingOptions/index.ctp:93
+#: /MailingOptions/index.ctp:95
 msgid "Subject"
 msgstr ""
 
-#: /Elements/mailing_option_form.ctp:10
+#: /Elements/mailing_option_form.ctp:11
 msgid "Is this configuration project-wide?"
 msgstr ""
 
-#: /Elements/mailing_option_form.ctp:12
+#: /Elements/mailing_option_form.ctp:14
 msgid "Signature"
 msgstr ""
 
-#: /Elements/mailing_option_form.ctp:24
+#: /Elements/mailing_option_form.ctp:26
 msgid "Current image"
 msgstr ""
 
-#: /Elements/mailing_option_form.ctp:30
-#: /MailingOptions/index.ctp:69
+#: /Elements/mailing_option_form.ctp:32
+#: /MailingOptions/index.ctp:71
 msgid "Mail server"
 msgstr ""
 
-#: /Elements/mailing_option_form.ctp:31
-#: /MailingOptions/index.ctp:72
+#: /Elements/mailing_option_form.ctp:33
+#: /MailingOptions/index.ctp:74
 msgid "Port"
 msgstr ""
 
-#: /Elements/mailing_option_form.ctp:32
+#: /Elements/mailing_option_form.ctp:34
 msgid "Time until timeout in ms"
 msgstr ""
 
-#: /Elements/mailing_option_form.ctp:33
+#: /Elements/mailing_option_form.ctp:35
 msgid "Does the server use TLS?"
 msgstr ""
 
-#: /Elements/mailing_option_form.ctp:35
-#: /MailingOptions/index.ctp:90
+#: /Elements/mailing_option_form.ctp:37
+#: /MailingOptions/index.ctp:92
 msgid "Sender address"
 msgstr ""
 
-#: /Elements/mailing_option_form.ctp:36
-#: /MailingOptions/index.ctp:87
+#: /Elements/mailing_option_form.ctp:38
+#: /MailingOptions/index.ctp:89
 msgid "Sender name"
 msgstr ""
 
-#: /Elements/mailing_option_form.ctp:37
+#: /Elements/mailing_option_form.ctp:39
+#: /Elements/project_form.ctp:9
 #: /Elements/user_form.ctp:7
-#: /MailingOptions/index.ctp:98
-#: /Users/index.ctp:17
+#: /MailingOptions/index.ctp:100
+#: /Users/index.ctp:20
 #: /Users/login.ctp:9
 msgid "Username"
 msgstr ""
 
-#: /Elements/mailing_option_form.ctp:38
+#: /Elements/mailing_option_form.ctp:40
 #: /Elements/user_passwords.ctp:2
-#: /MailingOptions/index.ctp:101
+#: /MailingOptions/index.ctp:103
 #: /Users/login.ctp:11
 msgid "Password"
 msgstr ""
 
-#: /Elements/mailing_option_form.ctp:42
+#: /Elements/mailing_option_form.ctp:44
 msgid "Signature image"
 msgstr ""
 
-#: /Elements/mailing_option_form.ctp:43
+#: /Elements/mailing_option_form.ctp:45
 msgid "The following placeholder will be inserted into the signature."
 msgstr ""
 
@@ -229,6 +232,20 @@ msgstr ""
 #: /Elements/media_gallery.ctp:75
 #: /Recipients/index.ctp:162
 msgid "Close"
+msgstr ""
+
+#: /Elements/project_form.ctp:6
+#: /Helper/NavHelper.php:32
+#: /Users/index.ctp:16
+msgid "Users"
+msgstr ""
+
+#: /Elements/project_form.ctp:10
+msgid "Member?"
+msgstr ""
+
+#: /Elements/project_form.ctp:11
+msgid "Admin?"
 msgstr ""
 
 #: /Elements/recipient_form.ctp:2
@@ -261,7 +278,11 @@ msgstr ""
 msgid "Card"
 msgstr ""
 
-#: /Elements/user_form.ctp:9
+#: /Elements/user_form.ctp:8
+msgid "Information"
+msgstr ""
+
+#: /Elements/user_form.ctp:10
 msgid "Is this user a super admin?"
 msgstr ""
 
@@ -283,11 +304,6 @@ msgstr ""
 #: /Helper/NavHelper.php:28
 #: /MailingOptions/index.ctp:14
 msgid "Mailing options"
-msgstr ""
-
-#: /Helper/NavHelper.php:32
-#: /Users/index.ctp:14
-msgid "Users"
 msgstr ""
 
 #: /Helper/NavHelper.php:36
@@ -351,15 +367,15 @@ msgstr ""
 msgid "Personal"
 msgstr ""
 
-#: /MailingOptions/index.ctp:58
+#: /MailingOptions/index.ctp:59
 msgid "Do you really want to delete this mailing option set?"
 msgstr ""
 
-#: /MailingOptions/index.ctp:75
+#: /MailingOptions/index.ctp:77
 msgid "Use TLS"
 msgstr ""
 
-#: /MailingOptions/index.ctp:82
+#: /MailingOptions/index.ctp:84
 msgid "Timeout"
 msgstr ""
 
@@ -371,11 +387,17 @@ msgstr ""
 msgid "Edit project"
 msgstr ""
 
-#: /Projects/index.ctp:5
+#: /Projects/index.ctp:7
 msgid "New project"
 msgstr ""
 
-#: /Projects/index.ctp:31
+#: /Projects/index.ctp:17
+#: /Texts/index.ctp:17
+#: /Users/index.ctp:22
+msgid "Actions"
+msgstr ""
+
+#: /Projects/index.ctp:42
 msgid "Do you really want to delete this project?"
 msgstr ""
 
@@ -432,7 +454,7 @@ msgid "Do you really want to delete the specified recipients?"
 msgstr ""
 
 #: /Recipients/index.ctp:117
-#: /Users/index.ctp:27
+#: /Users/index.ctp:42
 msgid "Edit"
 msgstr ""
 
@@ -449,7 +471,7 @@ msgid "Do you really want to send this card?"
 msgstr ""
 
 #: /Recipients/index.ctp:137
-#: /Users/index.ctp:38
+#: /Users/index.ctp:54
 msgid "Delete"
 msgstr ""
 
@@ -505,11 +527,6 @@ msgstr ""
 msgid "New card text"
 msgstr ""
 
-#: /Texts/index.ctp:17
-#: /Users/index.ctp:18
-msgid "Actions"
-msgstr ""
-
 #: /Texts/index.ctp:35
 msgid "Do you really want to delete this card text?"
 msgstr ""
@@ -519,7 +536,7 @@ msgid "Add a user"
 msgstr ""
 
 #: /Users/change_password.ctp:4
-#: /Users/index.ctp:33
+#: /Users/index.ctp:48
 msgid "Change password"
 msgstr ""
 
@@ -527,11 +544,31 @@ msgstr ""
 msgid "Edit user"
 msgstr ""
 
-#: /Users/index.ctp:5
+#: /Users/index.ctp:8
 msgid "New user"
 msgstr ""
 
-#: /Users/index.ctp:41
+#: /Users/index.ctp:19
+msgid "Role"
+msgstr ""
+
+#: /Users/index.ctp:21
+msgid "Info"
+msgstr ""
+
+#: /Users/index.ctp:27;31
+msgid "User"
+msgstr ""
+
+#: /Users/index.ctp:30
+msgid "Admin"
+msgstr ""
+
+#: /Users/index.ctp:34
+msgid "Superadmin"
+msgstr ""
+
+#: /Users/index.ctp:57
 msgid "Do you really want to delete this user?"
 msgstr ""
 
@@ -563,52 +600,84 @@ msgstr ""
 msgid "There is no card image or font defined. Preview could not be generated."
 msgstr ""
 
-#: /MailingOptionsController.php:21;38
+#: /MailingOptionsController.php:23;41
 msgid "Mailing options have successfully been saved."
 msgstr ""
 
-#: /MailingOptionsController.php:24;41
+#: /MailingOptionsController.php:26;44
 msgid "Mailing options could not be saved!"
 msgstr ""
 
-#: /MailingOptionsController.php:34;53;70
+#: /MailingOptionsController.php:36;60;80
 msgid "The specified mailing option set was not found!"
 msgstr ""
 
-#: /MailingOptionsController.php:59
+#: /MailingOptionsController.php:52
+msgid "Only administrators can edit project-wide mailing options!"
+msgstr ""
+
+#: /MailingOptionsController.php:67
 msgid "Mailing option set has successfully been deleted."
 msgstr ""
 
-#: /MailingOptionsController.php:76
+#: /MailingOptionsController.php:71
+msgid "Only administrators can delete project-wide mailing options!"
+msgstr ""
+
+#: /MailingOptionsController.php:87
 msgid "Mailing options have successfully been switched."
 msgstr ""
 
-#: /MailingOptionsController.php:79
+#: /MailingOptionsController.php:90
 msgid "Mailing options could not be switched!"
 msgstr ""
 
-#: /MailingOptionsController.php:91
+#: /MailingOptionsController.php:103
 msgid "Mailing mode has been set to productive configuration. Mails are sent directly to recipients!"
 msgstr ""
 
-#: /MailingOptionsController.php:98
+#: /MailingOptionsController.php:111
 msgid "Mailing mode has been set to test configuration. Mails are sent to the sender specified in the active mailing options. Recipients do not receive any mail!"
 msgstr ""
 
-#: /ProjectsController.php:19;33
+#: /ProjectsController.php:32;51
 msgid "Project has successfully been saved."
 msgstr ""
 
-#: /ProjectsController.php:22;36
+#: /ProjectsController.php:35;54
 msgid "Project could not be saved!"
 msgstr ""
 
-#: /ProjectsController.php:29;44
+#: /ProjectsController.php:38
+msgid "Only super administrators can add projects!"
+msgstr ""
+
+#: /ProjectsController.php:46;102
 msgid "The specified Project was not found!"
 msgstr ""
 
-#: /ProjectsController.php:50
+#: /ProjectsController.php:76
+msgid "Only super administrators can edit projects!"
+msgstr ""
+
+#: /ProjectsController.php:85
+msgid "The specified project was not found!"
+msgstr ""
+
+#: /ProjectsController.php:92
+msgid "Project has successfully been switched."
+msgstr ""
+
+#: /ProjectsController.php:95
+msgid "Project could not be switched!"
+msgstr ""
+
+#: /ProjectsController.php:109
 msgid "Project has successfully been deleted."
+msgstr ""
+
+#: /ProjectsController.php:113
+msgid "Only administrators can delete projects!"
 msgstr ""
 
 #: /RecipientsController.php:24;40
@@ -684,59 +753,59 @@ msgstr ""
 msgid "Upload could not be saved!"
 msgstr ""
 
-#: /UsersController.php:49;93
+#: /UsersController.php:55;100
 msgid "Passwords do not match. Please try again!"
 msgstr ""
 
-#: /UsersController.php:53;72
+#: /UsersController.php:59;78
 msgid "User has successfully been saved."
 msgstr ""
 
-#: /UsersController.php:56;75
+#: /UsersController.php:62;81
 msgid "User could not be saved!"
 msgstr ""
 
-#: /UsersController.php:59
+#: /UsersController.php:65
 msgid "Only administrators can add other user accounts!"
 msgstr ""
 
-#: /UsersController.php:67;88;113
+#: /UsersController.php:73;95;120
 msgid "The specified user was not found!"
 msgstr ""
 
-#: /UsersController.php:80
+#: /UsersController.php:87
 msgid "Only administrators can edit other user accounts!"
 msgstr ""
 
-#: /UsersController.php:97
+#: /UsersController.php:104
 msgid "Password has successfully been changed."
 msgstr ""
 
-#: /UsersController.php:100
+#: /UsersController.php:107
 msgid "Password could not be changed!"
 msgstr ""
 
-#: /UsersController.php:105
+#: /UsersController.php:112
 msgid "Only administrators can change other user's passwords!"
 msgstr ""
 
-#: /UsersController.php:116
+#: /UsersController.php:123
 msgid "You can't delete your own user account!"
 msgstr ""
 
-#: /UsersController.php:121
+#: /UsersController.php:128
 msgid "User has successfully been deleted."
 msgstr ""
 
-#: /UsersController.php:124
+#: /UsersController.php:131
 msgid "User could not be deleted."
 msgstr ""
 
-#: /UsersController.php:127
+#: /UsersController.php:134
 msgid "Only administrators can delete other user accounts!"
 msgstr ""
 
-#: /UsersController.php:141
+#: /UsersController.php:148
 msgid "Wrong username or password!"
 msgstr ""
 
