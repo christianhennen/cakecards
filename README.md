@@ -1,3 +1,5 @@
+[![Stories in Ready](https://badge.waffle.io/christianhennen/cakecards.svg?label=ready&title=Ready)](http://waffle.io/christianhennen/cakecards)
+
 #CakeCards
 ##Description
 A greeting card creation and emailing application based on CakePHP, Bootstrap and jQuery
