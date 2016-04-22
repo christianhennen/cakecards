@@ -55,7 +55,7 @@ The first user you've just created will be assigned the role of a super admin. I
 Be aware that if you delete every user with super admin privileges, the first user in the database will automatically be promoted to super admin.
 
 ##Upgrading
-Upgrading the application is pretty straighforward:
+Upgrading the application is pretty straightforward:
 1. Open a terminal and change to the installation directory (e.g. /var/www/htdocs/cakecards/)
 
 2. Pull the latest changes from the repository
